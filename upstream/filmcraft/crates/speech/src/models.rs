@@ -218,7 +218,7 @@ pub type DownloadProgress<'a> = &'a mut dyn FnMut(u64, u64, &str) -> bool;
 
 /// Download the missing files of `m` into `models_dir/<id>/`: each file streams into `<name>.part`,
 /// its SHA-256 is checked, then it is renamed into place. A wrong checksum deletes the part file
-/// and fails. Pure Rust TLS (rustls + RustCrypto) with the operating system's certificate
+/// and fails. Rustls TLS (aws-lc-rs provider) with the operating system's certificate
 /// verifier.
 #[cfg(feature = "download")]
 pub fn download(models_dir: &Path, m: &ModelInfo, progress: DownloadProgress) -> Result<(), crate::SpeechError> {
@@ -279,7 +279,7 @@ pub fn download_files(dir: &Path, files: &[ModelFile], progress: DownloadProgres
 
 #[cfg(feature = "download")]
 fn agent() -> ureq::Agent {
-    let provider = std::sync::Arc::new(rustls_rustcrypto::provider());
+    let provider = std::sync::Arc::new(rustls::crypto::aws_lc_rs::default_provider());
     ureq::Agent::config_builder()
         .tls_config(
             ureq::tls::TlsConfig::builder()

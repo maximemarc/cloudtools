@@ -1,0 +1,49 @@
+diff --git a/upstream/filmcraft/crates/speech/Cargo.toml b/upstream/filmcraft/crates/speech/Cargo.toml
+index 67f6d8f..c8a91ed 100644
+--- a/upstream/filmcraft/crates/speech/Cargo.toml
++++ b/upstream/filmcraft/crates/speech/Cargo.toml
+@@ -13,8 +13,8 @@ workspace = true
+ default = []
+ # Whisper inference on the CPU via candle (pure Rust). Off by default (and in wasm builds).
+ whisper = ["dep:candle-core", "dep:candle-nn"]
+-# Model downloads over HTTPS (pure-Rust TLS: rustls + RustCrypto, OS certificate verification).
+-download = ["dep:ureq", "dep:rustls", "dep:rustls-rustcrypto", "dep:sha2"]
++# Model downloads over HTTPS (rustls + aws-lc-rs, OS certificate verification).
++download = ["dep:ureq", "dep:rustls", "dep:aws-lc-rs", "dep:sha2"]
+ 
+ [dependencies]
+ filmcraft-time = { workspace = true }
+@@ -26,8 +26,9 @@ candle-core = { version = "0.9", default-features = false, optional = true }
+ candle-nn = { version = "0.9", default-features = false, optional = true }
+ rayon = { workspace = true }
+ ureq = { version = "3", default-features = false, features = ["rustls-no-provider", "platform-verifier"], optional = true }
+-rustls = { version = "0.23", default-features = false, optional = true }
+-rustls-rustcrypto = { version = "0.0.2-alpha", optional = true }
++rustls = { version = "0.23", default-features = false, features = ["aws_lc_rs"], optional = true }
++# Prebuilt NASM objects: Windows builds need no assembler (same setup as pdfcraft-sign).
++aws-lc-rs = { version = "1.18", default-features = false, features = ["aws-lc-sys", "prebuilt-nasm"], optional = true }
+ sha2 = { version = "0.10", optional = true }
+ 
+ [[example]]
+diff --git a/upstream/filmcraft/crates/speech/src/models.rs b/upstream/filmcraft/crates/speech/src/models.rs
+index 4d25715..73572e0 100644
+--- a/upstream/filmcraft/crates/speech/src/models.rs
++++ b/upstream/filmcraft/crates/speech/src/models.rs
+@@ -218,7 +218,7 @@ pub type DownloadProgress<'a> = &'a mut dyn FnMut(u64, u64, &str) -> bool;
+ 
+ /// Download the missing files of `m` into `models_dir/<id>/`: each file streams into `<name>.part`,
+ /// its SHA-256 is checked, then it is renamed into place. A wrong checksum deletes the part file
+-/// and fails. Pure Rust TLS (rustls + RustCrypto) with the operating system's certificate
++/// and fails. Rustls TLS (aws-lc-rs provider) with the operating system's certificate
+ /// verifier.
+ #[cfg(feature = "download")]
+ pub fn download(models_dir: &Path, m: &ModelInfo, progress: DownloadProgress) -> Result<(), crate::SpeechError> {
+@@ -279,7 +279,7 @@ pub fn download_files(dir: &Path, files: &[ModelFile], progress: DownloadProgres
+ 
+ #[cfg(feature = "download")]
+ fn agent() -> ureq::Agent {
+-    let provider = std::sync::Arc::new(rustls_rustcrypto::provider());
++    let provider = std::sync::Arc::new(rustls::crypto::aws_lc_rs::default_provider());
+     ureq::Agent::config_builder()
+         .tls_config(
+             ureq::tls::TlsConfig::builder()

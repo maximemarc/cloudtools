@@ -1,0 +1,133 @@
+diff --git a/upstream/gridcraft/Cargo.toml b/upstream/gridcraft/Cargo.toml
+index d7fad0f..d826390 100644
+--- a/upstream/gridcraft/Cargo.toml
++++ b/upstream/gridcraft/Cargo.toml
+@@ -32,7 +32,7 @@ serde_json = { version = "1", features = ["float_roundtrip"] }
+ log = "0.4"
+ rayon = "1"
+ regex = { version = "1", default-features = false, features = ["std", "unicode", "perf"] }
+-quick-xml = "0.38"
++quick-xml = "0.41"
+ zip = { version = "3", default-features = false, features = ["deflate"] }
+ image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+ 
+diff --git a/upstream/gridcraft/crates/xlsx/src/ods.rs b/upstream/gridcraft/crates/xlsx/src/ods.rs
+index 4f63fd1..4d7e0aa 100644
+--- a/upstream/gridcraft/crates/xlsx/src/ods.rs
++++ b/upstream/gridcraft/crates/xlsx/src/ods.rs
+@@ -10,6 +10,7 @@ use gridcraft_core::date::{days_in_month, serial_from_ymd};
+ use gridcraft_core::{CellRef, DateSystem, MAX_COLS, MAX_ROWS, RangeRef, Value};
+ use gridcraft_model::{Cell, NumFmt, Sheet, StyleId, Workbook};
+ use quick_xml::NsReader;
++use quick_xml::XmlVersion;
+ use quick_xml::events::{BytesStart, Event};
+ use quick_xml::name::ResolveResult;
+ 
+@@ -71,9 +72,9 @@ fn attr(reader: &NsReader<&[u8]>, e: &BytesStart<'_>, ns: &[u8], name: &[u8]) ->
+     let mut found = None;
+     for a in e.attributes() {
+         let a = a.map_err(|e| IoError::Xml(e.to_string()))?;
+-        let (resolved, local) = reader.resolve_attribute(a.key);
++        let (resolved, local) = reader.resolver().resolve_attribute(a.key);
+         if is_ns(resolved, ns) && local.as_ref() == name {
+-            let value = a.unescape_value().map_err(|e| IoError::Xml(e.to_string()))?;
++            let value = a.normalized_value(XmlVersion::Explicit1_0).map_err(|e| IoError::Xml(e.to_string()))?;
+             if value.len() > MAX_CELL_TEXT {
+                 return Err(IoError::TooLarge("ODS attribute exceeds 1 MiB".into()));
+             }
+@@ -106,7 +107,7 @@ fn check_manifest(bytes: &[u8]) -> Result<(), IoError> {
+         let event = reader.read_event().map_err(xml_error)?;
+         match &event {
+             Event::Start(e) | Event::Empty(e) => {
+-                let (ns, name) = reader.resolve_element(e.name());
++                let (ns, name) = reader.resolver().resolve_element(e.name());
+                 if is_ns(ns.clone(), MANIFEST) && name.as_ref() == b"encryption-data" {
+                     return Err(IoError::Format("encrypted ODS files are not supported".into()));
+                 }
+@@ -154,7 +155,7 @@ enum Tag {
+ }
+ 
+ fn tag(reader: &NsReader<&[u8]>, e: &BytesStart<'_>) -> Tag {
+-    let (ns, name) = reader.resolve_element(e.name());
++    let (ns, name) = reader.resolver().resolve_element(e.name());
+     let local = name.as_ref();
+     if is_ns(ns.clone(), OFFICE) {
+         return match local {
+@@ -269,7 +270,7 @@ impl Import {
+                 }
+                 Event::End(_) => self.end()?,
+                 Event::Text(t) => {
+-                    let text = t.xml_content().map_err(xml_error)?;
++                    let text = t.xml10_content().map_err(xml_error)?;
+                     if self.stack.is_empty() && !text.trim().is_empty() {
+                         return Err(xml_error("text outside the document"));
+                     }
+diff --git a/upstream/gridcraft/crates/xlsx/src/xlsb.rs b/upstream/gridcraft/crates/xlsx/src/xlsb.rs
+index 897a40b..5bcf3d4 100644
+--- a/upstream/gridcraft/crates/xlsx/src/xlsb.rs
++++ b/upstream/gridcraft/crates/xlsx/src/xlsb.rs
+@@ -7,6 +7,7 @@ use std::sync::Arc;
+ use gridcraft_core::{CellError, CellRef, DateSystem, MAX_COLS, MAX_ROWS, RangeRef, Value};
+ use gridcraft_model::{Cell, Sheet, Visibility, Workbook};
+ use quick_xml::NsReader;
++use quick_xml::XmlVersion;
+ use quick_xml::events::Event;
+ use quick_xml::name::ResolveResult;
+ 
+@@ -160,7 +161,7 @@ fn metadata(bytes: &[u8], ns: &[u8], root_name: &[u8]) -> Result<Vec<Entry>, IoE
+         let event = reader.read_event().map_err(|e| IoError::Xml(e.to_string()))?;
+         match &event {
+             Event::Start(e) | Event::Empty(e) => {
+-                let (namespace, local) = reader.resolve_element(e.name());
++                let (namespace, local) = reader.resolver().resolve_element(e.name());
+                 let valid_ns = matches!(namespace, ResolveResult::Bound(n) if n.as_ref() == ns);
+                 if depth == 0 {
+                     if seen || !valid_ns || local.as_ref() != root_name {
+@@ -174,7 +175,7 @@ fn metadata(bytes: &[u8], ns: &[u8], root_name: &[u8]) -> Result<Vec<Entry>, IoE
+                         if !a.key.as_ref().contains(&b':') {
+                             attrs.push((
+                                 String::from_utf8_lossy(a.key.as_ref()).into_owned(),
+-                                a.unescape_value().map_err(|e| IoError::Xml(e.to_string()))?.into_owned(),
++                                a.normalized_value(XmlVersion::Explicit1_0).map_err(|e| IoError::Xml(e.to_string()))?.into_owned(),
+                             ));
+                         }
+                     }
+@@ -188,7 +189,7 @@ fn metadata(bytes: &[u8], ns: &[u8], root_name: &[u8]) -> Result<Vec<Entry>, IoE
+                 }
+             }
+             Event::End(_) => depth = depth.checked_sub(1).ok_or_else(|| invalid("unexpected metadata end"))?,
+-            Event::Text(t) if depth == 0 && !t.xml_content().map_err(|e| IoError::Xml(e.to_string()))?.trim().is_empty() => {
++            Event::Text(t) if depth == 0 && !t.xml10_content().map_err(|e| IoError::Xml(e.to_string()))?.trim().is_empty() => {
+                 return Err(invalid("text outside package metadata"));
+             }
+             Event::DocType(_) => return Err(invalid("DOCTYPE in package metadata is unsupported")),
+diff --git a/upstream/gridcraft/crates/xlsx/src/xml.rs b/upstream/gridcraft/crates/xlsx/src/xml.rs
+index efa5cdc..1354867 100644
+--- a/upstream/gridcraft/crates/xlsx/src/xml.rs
++++ b/upstream/gridcraft/crates/xlsx/src/xml.rs
+@@ -2,6 +2,7 @@
+ //! shared strings) so large parts never need a full tree, plus escaping helpers for writing.
+ 
+ use quick_xml::Reader;
++use quick_xml::XmlVersion;
+ use quick_xml::events::{BytesStart, Event};
+ 
+ use crate::IoError;
+@@ -124,7 +125,7 @@ fn start_el(e: &BytesStart<'_>) -> El {
+         if key == b"xmlns" || key.starts_with(b"xmlns:") {
+             continue;
+         }
+-        let v = match a.unescape_value() {
++        let v = match a.normalized_value(XmlVersion::Explicit1_0) {
+             Ok(v) => v.into_owned(),
+             Err(_) => String::from_utf8_lossy(&a.value).into_owned(),
+         };
+@@ -203,7 +204,7 @@ pub fn parse_streaming(xml: &[u8], split: &[&str], cb: &mut dyn FnMut(El) -> Res
+             }
+             Event::Text(t) => {
+                 if let Some(top) = stack.last_mut() {
+-                    let s = t.xml_content().map_err(|e| IoError::Xml(e.to_string()))?;
++                    let s = t.xml10_content().map_err(|e| IoError::Xml(e.to_string()))?;
+                     top.text.push_str(&s);
+                 }
+             }

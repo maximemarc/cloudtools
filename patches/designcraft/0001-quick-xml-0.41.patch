@@ -1,0 +1,64 @@
+diff --git a/upstream/designcraft/Cargo.toml b/upstream/designcraft/Cargo.toml
+index 35a1ed7..51b6be3 100644
+--- a/upstream/designcraft/Cargo.toml
++++ b/upstream/designcraft/Cargo.toml
+@@ -63,7 +63,7 @@ flo_curves = "0.8"
+ qrcodegen = "1.8"
+ krilla = { version = "0.8", features = ["pdf"] }
+ hayro = "0.7"
+-quick-xml = "0.38"
++quick-xml = "0.41"
+ zip = { version = "3", default-features = false, features = ["deflate"] }
+ 
+ # ui
+diff --git a/upstream/designcraft/crates/idml/src/xml.rs b/upstream/designcraft/crates/idml/src/xml.rs
+index cb09249..bba8c56 100644
+--- a/upstream/designcraft/crates/idml/src/xml.rs
++++ b/upstream/designcraft/crates/idml/src/xml.rs
+@@ -1,6 +1,7 @@
+ //! A tiny XML DOM on top of `quick-xml`: enough for IDML parts (elements, attributes, text,
+ //! CDATA and processing instructions such as `<?ACE 18?>`).
+ 
++use quick_xml::XmlVersion;
+ use quick_xml::events::Event;
+ 
+ #[derive(Clone, Debug, PartialEq)]
+@@ -283,7 +284,7 @@ fn start_el(e: &quick_xml::events::BytesStart) -> Result<El, String> {
+     for a in e.attributes().with_checks(false) {
+         let a = a.map_err(|e| e.to_string())?;
+         let k = String::from_utf8_lossy(a.key.as_ref()).to_string();
+-        let v = a.unescape_value().map(|v| v.to_string()).unwrap_or_else(|_| String::from_utf8_lossy(&a.value).to_string());
++        let v = a.normalized_value(XmlVersion::Explicit1_0).map(|v| v.to_string()).unwrap_or_else(|_| String::from_utf8_lossy(&a.value).to_string());
+         el.attrs.push((k, v));
+     }
+     Ok(el)
+diff --git a/upstream/designcraft/crates/textimport/src/docx.rs b/upstream/designcraft/crates/textimport/src/docx.rs
+index 67a2b71..1bcc4f9 100644
+--- a/upstream/designcraft/crates/textimport/src/docx.rs
++++ b/upstream/designcraft/crates/textimport/src/docx.rs
+@@ -5,6 +5,7 @@ use std::io::Read;
+ 
+ use designcraft_doc::story::{BASIC_PARAGRAPH, NO_CHAR_STYLE};
+ use designcraft_doc::{CharAttrs, CharFormat, ParaAttrs, ParaFormat, Story, StoryId, Table};
++use quick_xml::XmlVersion;
+ use quick_xml::events::Event;
+ 
+ use crate::{ImportError, Imported, ImportedStyle};
+@@ -67,7 +68,7 @@ pub(crate) fn parse(xml: &str) -> Result<El, ImportError> {
+                     attrs: e
+                         .attributes()
+                         .flatten()
+-                        .map(|a| (local(a.key.as_ref()), a.unescape_value().map(|v| v.to_string()).unwrap_or_default()))
++                        .map(|a| (local(a.key.as_ref()), a.normalized_value(XmlVersion::Explicit1_0).map(|v| v.to_string()).unwrap_or_default()))
+                         .collect(),
+                     kids: vec![],
+                 };
+@@ -79,7 +80,7 @@ pub(crate) fn parse(xml: &str) -> Result<El, ImportError> {
+                     attrs: e
+                         .attributes()
+                         .flatten()
+-                        .map(|a| (local(a.key.as_ref()), a.unescape_value().map(|v| v.to_string()).unwrap_or_default()))
++                        .map(|a| (local(a.key.as_ref()), a.normalized_value(XmlVersion::Explicit1_0).map(|v| v.to_string()).unwrap_or_default()))
+                         .collect(),
+                     kids: vec![],
+                 };

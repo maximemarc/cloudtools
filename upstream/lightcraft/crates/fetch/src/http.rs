@@ -1,7 +1,7 @@
 //! A small HTTP/1.1 GET client for model downloads, in pure Rust: `std::net` sockets and, for
-//! `https://`, rustls with the RustCrypto provider (`rustls-rustcrypto`; no `ring` or
-//! `aws-lc-rs`, so nothing is compiled from C or assembly) and the Mozilla root certificates
-//! (`webpki-roots`).
+//! `https://`, rustls with the `aws-lc-rs` provider (the one PdfCraft already ships; the alpha
+//! `rustls-rustcrypto` provider pinned a vulnerable `rustls-webpki` 0.102) and the Mozilla root
+//! certificates (`webpki-roots`).
 //!
 //! Only what a large-file download needs: one request per connection (`Connection: close`),
 //! `Range` requests for resuming, redirects (followed by the caller), `Content-Length`,
@@ -170,7 +170,7 @@ fn is_timeout(e: &std::io::Error) -> bool {
 
 fn tls_config() -> Result<Arc<rustls::ClientConfig>, HttpError> {
     let roots = rustls::RootCertStore { roots: webpki_roots::TLS_SERVER_ROOTS.to_vec() };
-    let config = rustls::ClientConfig::builder_with_provider(Arc::new(rustls_rustcrypto::provider()))
+    let config = rustls::ClientConfig::builder_with_provider(Arc::new(rustls::crypto::aws_lc_rs::default_provider()))
         .with_safe_default_protocol_versions()
         .map_err(|e| HttpError::Tls(e.to_string()))?
         .with_root_certificates(roots)

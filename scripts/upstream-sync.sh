@@ -6,7 +6,9 @@
 #   ./scripts/upstream-sync.sh photocraft pdfcraft
 #   UPSTREAM_CACHE=/path/to/clones ./scripts/upstream-sync.sh
 #
-# vendor:    upstream/<name> is replaced by the tracked files of the upstream branch HEAD.
+# vendor:    upstream/<name> is replaced by the tracked files of the upstream branch HEAD
+#            (minus the `exclude` paths), then patches/<name>/*.patch are applied in order and
+#            every Cargo.lock under it goes through scripts/fix-lockfile-vulns.py.
 # submodule: upstream/<name> is a git submodule moved to the upstream branch HEAD.
 # Pins are written to upstream/UPSTREAM.lock. Nothing is committed.
 set -euo pipefail
@@ -33,8 +35,32 @@ update_lock() {
   rm -f "$tmp"
 }
 
+apply_patches() {
+  local name=$1 patch
+  for patch in "patches/$name"/*.patch; do
+    [[ -e "$patch" ]] || continue
+    git apply --whitespace=nowarn "$patch" || { echo "patch failed: $patch (rebase it on the new upstream)" >&2; exit 1; }
+    echo "  patched    $(basename "$patch")"
+  done
+}
+
+fix_lockfiles() {
+  local dest=$1 dirs=()
+  while IFS= read -r lock; do dirs+=("$(dirname "$lock")"); done < <(find "$dest" -name Cargo.lock -not -path '*/target/*' | sort)
+  ((${#dirs[@]})) && python3 -I scripts/fix-lockfile-vulns.py "${dirs[@]}" | sed 's/^/  /' || true
+}
+
 sync_vendor() {
-  local name=$1 branch=$2 url=$3 clone="$CACHE/$1" dest="upstream/$1" sha
+  local name=$1 branch=$2 exclude=$3 url=$4 clone="$CACHE/$1" dest="upstream/$1" sha
+  local pathspec=(.)
+  if [[ "$exclude" != "-" ]]; then
+    IFS=',' read -ra paths <<< "$exclude"
+    for p in "${paths[@]}"; do
+      [[ "$p" == /* || "$p" == *..* ]] && { echo "invalid exclude path for $name: $p" >&2; exit 1; }
+      pathspec+=(":(exclude)$p")
+    done
+  fi
+
   if git -C "$clone" rev-parse HEAD >/dev/null 2>&1; then
     GIT_LFS_SKIP_SMUDGE=1 git -C "$clone" fetch -q --depth 1 origin "$branch"
     git -C "$clone" reset -q --hard FETCH_HEAD
@@ -46,9 +72,11 @@ sync_vendor() {
   rm -rf -- "$dest"
   mkdir -p "$dest"
   # Tracked files only: no .git, no local build output, symlinks and modes preserved.
-  (cd "$clone" && git ls-files -z) | tar -C "$clone" --null -T - -cf - | tar -C "$dest" -xf -
+  (cd "$clone" && git ls-files -z -- "${pathspec[@]}") | tar -C "$clone" --null -T - -cf - | tar -C "$dest" -xf -
   update_lock "$name" vendor "$sha" "$url"
   echo "vendor     $name @ ${sha:0:12}"
+  apply_patches "$name"
+  fix_lockfiles "$dest"
 }
 
 sync_submodule() {
@@ -63,15 +91,21 @@ sync_submodule() {
   echo "submodule  $name @ ${sha:0:12}"
 }
 
-while read -r name mode branch _license <&3; do
+while read -r name mode branch exclude _license <&3; do
   [[ -z "$name" || "$name" == \#* ]] && continue
   [[ "$name" =~ ^[a-z0-9-]+$ ]] || { echo "invalid repo name: $name" >&2; exit 1; }
   (( $# == 0 )) || [[ -n "${WANTED[$name]:-}" ]] || continue
 
   url="https://github.com/${UPSTREAM_OWNER}/${name}"
   case "$mode" in
-    vendor)    sync_vendor "$name" "$branch" "$url" ;;
+    vendor)    sync_vendor "$name" "$branch" "$exclude" "$url" ;;
     submodule) sync_submodule "$name" "$branch" "$url" ;;
     *)         echo "unknown mode '$mode' for $name" >&2; exit 1 ;;
   esac
 done 3< "$CONF"
+
+# The product lockfile: Craft Studio's own dependency graph.
+if [[ -f Cargo.lock ]]; then
+  echo "workspace  Cargo.lock"
+  python3 -I scripts/fix-lockfile-vulns.py . | sed 's/^/  /' || true
+fi

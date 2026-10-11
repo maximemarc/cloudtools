@@ -5,6 +5,7 @@ use std::io::Read;
 
 use designcraft_doc::story::{BASIC_PARAGRAPH, NO_CHAR_STYLE};
 use designcraft_doc::{CharAttrs, CharFormat, ParaAttrs, ParaFormat, Story, StoryId, Table};
+use quick_xml::XmlVersion;
 use quick_xml::events::Event;
 
 use crate::{ImportError, Imported, ImportedStyle};
@@ -67,7 +68,7 @@ pub(crate) fn parse(xml: &str) -> Result<El, ImportError> {
                     attrs: e
                         .attributes()
                         .flatten()
-                        .map(|a| (local(a.key.as_ref()), a.unescape_value().map(|v| v.to_string()).unwrap_or_default()))
+                        .map(|a| (local(a.key.as_ref()), a.normalized_value(XmlVersion::Explicit1_0).map(|v| v.to_string()).unwrap_or_default()))
                         .collect(),
                     kids: vec![],
                 };
@@ -79,7 +80,7 @@ pub(crate) fn parse(xml: &str) -> Result<El, ImportError> {
                     attrs: e
                         .attributes()
                         .flatten()
-                        .map(|a| (local(a.key.as_ref()), a.unescape_value().map(|v| v.to_string()).unwrap_or_default()))
+                        .map(|a| (local(a.key.as_ref()), a.normalized_value(XmlVersion::Explicit1_0).map(|v| v.to_string()).unwrap_or_default()))
                         .collect(),
                     kids: vec![],
                 };

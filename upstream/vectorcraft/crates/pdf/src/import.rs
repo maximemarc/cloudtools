@@ -167,6 +167,10 @@ pub fn import_with_report(bytes: &[u8], opts: &ImportOptions) -> Result<ImportRe
             let msg = match w {
                 InterpreterWarning::UnsupportedFont => "a font could not be read; its text was skipped",
                 InterpreterWarning::ImageDecodeFailure => "an image could not be decoded and was skipped",
+                // Hardened hayro builds (pdfcraft/vendor, used by Craft Studio) add more variants,
+                // e.g. `ContentTruncated`; unreachable with the crates.io release.
+                #[allow(unreachable_patterns)]
+                _ => "part of a page could not be read and was skipped",
             };
             if let Ok(mut v) = sink2.lock()
                 && !v.iter().any(|x| x == msg)

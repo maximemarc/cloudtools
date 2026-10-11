@@ -1,0 +1,13 @@
+# cargo-audit configuration for the whole monorepo (root Cargo.lock and upstream/* lockfiles).
+
+[advisories]
+ignore = [
+  # RUSTSEC-2023-0071 (rsa, "Marvin attack"): timing side channel on RSA *private-key*
+  # operations. No fixed rsa release exists. Every use in this repo is public-key only:
+  # - pdfcraft-sign (rsa 0.10.0-rc): signature padding inspection (`hazmat::rsa_encrypt` on the
+  #   signer's public key) and BoxedUint arithmetic; private-key signing goes through aws-lc-rs.
+  # - sqlx-mysql (rsa 0.9, upstream/artcraft optional `database` feature): encrypts the password
+  #   with the server's public key during `caching_sha2_password` auth.
+  # Re-check when rsa 0.10.0 ships or any use moves to private keys.
+  "RUSTSEC-2023-0071",
+]

@@ -1,0 +1,39 @@
+diff --git a/upstream/lightcraft/crates/fetch/Cargo.toml b/upstream/lightcraft/crates/fetch/Cargo.toml
+index 2e65583..1932b5f 100644
+--- a/upstream/lightcraft/crates/fetch/Cargo.toml
++++ b/upstream/lightcraft/crates/fetch/Cargo.toml
+@@ -11,7 +11,8 @@ workspace = true
+ # downloads run natively only (the web build fetches no models)
+ [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+ log = { workspace = true }
+-rustls = { version = "0.23", default-features = false, features = ["std", "tls12"] }
+-rustls-rustcrypto = "0.0.2-alpha"
++rustls = { version = "0.23", default-features = false, features = ["std", "tls12", "aws_lc_rs"] }
++# Prebuilt NASM objects: Windows builds need no assembler (same setup as pdfcraft-sign).
++aws-lc-rs = { version = "1.18", default-features = false, features = ["aws-lc-sys", "prebuilt-nasm"] }
+ webpki-roots = "1"
+ sha2 = { version = "0.10", default-features = false, features = ["std"] }
+diff --git a/upstream/lightcraft/crates/fetch/src/http.rs b/upstream/lightcraft/crates/fetch/src/http.rs
+index e900850..02a3f9f 100644
+--- a/upstream/lightcraft/crates/fetch/src/http.rs
++++ b/upstream/lightcraft/crates/fetch/src/http.rs
+@@ -1,7 +1,7 @@
+ //! A small HTTP/1.1 GET client for model downloads, in pure Rust: `std::net` sockets and, for
+-//! `https://`, rustls with the RustCrypto provider (`rustls-rustcrypto`; no `ring` or
+-//! `aws-lc-rs`, so nothing is compiled from C or assembly) and the Mozilla root certificates
+-//! (`webpki-roots`).
++//! `https://`, rustls with the `aws-lc-rs` provider (the one PdfCraft already ships; the alpha
++//! `rustls-rustcrypto` provider pinned a vulnerable `rustls-webpki` 0.102) and the Mozilla root
++//! certificates (`webpki-roots`).
+ //!
+ //! Only what a large-file download needs: one request per connection (`Connection: close`),
+ //! `Range` requests for resuming, redirects (followed by the caller), `Content-Length`,
+@@ -170,7 +170,7 @@ fn is_timeout(e: &std::io::Error) -> bool {
+ 
+ fn tls_config() -> Result<Arc<rustls::ClientConfig>, HttpError> {
+     let roots = rustls::RootCertStore { roots: webpki_roots::TLS_SERVER_ROOTS.to_vec() };
+-    let config = rustls::ClientConfig::builder_with_provider(Arc::new(rustls_rustcrypto::provider()))
++    let config = rustls::ClientConfig::builder_with_provider(Arc::new(rustls::crypto::aws_lc_rs::default_provider()))
+         .with_safe_default_protocol_versions()
+         .map_err(|e| HttpError::Tls(e.to_string()))?
+         .with_root_certificates(roots)
