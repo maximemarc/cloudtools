@@ -1,9 +1,9 @@
 # Craft Studio on the three desktop platforms.
 #
-# Every OS: release build, then `--smoke` (every app opened in turn, one screenshot each; it fails
-# if an app fails to start or panics). Linux runs it under Xvfb on Mesa's software renderers, macOS
-# on the runner's paravirtual Metal device. Windows runners have no GPU, so the Windows run is
-# best-effort: a failure is a warning and the screenshots show how far it got.
+# Every OS: release build, then `--smoke` (every app opened in turn, one screenshot each; the job
+# fails if an app fails to start or panics). The runners have no GPU: Linux renders under Xvfb with
+# Mesa's software drivers, macOS on the paravirtual Metal device, Windows on WARP (DirectX 12 on the
+# CPU, where EffectCraft's GPU compositor falls back to the CPU, as upstream expects).
 name: Craft Studio
 
 on:
@@ -41,9 +41,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { name: Linux, os: ubuntu-24.04, smoke_required: true }
-          - { name: macOS, os: macos-15, smoke_required: true }
-          - { name: Windows, os: windows-2025, smoke_required: false }
+          - { name: Linux, os: ubuntu-24.04 }
+          - { name: macOS, os: macos-15 }
+          - { name: Windows, os: windows-2025 }
     steps:
       - name: Free disk space
         if: runner.os == 'Linux'
@@ -87,8 +87,8 @@ jobs:
           target/release/craft-studio --version
           target/release/craft-studio --list
 
+      # About 1 min on Linux and macOS, 9 min on WARP.
       - name: Smoke test
-        continue-on-error: ${{ !matrix.smoke_required }}
         timeout-minutes: 20
         env:
           RUST_LOG: info,wgpu_core=warn,wgpu_hal=warn,naga=warn

@@ -102,8 +102,8 @@ whenever the settings settle, asks for a cost estimate that includes the prompt 
 
 Check a build end to end (every app opened in turn, one screenshot each, exit status 1 if an
 app fails to start or panics). CI ([`.github/workflows/craft-studio.yml`](../.github/workflows/craft-studio.yml))
-runs it on every push: under `xvfb-run` on Linux and on the runner's Metal device on macOS, where
-it gates the build, and as a best-effort run on the GPU-less Windows runners. The screenshots are the `smoke-<OS>` artifacts.
+runs it on every push on Linux (`xvfb-run`, Mesa), macOS (paravirtual Metal) and Windows (WARP).
+The screenshots are the `smoke-<OS>` artifacts.
 
 ```bash
 cargo run --release -p craft-studio -- --smoke /tmp/craft-studio-smoke

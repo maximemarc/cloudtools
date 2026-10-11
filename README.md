@@ -14,7 +14,7 @@ cargo run --release -p craft-studio -- --app pdfcraft   # ouvrir directement une
 cargo run --release -p craft-studio -- --list           # identifiants des apps
 ```
 
-CI ([.github/workflows/craft-studio.yml](.github/workflows/craft-studio.yml)) : build release sur Linux, macOS et Windows, puis `--smoke` (les 13 apps ouvertes tour à tour, une capture chacune) — bloquant sur Linux (Xvfb) et macOS (Metal du runner), indicatif sur Windows (runner sans GPU). Captures dans les artefacts `smoke-<OS>`.
+CI ([.github/workflows/craft-studio.yml](.github/workflows/craft-studio.yml)) : build release sur Linux, macOS et Windows, puis `--smoke` (les 13 apps ouvertes tour à tour, une capture chacune) sur les trois OS, en rendu logiciel ou virtualisé (Xvfb + Mesa, Metal paravirtualisé, WARP). Captures dans les artefacts `smoke-<OS>`.
 
 ## Layout
 
@@ -31,7 +31,7 @@ upstream/                 code importé, jamais modifié à la main
   artcraftx/              submodule (aucune licence)
   cloud-worker/           submodule (aucune licence)
 patches/<repo>/           correctifs appliqués après chaque import (vulnérabilités, intégration)
-.github/workflows/        CI Craft Studio (Linux + smoke Xvfb, macOS, Windows)
+.github/workflows/        CI Craft Studio (build + smoke sur Linux, macOS, Windows)
 scripts/
   upstream-sync.sh        import / mise à jour depuis l'upstream (+ patches + lockfiles)
   gen-module-manifests.py dépendances des adaptateurs depuis les binaires upstream
