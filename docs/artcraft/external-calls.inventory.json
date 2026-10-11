@@ -1,0 +1,2628 @@
+{
+ "artcraft": {
+  "commit": "28a39a0de4a2fc2eccc237df2046c24245bd12ab",
+  "telemetry": {
+   "discord-presence": {
+    "count": 6,
+    "examples": [
+     "crates/desktop/artcraft/src/core/threads/discord_presence_thread.rs:2",
+     "crates/desktop/artcraft/src/core/threads/discord_presence_thread.rs:17",
+     "crates/desktop/artcraft/src/core/threads/discord_presence_thread.rs:23",
+     "crates/desktop/artcraft/src/core/threads/discord_presence_thread.rs:34",
+     "crates/desktop/artcraft/src/core/threads/discord_presence_thread.rs:40",
+     "crates/desktop/artcraft/src/core/threads/discord_presence_thread.rs:44"
+    ]
+   },
+   "google-analytics": {
+    "count": 8,
+    "examples": [
+     "frontend/apps/artcraft/app/index.html:10",
+     "frontend/apps/artcraft/app/index.html:13",
+     "frontend/apps/artcraft/app/index.html:14",
+     "frontend/apps/artcraft/app/index.html:15",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-event.ts:6",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-event.ts:8",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-login.ts:6",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-logout.ts:6"
+    ]
+   },
+   "ms-clarity": {
+    "count": 1,
+    "examples": [
+     "frontend/apps/artcraft/app/index.html:25"
+    ]
+   },
+   "posthog": {
+    "count": 14,
+    "examples": [
+     "frontend/apps/artcraft/app/src/hooks/usePosthogFeatureFlag/index.ts:1",
+     "frontend/apps/artcraft/app/src/hooks/usePosthogFeatureFlag/usePosthogFeatureFlag.tsx:1",
+     "frontend/apps/artcraft/app/src/hooks/usePosthogFeatureFlag/usePosthogFeatureFlag.tsx:5",
+     "frontend/apps/artcraft/app/src/index.tsx:13",
+     "frontend/apps/artcraft/app/src/index.tsx:38",
+     "frontend/apps/artcraft/app/src/index.tsx:39",
+     "frontend/apps/artcraft/app/src/index.tsx:40",
+     "frontend/apps/artcraft/app/src/index.tsx:41",
+     "frontend/apps/artcraft/app/src/index.tsx:42",
+     "frontend/apps/artcraft/app/src/index.tsx:51",
+     "frontend/apps/artcraft/app/src/root.tsx:2",
+     "frontend/apps/artcraft/app/src/root.tsx:3",
+     "frontend/apps/artcraft/app/src/root.tsx:58",
+     "frontend/apps/artcraft/app/src/root.tsx:60"
+    ]
+   },
+   "statsig": {
+    "count": 27,
+    "examples": [
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:15",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:16",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:359",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:361",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:368",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:371",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:428",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:433",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:438",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:449",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:498",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:504",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:505",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:508",
+     "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:514"
+    ]
+   },
+   "usage-heartbeat": {
+    "count": 16,
+    "examples": [
+     "crates/api_clients/artcraft/artcraft_api_defs/src/analytics/log_active_user.rs:7",
+     "crates/api_clients/artcraft/artcraft_api_defs/src/analytics/log_active_user.rs:10",
+     "crates/api_clients/artcraft/artcraft_api_defs/src/analytics/mod.rs:1",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user.rs:5",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user.rs:8",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user.rs:44",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user_v2.rs:5",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user_v2.rs:7",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user_v2.rs:14",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/mod.rs:1",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/mod.rs:2",
+     "crates/api_clients/artcraft/artcraft_client/src/utils/basic_json_post_request.rs:24",
+     "crates/desktop/artcraft/src/services/storyteller/threads/storyteller_activity_thread.rs:6",
+     "crates/desktop/artcraft/src/services/storyteller/threads/storyteller_activity_thread.rs:7",
+     "crates/desktop/artcraft/src/services/storyteller/threads/storyteller_activity_thread.rs:42"
+    ]
+   }
+  },
+  "network": {
+   "browser-fetch": {
+    "count": 1,
+    "examples": [
+     "frontend/apps/artcraft/app/public/jsm/libs/ammo.wasm.js:11"
+    ]
+   },
+   "http-client": {
+    "count": 376,
+    "examples": [
+     "artcraft-native/src/backend/audio.rs:27",
+     "artcraft-native/src/backend/audio.rs:80",
+     "artcraft-native/src/backend/audio.rs:247",
+     "artcraft-native/src/backend/media_cache.rs:35",
+     "artcraft-native/src/backend/media_cache.rs:78",
+     "artcraft-native/src/backend/media_cache.rs:182",
+     "artcraft-native/src/backend/mod.rs:173",
+     "artcraft-native/src/backend/mod.rs:184",
+     "artcraft-native/src/backend/mod.rs:193",
+     "artcraft-native/src/backend/mod.rs:521",
+     "artcraft-native/src/backend/mod.rs:544",
+     "artcraft-native/src/backend/mod.rs:565",
+     "artcraft-native/src/backend/mod.rs:581",
+     "artcraft-native/src/backend/mod.rs:658",
+     "artcraft-native/src/backend/mod.rs:691"
+    ]
+   },
+   "listen": {
+    "count": 3,
+    "examples": [
+     "crates/api_clients/fal_client/src/requests/core_api/fal_request.rs:429",
+     "crates/desktop/artcraft/src/core/utils/auto_download.rs:235",
+     "crates/desktop/artcraft/src/core/utils/auto_download.rs:293"
+    ]
+   },
+   "open-browser": {
+    "count": 6,
+    "examples": [
+     "artcraft-native/src/app.rs:382",
+     "artcraft-native/src/app.rs:769",
+     "artcraft-native/src/backend/mod.rs:283",
+     "artcraft-native/src/overlays/account.rs:167",
+     "crates/desktop/artcraft/src/core/commands/download/download_directory_reveal_command.rs:19",
+     "crates/desktop/artcraft/src/lib.rs:160"
+    ]
+   },
+   "python-http": {
+    "count": 1,
+    "examples": [
+     "crates/api_clients/openai_sora_client/src/requests/auth_sentinel_2/metadata/python_impl/sentinel_token.py:20"
+    ]
+   }
+  },
+  "hosts": {
+   "static.seedance2-pro.com": {
+    "count": 81,
+    "example": "crates/api_clients/kinovi_web_client/src/generate/audio/generate_suno_remix.rs:190"
+   },
+   "v3b.fal.media": {
+    "count": 73,
+    "example": "crates/api_clients/fal_client/src/polling/poll_job_response/poll_job_response.rs:177"
+   },
+   "grok.com": {
+    "count": 40,
+    "example": "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:20"
+   },
+   "queue.fal.run": {
+    "count": 19,
+    "example": "crates/api_clients/fal_client/src/polling/poll_job_response/poll_job_response.rs:152"
+   },
+   "storage.googleapis.com": {
+    "count": 19,
+    "example": "crates/api_clients/fal_client/src/requests/api/video/extend/flux_3/api.rs:74"
+   },
+   "api.worldlabs.ai": {
+    "count": 18,
+    "example": "crates/api_clients/worldlabs_api_client/src/api/requests/delete_world/delete_world.rs:11"
+   },
+   "sora.chatgpt.com": {
+    "count": 17,
+    "example": "crates/api_clients/openai_sora_client/src/requests/auth_bearer/generate_bearer_jwt_with_cookie.rs:12"
+   },
+   "api.storyteller.ai": {
+    "count": 15,
+    "example": "crates/api_clients/artcraft/artcraft_client/src/endpoints/omni_gen/models/image/omni_gen_list_image_models.rs:221"
+   },
+   "something.else": {
+    "count": 15,
+    "example": "crates/vendor/tauri-plugin-http/src/scope.rs:172"
+   },
+   "www.midjourney.com": {
+    "count": 13,
+    "example": "crates/api_clients/midjourney_client/src/endpoints/refresh_token.rs:63"
+   },
+   "assets.grok.com": {
+    "count": 12,
+    "example": "crates/api_clients/grok_consumer_client/src/requests/media_posts/create_media_post/response.rs:22"
+   },
+   "getartcraft.com": {
+    "count": 11,
+    "example": "artcraft-native/src/backend/mod.rs:49"
+   },
+   "chatgpt.com": {
+    "count": 11,
+    "example": "crates/api_clients/openai_sora_client/src/requests/auth_sentinel/generate_sentinel_token.rs:13"
+   },
+   "cdn-2.fakeyou.com": {
+    "count": 7,
+    "example": "crates/api_clients/fal_client/src/requests_old/webhook/object/enqueue_hunyuan_3d_21_image_to_3d_webhook.rs:52"
+   },
+   "imagine.x.ai": {
+    "count": 6,
+    "example": "crates/api_clients/grok_api_client/src/api/requests/images/image_edit/image_edit.rs:319"
+   },
+   "marble.worldlabs.ai": {
+    "count": 6,
+    "example": "crates/api_clients/worldlabs_consumer_client/src/api/common/common_header_values.rs:3"
+   },
+   "desktop.getartcraft.com": {
+    "count": 6,
+    "example": "crates/lib/artcraft_client_identity/src/destination.rs:88"
+   },
+   "studio.storyteller.ai": {
+    "count": 6,
+    "example": "crates/lib/artcraft_client_identity/src/origins.rs:11"
+   },
+   "tauri.app": {
+    "count": 6,
+    "example": "crates/vendor/tauri-plugin-http/src/scope.rs:214"
+   },
+   "console.gmicloud.ai": {
+    "count": 5,
+    "example": "crates/api_clients/gmicloud_client/src/requests/common/create_request.rs:12"
+   },
+   "sora.com": {
+    "count": 5,
+    "example": "crates/api_clients/openai_sora_client/src/requests/deprecated/job_status/sora_job_status.rs:20"
+   },
+   "cdn.artcraft.ai": {
+    "count": 5,
+    "example": "crates/desktop/artcraft/src/core/threads/third_party_task_polling_thread/events/notify_frontend_of_completion.rs:157"
+   },
+   "fonts.googleapis.com": {
+    "count": 5,
+    "example": "frontend/apps/artcraft/app/index.html:33"
+   },
+   "www.youtube.com": {
+    "count": 4,
+    "example": "artcraft-native/src/shell.rs:20"
+   },
+   "app.getartcraft.com": {
+    "count": 4,
+    "example": "artcraft-native/src/shell.rs:21"
+   },
+   "imagine-public.x.ai": {
+    "count": 4,
+    "example": "crates/api_clients/grok_consumer_client/src/requests/image_websocket/messages/message_image_data.rs:54"
+   },
+   "cdn.marble.worldlabs.ai": {
+    "count": 4,
+    "example": "crates/api_clients/worldlabs_consumer_client/src/api/requests/objects/update_run_object_with_world.rs:441"
+   },
+   "google.com": {
+    "count": 4,
+    "example": "crates/desktop/artcraft/src/services/grok/windows/grok_login_window/grok_login_window_open.rs:18"
+   },
+   "www.gravatar.com": {
+    "count": 4,
+    "example": "crates/lib/artcraft_client_identity/src/destination.rs:153"
+   },
+   "storyteller.ai": {
+    "count": 4,
+    "example": "crates/lib/url_utils/src/download_extension/extract_download_extension_from_url.rs:28"
+   },
+   "api.fakeyou.com": {
+    "count": 3,
+    "example": "crates/api_clients/artcraft/artcraft_client/src/utils/api_host.rs:27"
+   },
+   "cdn.seedance2-pro.com": {
+    "count": 3,
+    "example": "crates/api_clients/artcraft/artcraft_router/src/generate/generate_video/providers/kinovi/seedance_2p0/cost.rs:637"
+   },
+   "kinovi.ai": {
+    "count": 3,
+    "example": "crates/api_clients/kinovi_web_client/src/requests/kinovi_host.rs:29"
+   },
+   "seedance2-pro.com": {
+    "count": 3,
+    "example": "crates/api_clients/kinovi_web_client/src/requests/kinovi_host.rs:30"
+   },
+   "videos.openai.com": {
+    "count": 3,
+    "example": "crates/api_clients/openai_sora_client/src/requests/upload/upload_media_http_response.rs:32"
+   },
+   "cdn.storyteller.ai": {
+    "count": 3,
+    "example": "crates/lib/artcraft_client_identity/src/destination.rs:108"
+   },
+   "style.storyteller.ai": {
+    "count": 3,
+    "example": "crates/lib/artcraft_client_identity/src/destination.rs:109"
+   },
+   "youtu.be": {
+    "count": 3,
+    "example": "frontend/libs/components/help-menu/src/lib/tutorials.ts:20"
+   },
+   "discord.gg": {
+    "count": 2,
+    "example": "artcraft-native/src/shell.rs:18"
+   },
+   "fal.run": {
+    "count": 2,
+    "example": "crates/api_clients/fal_client/src/requests/core_api/fal_request.rs:13"
+   },
+   "x.com": {
+    "count": 2,
+    "example": "crates/api_clients/grok_consumer_client/src/credentials/_metadata/crypto_signature/xStatsigIDGenerator.py:169"
+   },
+   "abs.twimg.com": {
+    "count": 2,
+    "example": "crates/api_clients/grok_consumer_client/src/requests/index_page/get_numbers.rs:25"
+   },
+   "lh3.googleusercontent.com": {
+    "count": 2,
+    "example": "crates/api_clients/midjourney_client/src/credentials/jwt_decode.rs:5"
+   },
+   "securetoken.google.com": {
+    "count": 2,
+    "example": "crates/api_clients/midjourney_client/src/credentials/jwt_decode.rs:7"
+   },
+   "securetoken.googleapis.com": {
+    "count": 2,
+    "example": "crates/api_clients/midjourney_client/src/endpoints/refresh_token.rs:9"
+   },
+   "cdn.midjourney.com": {
+    "count": 2,
+    "example": "crates/api_clients/midjourney_client/src/utils/get_image_url.rs:8"
+   },
+   "cdn.oaistatic.com": {
+    "count": 2,
+    "example": "crates/api_clients/openai_sora_client/src/requests/auth_sentinel/config.rs:364"
+   },
+   "api.openai.com": {
+    "count": 2,
+    "example": "crates/api_clients/openai_sora_client/src/utils_internal/lightweight_sora_jwt_parse.rs:55"
+   },
+   "todo.com": {
+    "count": 2,
+    "example": "crates/api_clients/worldlabs_consumer_client/src/api/requests/objects/update_run_object_with_upload.rs:430"
+   },
+   "accounts.x.ai": {
+    "count": 2,
+    "example": "crates/desktop/artcraft/src/services/grok/windows/grok_login_window/grok_login_window_open.rs:26"
+   },
+   "accounts.google.com": {
+    "count": 2,
+    "example": "crates/desktop/artcraft/src/services/grok/windows/grok_login_window/grok_login_window_thread.rs:78"
+   },
+   "midjourney.com": {
+    "count": 2,
+    "example": "crates/desktop/artcraft/src/services/midjourney/state/midjourney_credential_manager.rs:300"
+   },
+   "fal.ai": {
+    "count": 2,
+    "example": "crates/lib/artcraft_client_identity/src/destination.rs:136"
+   },
+   "videos.youtube.com": {
+    "count": 2,
+    "example": "crates/lib/url_utils/src/download_extension/extract_download_extension_from_url.rs:35"
+   },
+   "tauri.localhost": {
+    "count": 2,
+    "example": "crates/vendor/tauri-plugin-http/src/artcraft_identity.rs:22"
+   },
+   "fonts.gstatic.com": {
+    "count": 2,
+    "example": "frontend/apps/artcraft/app/index.html:34"
+   },
+   "us.i.posthog.com": {
+    "count": 2,
+    "example": "frontend/apps/artcraft/app/src/index.tsx:41"
+   },
+   "hax.storyteller.ai": {
+    "count": 2,
+    "example": "frontend/libs/api/src/lib/SegmentationApi.ts:51"
+   },
+   "threejs.org": {
+    "count": 2,
+    "example": "frontend/libs/components/pagescene/src/lib/engine/scene.ts:230"
+   },
+   "www.getartcraft.com": {
+    "count": 1,
+    "example": "crates/api_clients/artcraft/artcraft_client/src/utils/login_challenge_client.rs:76"
+   },
+   "api.x.ai": {
+    "count": 1,
+    "example": "crates/api_clients/grok_api_client/src/api/requests/xai_host.rs:2"
+   },
+   "tools.scrapfly.io": {
+    "count": 1,
+    "example": "crates/api_clients/grok_consumer_client/src/requests/image_websocket/_metadata/tls_fingerprint_checking.rs:8"
+   },
+   "sora-cdn.oaistatic.com": {
+    "count": 1,
+    "example": "crates/api_clients/openai_sora_client/src/requests/auth_sentinel/request.rs:71"
+   },
+   "upload.wikimedia.org": {
+    "count": 1,
+    "example": "crates/api_clients/worldlabs_api_client/src/api/requests/generate_world/generate_world.rs:143"
+   },
+   "identitytoolkit.googleapis.com": {
+    "count": 1,
+    "example": "crates/api_clients/worldlabs_consumer_client/src/credentials/world_labs_bearer_token.rs:11"
+   },
+   "auth.openai.com": {
+    "count": 1,
+    "example": "crates/desktop/artcraft/src/services/sora/windows/sora_login_window/sora_login_thread.rs:70"
+   },
+   "www.worldlabs.ai": {
+    "count": 1,
+    "example": "crates/desktop/artcraft/src/services/worldlabs/windows/worldlabs_login_window/worldlabs_javascript.rs:88"
+   },
+   "worldlabs.ai": {
+    "count": 1,
+    "example": "crates/desktop/artcraft/src/services/worldlabs/windows/worldlabs_login_window/worldlabs_login_webview_extract_cookies.rs:9"
+   },
+   "api.getartcraft.com": {
+    "count": 1,
+    "example": "crates/lib/artcraft_client_identity/src/destination.rs:85"
+   },
+   "static.kinovi.ai": {
+    "count": 1,
+    "example": "crates/lib/artcraft_client_identity/src/destination.rs:134"
+   },
+   "notstoryteller.ai": {
+    "count": 1,
+    "example": "crates/lib/artcraft_client_identity/src/destination.rs:150"
+   },
+   "evilgrok.com": {
+    "count": 1,
+    "example": "crates/lib/artcraft_client_identity/src/destination.rs:151"
+   },
+   "news.ycombinator.com": {
+    "count": 1,
+    "example": "crates/schema/public/tokens/src/safe_entropy.rs:35"
+   },
+   "fetch.spec.whatwg.org": {
+    "count": 1,
+    "example": "crates/vendor/tauri-plugin-http/src/commands.rs:205"
+   },
+   "www.googletagmanager.com": {
+    "count": 1,
+    "example": "frontend/apps/artcraft/app/index.html:10"
+   },
+   "www.clarity.ms": {
+    "count": 1,
+    "example": "frontend/apps/artcraft/app/index.html:25"
+   },
+   "upload.storyteller.ai": {
+    "count": 1,
+    "example": "frontend/apps/artcraft/app/src/configs.ts:45"
+   },
+   "discord.com": {
+    "count": 1,
+    "example": "frontend/libs/components/help-menu/src/lib/help-menu.tsx:220"
+   },
+   "frontend-cdn.fakeyou.com": {
+    "count": 1,
+    "example": "frontend/libs/components/login-modal/src/lib/login-modal.tsx:15"
+   },
+   "twitter.com": {
+    "count": 1,
+    "example": "frontend/libs/components/pagescene/src/lib/engine/FindSurfaces.js:9"
+   },
+   "api.frankfurter.dev": {
+    "count": 1,
+    "example": "frontend/libs/components/pricing-modal/src/lib/use-currency.ts:118"
+   },
+   "cdn.brandfetch.io": {
+    "count": 1,
+    "example": "frontend/libs/components/video-editor/src/lib/guides/definitions/platforms.tsx:13"
+   }
+  }
+ },
+ "artcraft-services": {
+  "commit": "28bd2e7ee349ded3d65e81fc58929e05f24cb836",
+  "telemetry": {
+   "datadog": {
+    "count": 13,
+    "examples": [
+     "crates/api_clients/datadog_client/src/client.rs:7",
+     "crates/api_clients/datadog_client/src/client.rs:212",
+     "crates/api_clients/datadog_client/src/client.rs:224",
+     "crates/api_clients/datadog_client/src/client.rs:240",
+     "crates/lib/metrics/src/builder.rs:5",
+     "crates/lib/metrics/src/builder.rs:40",
+     "crates/lib/metrics/src/builder.rs:81",
+     "crates/lib/metrics/src/worker.rs:10",
+     "crates/lib/metrics/src/worker.rs:108",
+     "crates/lib/metrics/src/worker.rs:349",
+     "crates/service/web/storyteller_web/src/startup/setup_metrics.rs:3",
+     "crates/service/web/storyteller_web/src/startup/setup_metrics.rs:4",
+     "crates/service/web/storyteller_web/src/startup/setup_metrics.rs:49"
+    ]
+   },
+   "google-analytics": {
+    "count": 10,
+    "examples": [
+     "frontend/apps/artcraft-webapp/index.html:7",
+     "frontend/apps/artcraft-webapp/index.html:18",
+     "frontend/apps/artcraft-webapp/index.html:20",
+     "frontend/apps/artcraft-webapp/index.html:21",
+     "frontend/apps/artcraft-website-next/src/components/analytics.tsx:33",
+     "frontend/apps/artcraft-website-next/src/components/analytics.tsx:37",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-event.ts:6",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-event.ts:8",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-login.ts:6",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-logout.ts:6"
+    ]
+   },
+   "newrelic": {
+    "count": 9,
+    "examples": [
+     "crates/service/job/deprecated/inference_job/src/util/get_filtered_env_vars.rs:14",
+     "crates/vendor/newrelic-telemetry-sdk-rust/src/client.rs:142",
+     "crates/vendor/newrelic-telemetry-sdk-rust/src/client.rs:325",
+     "crates/vendor/newrelic-telemetry-sdk-rust/src/client.rs:445",
+     "crates/vendor/newrelic-telemetry-sdk-rust/src/client.rs:632",
+     "crates/vendor/newrelic-telemetry-sdk-rust/src/client.rs:856",
+     "crates/vendor/newrelic-telemetry-sdk-rust/src/client.rs:899",
+     "crates/vendor/newrelic-telemetry-sdk-rust/src/client.rs:964",
+     "crates/vendor/newrelic-telemetry-sdk-rust/src/client.rs:975"
+    ]
+   },
+   "opentelemetry": {
+    "count": 3,
+    "examples": [
+     "crates/service/job/deprecated/inference_job/src/util/instrumentation.rs:6",
+     "crates/service/job/deprecated/inference_job/src/util/instrumentation.rs:29",
+     "crates/service/job/deprecated/inference_job/src/util/instrumentation.rs:32"
+    ]
+   },
+   "usage-heartbeat": {
+    "count": 19,
+    "examples": [
+     "crates/api_clients/artcraft/artcraft_api_defs/src/analytics/log_active_user.rs:7",
+     "crates/api_clients/artcraft/artcraft_api_defs/src/analytics/log_active_user.rs:10",
+     "crates/api_clients/artcraft/artcraft_api_defs/src/analytics/mod.rs:1",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user.rs:5",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user.rs:8",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user.rs:44",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user_v2.rs:5",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user_v2.rs:7",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/log_active_user_v2.rs:14",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/mod.rs:1",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/analytics/mod.rs:2",
+     "crates/api_clients/artcraft/artcraft_client/src/utils/basic_json_post_request.rs:24",
+     "crates/service/web/storyteller_web/src/docs/api_doc.rs:374",
+     "crates/service/web/storyteller_web/src/http_server/endpoints/analytics/log_app_active_user_handler.rs:8",
+     "crates/service/web/storyteller_web/src/http_server/endpoints/analytics/log_app_active_user_handler.rs:24"
+    ]
+   }
+  },
+  "network": {
+   "browser-fetch": {
+    "count": 6,
+    "examples": [
+     "crates/vendor/candle/candle-wasm-examples/llama2-c/src/app.rs:18",
+     "crates/vendor/candle/candle-wasm-examples/whisper/src/app.rs:27",
+     "crates/vendor/candle/candle-wasm-examples/yolo/src/app.rs:18",
+     "frontend/apps/artcraft-dashboard/src/hooks/useCountryFromIP.ts:31",
+     "frontend/apps/artcraft-dashboard/src/hooks/useCountryFromIP.ts:34",
+     "frontend/apps/artcraft-webapp/vite.config.ts:43"
+    ]
+   },
+   "http-client": {
+    "count": 272,
+    "examples": [
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/media_files/legacy_upload_media_file_from_file.rs:13",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/media_files/legacy_upload_media_file_from_file.rs:14",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/media_files/upload_image_media_file_from_bytes.rs:13",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/media_files/upload_image_media_file_from_bytes.rs:14",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/media_files/upload_image_media_file_from_file.rs:13",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/media_files/upload_image_media_file_from_file.rs:14",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/media_files/upload_new_engine_asset_from_file.rs:11",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/media_files/upload_new_engine_asset_from_file.rs:12",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/media_files/upload_video_media_file_from_file.rs:11",
+     "crates/api_clients/artcraft/artcraft_client/src/endpoints/media_files/upload_video_media_file_from_file.rs:12",
+     "crates/api_clients/artcraft/artcraft_client/src/error/api_error.rs:3",
+     "crates/api_clients/artcraft/artcraft_client/src/error/api_error.rs:53",
+     "crates/api_clients/artcraft/artcraft_client/src/error/api_error.rs:94",
+     "crates/api_clients/artcraft/artcraft_client/src/error/api_error.rs:95",
+     "crates/api_clients/artcraft/artcraft_client/src/error/client_error.rs:23"
+    ]
+   },
+   "listen": {
+    "count": 13,
+    "examples": [
+     "crates/api_clients/fal_client/src/requests/core_api/fal_request.rs:429",
+     "crates/service/job/deprecated/email_sender_job/src/http_server/run_http_server.rs:43",
+     "crates/service/job/deprecated/inference_job/src/http_server/run_http_server.rs:45",
+     "crates/service/job/gmicloud_job/src/http_server/run_http_server.rs:41",
+     "crates/service/job/grok_api_job/src/http_server/run_http_server.rs:43",
+     "crates/service/job/seedance2_pro_job/src/http_server/run_http_server.rs:58",
+     "crates/service/job/user_spend_analytics_job/src/http_server/run_http_server.rs:46",
+     "crates/service/job/video_thumbnail_job/src/http_server/run_http_server.rs:46",
+     "crates/service/job/worldlabs_job/src/http_server/run_http_server.rs:42",
+     "crates/service/web/dummy_service/src/main.rs:55",
+     "crates/service/web/dummy_service/src/main.rs:71",
+     "crates/service/web/storyteller_web/src/api_doc_server.rs:43",
+     "crates/service/web/storyteller_web/src/main.rs:228"
+    ]
+   },
+   "update-check": {
+    "count": 1,
+    "examples": [
+     "crates/service/web/storyteller_web/src/threads/poll_craft_app_releases_thread/github.rs:41"
+    ]
+   }
+  },
+  "hosts": {
+   "cdn.mathjax.org": {
+    "count": 2034,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/docs/aligned__buffer_8h.html:22"
+   },
+   "www.doxygen.org": {
+    "count": 2034,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/docs/aligned__buffer_8h.html:140"
+   },
+   "v3b.fal.media": {
+    "count": 81,
+    "example": "crates/api_clients/fal_client/src/polling/poll_job_response/poll_job_response.rs:177"
+   },
+   "static.seedance2-pro.com": {
+    "count": 80,
+    "example": "crates/api_clients/kinovi_web_client/src/generate/audio/generate_suno_remix.rs:190"
+   },
+   "huggingface.co": {
+    "count": 67,
+    "example": "crates/service/job/deprecated/download_job/src/job_loop/is_bad_download_url.rs:60"
+   },
+   "cdnjs.cloudflare.com": {
+    "count": 31,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/docs/_modules/cutlass/emit/pytorch.html:921"
+   },
+   "storage.googleapis.com": {
+    "count": 26,
+    "example": "crates/api_clients/bucket_client/src/bucket_client_builder.rs:103"
+   },
+   "www.sphinx-doc.org": {
+    "count": 26,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/docs/_modules/cutlass/emit/pytorch.html:889"
+   },
+   "cdn-2.fakeyou.com": {
+    "count": 25,
+    "example": "crates/api_clients/fal_client/src/requests_old/webhook/object/enqueue_hunyuan_3d_21_image_to_3d_webhook.rs:52"
+   },
+   "getartcraft.com": {
+    "count": 25,
+    "example": "crates/lib/actix_artcraft/src/requests/get_request_signup_source_enum.rs:68"
+   },
+   "pradyunsg.me": {
+    "count": 25,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/docs/_modules/cutlass/emit/pytorch.html:889"
+   },
+   "fonts.googleapis.com": {
+    "count": 21,
+    "example": "crates/vendor/candle/candle-wasm-examples/bert/lib-example.html:15"
+   },
+   "queue.fal.run": {
+    "count": 19,
+    "example": "crates/api_clients/fal_client/src/polling/poll_job_response/poll_job_response.rs:152"
+   },
+   "www.youtube.com": {
+    "count": 19,
+    "example": "crates/lib/markdown/src/markdown_with_socials_to_html.rs:103"
+   },
+   "api.storyteller.ai": {
+    "count": 16,
+    "example": "crates/api_clients/artcraft/artcraft_client/src/endpoints/omni_gen/models/image/omni_gen_list_image_models.rs:221"
+   },
+   "fakeyou.com": {
+    "count": 16,
+    "example": "crates/api_clients/fakeyou_client/src/fakeyou_api_client.rs:36"
+   },
+   "pub-c8a4a5bdbdb048f286b77bdf9f786ff2.r2.dev": {
+    "count": 15,
+    "example": "crates/lib/domains/src/fakeyou.rs:67"
+   },
+   "dev.storyteller.ai": {
+    "count": 14,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller.rs:39"
+   },
+   "archive.org": {
+    "count": 13,
+    "example": "crates/vendor/Symphonia/benchtest/benchtest.py:32"
+   },
+   "storyteller.ai": {
+    "count": 12,
+    "example": "crates/lib/actix_artcraft/src/requests/get_request_signup_source_enum.rs:100"
+   },
+   "www.tiktok.com": {
+    "count": 12,
+    "example": "crates/lib/markdown/src/markdown_with_socials_to_html.rs:78"
+   },
+   "docutils.sourceforge.io": {
+    "count": 12,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/docs/contribute.html:5"
+   },
+   "app.getartcraft.com": {
+    "count": 11,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_webapp.rs:25"
+   },
+   "devproxy.fakeyou.com": {
+    "count": 10,
+    "example": "crates/lib/actix_cors_configs/src/configs/fakeyou.rs:64"
+   },
+   "devproxy.storyteller.ai": {
+    "count": 10,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller.rs:55"
+   },
+   "cdn.beeble.ai": {
+    "count": 9,
+    "example": "crates/api_clients/beeble_client/src/requests/start_generation/start_generation.rs:241"
+   },
+   "desktop.getartcraft.com": {
+    "count": 9,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_desktop.rs:20"
+   },
+   "dev.fakeyou.com": {
+    "count": 9,
+    "example": "crates/lib/actix_cors_configs/src/configs/fakeyou.rs:50"
+   },
+   "www.reddit.com": {
+    "count": 9,
+    "example": "crates/lib/markdown/src/markdown_with_socials_to_html.rs:58"
+   },
+   "cdn.tailwindcss.com": {
+    "count": 9,
+    "example": "crates/vendor/candle/candle-wasm-examples/bert/lib-example.html:21"
+   },
+   "api.worldlabs.ai": {
+    "count": 8,
+    "example": "crates/api_clients/worldlabs_api_client/src/api/requests/delete_world/delete_world.rs:11"
+   },
+   "genhub.app": {
+    "count": 8,
+    "example": "frontend/apps/genhub/index.html:15"
+   },
+   "api.fakeyou.com": {
+    "count": 7,
+    "example": "crates/api_clients/artcraft/artcraft_client/src/utils/api_host.rs:25"
+   },
+   "accounts.google.com": {
+    "count": 7,
+    "example": "crates/api_clients/google_sign_in/src/decode_and_verify_token_claims.rs:27"
+   },
+   "civitai.com": {
+    "count": 7,
+    "example": "crates/cli/devenv/dev-database-seed/src/seeding/model_weights.rs:209"
+   },
+   "cdn.skypack.dev": {
+    "count": 7,
+    "example": "crates/vendor/candle/candle-wasm-examples/bert/lib-example.html:24"
+   },
+   "gravatar.com": {
+    "count": 7,
+    "example": "frontend/apps/artcraft-dashboard/src/components/MediaDetailModal.tsx:282"
+   },
+   "imagine.x.ai": {
+    "count": 6,
+    "example": "crates/api_clients/grok_api_client/src/api/requests/images/image_edit/image_edit.rs:319"
+   },
+   "x.com": {
+    "count": 6,
+    "example": "crates/lib/markdown/src/markdown_with_socials_to_html.rs:88"
+   },
+   "discord.gg": {
+    "count": 6,
+    "example": "crates/service/web/dummy_service/src/endpoints/root_handler.rs:12"
+   },
+   "colab.research.google.com": {
+    "count": 6,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/docs/externals/00_basic_gemm.html:241"
+   },
+   "cdn.jsdelivr.net": {
+    "count": 6,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/docs/externals/00_basic_gemm.html:819"
+   },
+   "filecdn.minimax.chat": {
+    "count": 6,
+    "example": "frontend/apps/artcraft-website-next/src/lib/campaign-data.ts:181"
+   },
+   "artcraft.ai": {
+    "count": 5,
+    "example": "crates/lib/actix_artcraft/src/requests/get_request_signup_source_enum.rs:60"
+   },
+   "tauri.localhost": {
+    "count": 5,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_desktop.rs:63"
+   },
+   "instagram.com": {
+    "count": 5,
+    "example": "crates/lib/markdown/src/markdown_with_socials_to_html.rs:48"
+   },
+   "www.instagram.com": {
+    "count": 5,
+    "example": "frontend/apps/artcraft-desktop-website/index.html:152"
+   },
+   "vo.codes": {
+    "count": 4,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:53"
+   },
+   "realseedance.com": {
+    "count": 4,
+    "example": "crates/lib/actix_cors_configs/src/configs/realseedance.rs:8"
+   },
+   "www.realseedance.com": {
+    "count": 4,
+    "example": "crates/lib/actix_cors_configs/src/configs/realseedance.rs:9"
+   },
+   "drive.google.com": {
+    "count": 4,
+    "example": "crates/lib/deprecated/config/src/bad_urls.rs:61"
+   },
+   "cdn.storyteller.ai": {
+    "count": 4,
+    "example": "crates/lib/domains/src/storyteller.rs:78"
+   },
+   "fonts.gstatic.com": {
+    "count": 4,
+    "example": "frontend/apps/artcraft-dashboard/index.html:8"
+   },
+   "nx.dev": {
+    "count": 4,
+    "example": "frontend/apps/genhub/src/app/nx-welcome.tsx:476"
+   },
+   "cdn.seedance2-pro.com": {
+    "count": 3,
+    "example": "crates/api_clients/artcraft/artcraft_router/src/generate/generate_video/providers/kinovi/seedance_2p0/cost.rs:639"
+   },
+   "api.beeble.ai": {
+    "count": 3,
+    "example": "crates/api_clients/beeble_client/src/requests/create_upload_url/create_upload_url.rs:10"
+   },
+   "api.muapi.ai": {
+    "count": 3,
+    "example": "crates/api_clients/muapi_client/src/requests/poll_prediction_result/poll_prediction_result.rs:10"
+   },
+   "image.civitai.com": {
+    "count": 3,
+    "example": "crates/cli/devenv/dev-database-seed/src/seeding/model_weights.rs:125"
+   },
+   "api.getartcraft.com": {
+    "count": 3,
+    "example": "crates/lib/actix_artcraft/src/requests/get_request_signup_source_enum.rs:76"
+   },
+   "studio.storyteller.ai": {
+    "count": 3,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_desktop.rs:63"
+   },
+   "www.getartcraft.com": {
+    "count": 3,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_website.rs:38"
+   },
+   "www.artcraft.ai": {
+    "count": 3,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_website.rs:40"
+   },
+   "power.stream": {
+    "count": 3,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:8"
+   },
+   "storyteller.stream": {
+    "count": 3,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:25"
+   },
+   "create.storyteller.ai": {
+    "count": 3,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:37"
+   },
+   "trumped.com": {
+    "count": 3,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:69"
+   },
+   "staging.fakeyou.com": {
+    "count": 3,
+    "example": "crates/lib/actix_cors_configs/src/cors.rs:170"
+   },
+   "vm.tiktok.com": {
+    "count": 3,
+    "example": "crates/lib/deprecated/config/src/bad_urls.rs:55"
+   },
+   "ipywidgets.readthedocs.io": {
+    "count": 3,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/docs/externals/00_basic_gemm.html:286"
+   },
+   "pytorch.org": {
+    "count": 3,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/docs/externals/02_pytorch_extension_grouped_gemm.html:356"
+   },
+   "www.linkedin.com": {
+    "count": 3,
+    "example": "frontend/apps/artcraft-webapp/src/config/links.ts:7"
+   },
+   "player.vimeo.com": {
+    "count": 3,
+    "example": "frontend/apps/artcraft-webapp/src/pages/pricing/pricing.tsx:110"
+   },
+   "www.youtube-nocookie.com": {
+    "count": 3,
+    "example": "frontend/apps/artcraft-website-next/src/components/lite-youtube.tsx:22"
+   },
+   "youtu.be": {
+    "count": 3,
+    "example": "frontend/libs/components/help-menu/src/lib/tutorials.ts:20"
+   },
+   "fal.run": {
+    "count": 2,
+    "example": "crates/api_clients/fal_client/src/requests/core_api/fal_request.rs:13"
+   },
+   "console.gmicloud.ai": {
+    "count": 2,
+    "example": "crates/api_clients/gmicloud_client/src/requests/common/create_request.rs:12"
+   },
+   "lh3.googleusercontent.com": {
+    "count": 2,
+    "example": "crates/api_clients/google_sign_in/src/decode_and_verify_token_claims.rs:90"
+   },
+   "openart.ai": {
+    "count": 2,
+    "example": "crates/api_clients/openart_client/src/requests/get_session_request.rs:11"
+   },
+   "2d.getartcraft.com": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_2d.rs:31"
+   },
+   "2d.storyteller.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_2d.rs:32"
+   },
+   "macaroni-1.tailce84f.ts.net": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_3d.rs:19"
+   },
+   "halide.tailce84f.ts.net": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_3d.rs:20"
+   },
+   "brandons-macbook-pro.taild62114.ts.net": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_3d.rs:21"
+   },
+   "3d.getartcraft.com": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_3d.rs:34"
+   },
+   "3d.storyteller.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_3d.rs:35"
+   },
+   "artcraft-dashboard.netlify.app": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_admin_dashboard.rs:6"
+   },
+   "dev.dash.power.stream": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:11"
+   },
+   "dev.power.stream": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:12"
+   },
+   "api.storyteller.stream": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:23"
+   },
+   "obs.storyteller.stream": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:24"
+   },
+   "ws.storyteller.stream": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:26"
+   },
+   "staging.obs.storyteller.stream": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:32"
+   },
+   "staging.storyteller.stream": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:33"
+   },
+   "obs.storyteller.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:38"
+   },
+   "ws.storyteller.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:39"
+   },
+   "vocodes.com": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:54"
+   },
+   "dev.api.vo.codes": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:58"
+   },
+   "dev.vo.codes": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:59"
+   },
+   "dev.trumped.com": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:73"
+   },
+   "memeboard.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_board.rs:9"
+   },
+   "dingboard.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_board.rs:10"
+   },
+   "board.storyteller.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_board.rs:46"
+   },
+   "deploy-preview-123--unrelated.netlify.app": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_board.rs:75"
+   },
+   "render.storyteller.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_render.rs:30"
+   },
+   "studio-staging.studio.storyteller.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:75"
+   },
+   "studio-testing.studio.storyteller.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:82"
+   },
+   "real-seedance.netlify.app": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/cors.rs:127"
+   },
+   "staging.storyteller.ai": {
+    "count": 2,
+    "example": "crates/lib/actix_cors_configs/src/cors.rs:219"
+   },
+   "m.youtube.com": {
+    "count": 2,
+    "example": "crates/lib/deprecated/config/src/bad_urls.rs:56"
+   },
+   "storyteller.io": {
+    "count": 2,
+    "example": "crates/lib/url_config/src/third_party_url_redirector.rs:140"
+   },
+   "videos.youtube.com": {
+    "count": 2,
+    "example": "crates/lib/url_utils/src/download_extension/extract_download_extension_from_url.rs:35"
+   },
+   "dashboard.stripe.com": {
+    "count": 2,
+    "example": "crates/service/web/storyteller_web/src/http_server/endpoints/moderation/user_stripe_data/moderator_get_user_stripe_customer_ids_handler.rs:94"
+   },
+   "arxiv.org": {
+    "count": 2,
+    "example": "crates/vendor/candle/candle-pyo3/py_src/candle/nn/normalization.py:12"
+   },
+   "get.geojs.io": {
+    "count": 2,
+    "example": "frontend/apps/artcraft-dashboard/src/hooks/useCountryFromIP.ts:31"
+   },
+   "www.googletagmanager.com": {
+    "count": 2,
+    "example": "frontend/apps/artcraft-webapp/index.html:18"
+   },
+   "frontend-cdn.fakeyou.com": {
+    "count": 2,
+    "example": "frontend/apps/artcraft-webapp/src/components/auth/auth-showcase.tsx:2"
+   },
+   "www.gravatar.com": {
+    "count": 2,
+    "example": "frontend/apps/artcraft-webapp/src/components/topbar/TopBarActions.tsx:149"
+   },
+   "pub-f7441936e5804042a1ea2bdc92e4dc71.r2.dev": {
+    "count": 2,
+    "example": "frontend/apps/artcraft-website-next/src/lib/landing-data.ts:74"
+   },
+   "hax.storyteller.ai": {
+    "count": 2,
+    "example": "frontend/libs/api/src/lib/SegmentationApi.ts:51"
+   },
+   "threejs.org": {
+    "count": 2,
+    "example": "frontend/libs/components/pagescene/src/lib/engine/scene.ts:230"
+   },
+   "images.unsplash.com": {
+    "count": 1,
+    "example": "crates/api_clients/beeble_client/src/requests/start_generation/start_generation.rs:268"
+   },
+   "api.cometapi.com": {
+    "count": 1,
+    "example": "crates/api_clients/comet_api_client/src/requests/comet_host.rs:2"
+   },
+   "api.datadoghq.com": {
+    "count": 1,
+    "example": "crates/api_clients/datadog_client/src/client.rs:7"
+   },
+   "www.googleapis.com": {
+    "count": 1,
+    "example": "crates/api_clients/google_sign_in/src/certs/download_certs.rs:8"
+   },
+   "api.x.ai": {
+    "count": 1,
+    "example": "crates/api_clients/grok_api_client/src/api/requests/xai_host.rs:2"
+   },
+   "kinovi.ai": {
+    "count": 1,
+    "example": "crates/api_clients/kinovi_web_client/src/requests/kinovi_host.rs:29"
+   },
+   "seedance2-pro.com": {
+    "count": 1,
+    "example": "crates/api_clients/kinovi_web_client/src/requests/kinovi_host.rs:30"
+   },
+   "api.rootly.com": {
+    "count": 1,
+    "example": "crates/api_clients/rootly_client/src/requests/create_alert/create_alert.rs:9"
+   },
+   "artcraft.com": {
+    "count": 1,
+    "example": "crates/api_clients/rootly_client/src/requests/create_alert/create_alert.rs:248"
+   },
+   "api.runwayml.com": {
+    "count": 1,
+    "example": "crates/api_clients/runwayml_client/src/requests/gen4_image_to_video.rs:10"
+   },
+   "d2jqrm6oza8nb6.cloudfront.net": {
+    "count": 1,
+    "example": "crates/api_clients/runwayml_client/src/requests/gen4_image_to_video.rs:84"
+   },
+   "media-server.thumbnail": {
+    "count": 1,
+    "example": "crates/api_clients/thumbnail_generator/src/task_client/thumbnail_task.rs:197"
+   },
+   "upload.wikimedia.org": {
+    "count": 1,
+    "example": "crates/api_clients/worldlabs_api_client/src/api/requests/generate_world/generate_world.rs:143"
+   },
+   "storage.cloud.google.com": {
+    "count": 1,
+    "example": "crates/cli/devenv/dev-upload-media-file/src/main.rs:139"
+   },
+   "console.cloud.google.com": {
+    "count": 1,
+    "example": "crates/cli/devenv/dev-upload-media-file/src/main.rs:145"
+   },
+   "api.stripe.com": {
+    "count": 1,
+    "example": "crates/cli/production/db-backfill/src/operations/backfill_user_spend_events/stripe_api.rs:10"
+   },
+   "other-machine.tailce84f.ts.net": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_3d.rs:59"
+   },
+   "sub.desktop.getartcraft.com": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/artcraft_desktop.rs:54"
+   },
+   "fakeyou.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/fakeyou.rs:90"
+   },
+   "feature-mvp--fakeyou.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/fakeyou.rs:96"
+   },
+   "deploy-preview-86--fakeyou.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/fakeyou.rs:102"
+   },
+   "bar.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/fakeyou.rs:108"
+   },
+   "deploy-preview-86--bar.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/fakeyou.rs:109"
+   },
+   "dash.power.stream": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:7"
+   },
+   "api.vo.codes": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:52"
+   },
+   "evil.vo.codes": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/legacy.rs:103"
+   },
+   "storyteller-ai.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller.rs:81"
+   },
+   "feature-mvp--storyteller-ai.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller.rs:87"
+   },
+   "deploy-preview-86--storyteller-ai.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller.rs:93"
+   },
+   "foo.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller.rs:99"
+   },
+   "deploy-preview-86--foo.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller.rs:100"
+   },
+   "storyteller-board.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_board.rs:56"
+   },
+   "test--storyteller-board.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_board.rs:62"
+   },
+   "deploy-preview-123--storyteller-board.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_board.rs:68"
+   },
+   "storyteller-board--unrelated.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_board.rs:74"
+   },
+   "storyteller-render.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_render.rs:40"
+   },
+   "test--storyteller-render.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_render.rs:46"
+   },
+   "deploy-preview-123--storyteller-render.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_render.rs:52"
+   },
+   "storyteller-render--unrelated.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_render.rs:58"
+   },
+   "pipeline-gottagofast.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:40"
+   },
+   "test--pipeline-gottagofast.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:46"
+   },
+   "deploy-preview-86--pipeline-gottagofast.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:52"
+   },
+   "deploy-preview-86--unrelated-project.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:58"
+   },
+   "studiofake.storyteller.ai": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:69"
+   },
+   "studio-staging-fake.studio.storyteller.ai": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:76"
+   },
+   "studio-testing-fake.studio.storyteller.ai": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:83"
+   },
+   "storytellerstudio.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:89"
+   },
+   "storytellerstudiofake.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:90"
+   },
+   "foo--storytellerstudio.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:96"
+   },
+   "deploy-preview-123--storytellerstudio.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:102"
+   },
+   "fakestorytellerstudio.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:108"
+   },
+   "deploy-preview-86--fakestorytellerstudio.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/storyteller_studio.rs:109"
+   },
+   "sub.tauri.localhost": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/configs/tauri.rs:41"
+   },
+   "stackoverflow.com": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/cors.rs:84"
+   },
+   "fake.fakeyou.com": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/cors.rs:173"
+   },
+   "jungle.horse": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/cors.rs:174"
+   },
+   "deploy-preview-12--real-seedance.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/cors.rs:203"
+   },
+   "realseedance.fake.com": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/cors.rs:208"
+   },
+   "realseedance.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/cors.rs:209"
+   },
+   "unrelated-project.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/testing.rs:50"
+   },
+   "deploy-preview-123--unrelated-project.netlify.app": {
+    "count": 1,
+    "example": "crates/lib/actix_cors_configs/src/testing.rs:51"
+   },
+   "i.imgur.com": {
+    "count": 1,
+    "example": "crates/lib/deprecated/config/src/is_bad_video_download_url.rs:46"
+   },
+   "y.yarn.co": {
+    "count": 1,
+    "example": "crates/lib/deprecated/config/src/is_bad_video_download_url.rs:51"
+   },
+   "www.cijianlink.com": {
+    "count": 1,
+    "example": "crates/lib/deprecated/config/src/is_bad_video_download_url.rs:52"
+   },
+   "replicate.delivery": {
+    "count": 1,
+    "example": "crates/lib/deprecated/config/src/is_bad_video_download_url.rs:53"
+   },
+   "pub-bc5e2bc0cdee4bb5ae8fca9d641ca0d6.r2.dev": {
+    "count": 1,
+    "example": "crates/lib/deprecated/machine_learning/ml_weights_registry/src/weights_registry/weight_descriptor_builder.rs:1"
+   },
+   "engine.fakeyou.com": {
+    "count": 1,
+    "example": "crates/lib/domains/src/fakeyou.rs:45"
+   },
+   "dev.storyteller.io": {
+    "count": 1,
+    "example": "crates/lib/url_config/src/third_party_url_redirector.rs:108"
+   },
+   "news.ycombinator.com": {
+    "count": 1,
+    "example": "crates/schema/public/tokens/src/safe_entropy.rs:35"
+   },
+   "adot-collector.adot": {
+    "count": 1,
+    "example": "crates/service/job/deprecated/inference_job/src/util/instrumentation.rs:32"
+   },
+   "invoice.stripe.com": {
+    "count": 1,
+    "example": "crates/service/plugins/billing/src/stripe/http_endpoints/webhook/webhook_event_handlers/invoice/invoice_paid_handler.rs:174"
+   },
+   "pay.stripe.com": {
+    "count": 1,
+    "example": "crates/service/plugins/billing/src/stripe/http_endpoints/webhook/webhook_event_handlers/invoice/invoice_paid_handler.rs:175"
+   },
+   "api.artcraft.ai": {
+    "count": 1,
+    "example": "crates/service/web/storyteller_web/src/http_server/requests/get_request_domain_branding.rs:109"
+   },
+   "stevenbenner.com": {
+    "count": 1,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/docs/jquery.js:64"
+   },
+   "docs.python.org": {
+    "count": 1,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/cutlass/__init__.py:103"
+   },
+   "docs.nvidia.com": {
+    "count": 1,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/docs/_modules/cutlass/utils/check.html:380"
+   },
+   "developer.nvidia.com": {
+    "count": 1,
+    "example": "crates/vendor/candle/candle-flash-attn/cutlass/python/docs/index.html:267"
+   },
+   "zenodo.org": {
+    "count": 1,
+    "example": "crates/vendor/candle/candle-transformers/src/models/dinov2reg4.rs:38"
+   },
+   "segment-anything.com": {
+    "count": 1,
+    "example": "crates/vendor/candle/candle-wasm-examples/segment-anything/lib-example.html:406"
+   },
+   "blog.research.google": {
+    "count": 1,
+    "example": "crates/vendor/candle/candle-wasm-examples/t5/index.html:142"
+   },
+   "commons.wikimedia.org": {
+    "count": 1,
+    "example": "crates/vendor/candle/candle-wasm-examples/yolo/src/app.rs:240"
+   },
+   "app.databox.com": {
+    "count": 1,
+    "example": "frontend/apps/artcraft-dashboard/src/pages/DashboardHome.tsx:8"
+   },
+   "rustup.rs": {
+    "count": 1,
+    "example": "frontend/apps/artcraft-website-next/src/components/apps/app-sections.tsx:210"
+   },
+   "bsky.app": {
+    "count": 1,
+    "example": "frontend/apps/artcraft-website-next/src/components/apps/share-bar.tsx:22"
+   },
+   "docs.google.com": {
+    "count": 1,
+    "example": "frontend/apps/artcraft-website-next/src/components/beta/beta-form.tsx:13"
+   },
+   "i.ytimg.com": {
+    "count": 1,
+    "example": "frontend/apps/artcraft-website-next/src/components/lite-youtube.tsx:44"
+   },
+   "www.minimax.io": {
+    "count": 1,
+    "example": "frontend/apps/artcraft-website-next/src/lib/campaign-data.ts:141"
+   },
+   "www.jboogxcreative.com": {
+    "count": 1,
+    "example": "frontend/apps/artcraft-website-next/src/lib/campaign-data.ts:280"
+   },
+   "img.youtube.com": {
+    "count": 1,
+    "example": "frontend/apps/artcraft-website-next/src/lib/press-kit-data.ts:93"
+   },
+   "marketplace.visualstudio.com": {
+    "count": 1,
+    "example": "frontend/apps/genhub/src/app/nx-welcome.tsx:645"
+   },
+   "plugins.jetbrains.com": {
+    "count": 1,
+    "example": "frontend/apps/genhub/src/app/nx-welcome.tsx:666"
+   },
+   "picsum.photos": {
+    "count": 1,
+    "example": "frontend/apps/genhub/src/data/mock-gallery.ts:78"
+   },
+   "style.storyteller.ai": {
+    "count": 1,
+    "example": "frontend/libs/api/src/lib/enums/Api.ts:3"
+   },
+   "discord.com": {
+    "count": 1,
+    "example": "frontend/libs/components/help-menu/src/lib/help-menu.tsx:220"
+   },
+   "twitter.com": {
+    "count": 1,
+    "example": "frontend/libs/components/pagescene/src/lib/engine/FindSurfaces.js:9"
+   },
+   "api.frankfurter.dev": {
+    "count": 1,
+    "example": "frontend/libs/components/pricing-modal/src/lib/use-currency.ts:118"
+   },
+   "cdn.brandfetch.io": {
+    "count": 1,
+    "example": "frontend/libs/components/video-editor/src/lib/guides/definitions/platforms.tsx:13"
+   }
+  }
+ },
+ "artcraftx": {
+  "commit": "98c2a48940aa0a54604637f665ee539c122fa707",
+  "telemetry": {
+   "discord-presence": {
+    "count": 6,
+    "examples": [
+     "crates/artcraftx/src/threads/discord_presence_thread.rs:2",
+     "crates/artcraftx/src/threads/discord_presence_thread.rs:18",
+     "crates/artcraftx/src/threads/discord_presence_thread.rs:24",
+     "crates/artcraftx/src/threads/discord_presence_thread.rs:35",
+     "crates/artcraftx/src/threads/discord_presence_thread.rs:41",
+     "crates/artcraftx/src/threads/discord_presence_thread.rs:45"
+    ]
+   },
+   "google-analytics": {
+    "count": 8,
+    "examples": [
+     "frontend/apps/artcraft/app/index.html:10",
+     "frontend/apps/artcraft/app/index.html:13",
+     "frontend/apps/artcraft/app/index.html:14",
+     "frontend/apps/artcraft/app/index.html:15",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-event.ts:6",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-event.ts:8",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-login.ts:6",
+     "frontend/libs/analytics/google-analytics/src/lib/gtag-logout.ts:6"
+    ]
+   },
+   "ms-clarity": {
+    "count": 1,
+    "examples": [
+     "frontend/apps/artcraft/app/index.html:25"
+    ]
+   },
+   "posthog": {
+    "count": 14,
+    "examples": [
+     "frontend/apps/artcraft/app/src/hooks/usePosthogFeatureFlag/index.ts:1",
+     "frontend/apps/artcraft/app/src/hooks/usePosthogFeatureFlag/usePosthogFeatureFlag.tsx:1",
+     "frontend/apps/artcraft/app/src/hooks/usePosthogFeatureFlag/usePosthogFeatureFlag.tsx:5",
+     "frontend/apps/artcraft/app/src/index.tsx:21",
+     "frontend/apps/artcraft/app/src/index.tsx:80",
+     "frontend/apps/artcraft/app/src/index.tsx:81",
+     "frontend/apps/artcraft/app/src/index.tsx:82",
+     "frontend/apps/artcraft/app/src/index.tsx:83",
+     "frontend/apps/artcraft/app/src/index.tsx:84",
+     "frontend/apps/artcraft/app/src/index.tsx:93",
+     "frontend/apps/artcraft/app/src/root.tsx:2",
+     "frontend/apps/artcraft/app/src/root.tsx:3",
+     "frontend/apps/artcraft/app/src/root.tsx:45",
+     "frontend/apps/artcraft/app/src/root.tsx:47"
+    ]
+   },
+   "statsig": {
+    "count": 374,
+    "examples": [
+     "crates/api_clients/grok_consumer_client/src/credentials/grok_request_headers.rs:13",
+     "crates/api_clients/grok_consumer_client/src/credentials/grok_request_headers.rs:22",
+     "crates/api_clients/grok_consumer_client/src/credentials/grok_request_headers.rs:23",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:657",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:658",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:659",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:661",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:700",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:701",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:711",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:719",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:728",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:732",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:760",
+     "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_video/generate_video.rs:761"
+    ]
+   },
+   "usage-heartbeat": {
+    "count": 15,
+    "examples": [
+     "crates/api_clients/artcraft_client/src/api_defs/analytics/log_active_user.rs:6",
+     "crates/api_clients/artcraft_client/src/api_defs/analytics/log_active_user.rs:9",
+     "crates/api_clients/artcraft_client/src/api_defs/analytics/mod.rs:1",
+     "crates/api_clients/artcraft_client/src/endpoints/analytics/log_active_user.rs:5",
+     "crates/api_clients/artcraft_client/src/endpoints/analytics/log_active_user.rs:8",
+     "crates/api_clients/artcraft_client/src/endpoints/analytics/log_active_user.rs:44",
+     "crates/api_clients/artcraft_client/src/endpoints/analytics/log_active_user_v2.rs:5",
+     "crates/api_clients/artcraft_client/src/endpoints/analytics/log_active_user_v2.rs:7",
+     "crates/api_clients/artcraft_client/src/endpoints/analytics/log_active_user_v2.rs:14",
+     "crates/api_clients/artcraft_client/src/endpoints/analytics/mod.rs:1",
+     "crates/api_clients/artcraft_client/src/endpoints/analytics/mod.rs:2",
+     "crates/api_clients/artcraft_client/src/utils/api_or_web_json_post_request.rs:26",
+     "crates/artcraftx/src/services/storyteller/threads/storyteller_activity_thread.rs:6",
+     "crates/artcraftx/src/services/storyteller/threads/storyteller_activity_thread.rs:7",
+     "crates/artcraftx/src/services/storyteller/threads/storyteller_activity_thread.rs:118"
+    ]
+   }
+  },
+  "network": {
+   "browser-fetch": {
+    "count": 3,
+    "examples": [
+     "crates/api_clients/grok_consumer_statsig/src/mint_harness.rs:76",
+     "crates/api_clients/grok_consumer_statsig/src/mint_harness.rs:78",
+     "crates/api_clients/grok_consumer_statsig/src/mint_harness.rs:93"
+    ]
+   },
+   "http-client": {
+    "count": 281,
+    "examples": [
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/legacy_upload_media_file_from_file.rs:13",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/legacy_upload_media_file_from_file.rs:14",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/upload_audio_media_file_from_file.rs:9",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/upload_audio_media_file_from_file.rs:10",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/upload_image_media_file_from_bytes.rs:13",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/upload_image_media_file_from_bytes.rs:14",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/upload_image_media_file_from_file.rs:13",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/upload_image_media_file_from_file.rs:14",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/upload_new_engine_asset_from_file.rs:11",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/upload_new_engine_asset_from_file.rs:12",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/upload_video_media_file_from_file.rs:11",
+     "crates/api_clients/artcraft_client/src/endpoints/media_files/upload_video_media_file_from_file.rs:12",
+     "crates/api_clients/artcraft_client/src/error/api_error.rs:3",
+     "crates/api_clients/artcraft_client/src/error/api_error.rs:53",
+     "crates/api_clients/artcraft_client/src/error/api_error.rs:94"
+    ]
+   },
+   "open-browser": {
+    "count": 3,
+    "examples": [
+     "crates/artcraftx/src/commands/download/download_directory_reveal_command.rs:10",
+     "crates/artcraftx/src/commands/download/open_local_file_command.rs:7",
+     "crates/artcraftx/src/lib.rs:127"
+    ]
+   }
+  },
+  "hosts": {
+   "v3b.fal.media": {
+    "count": 70,
+    "example": "crates/api_clients/fal_client/src/polling/poll_job_response/poll_job_response.rs:177"
+   },
+   "static.seedance2-pro.com": {
+    "count": 42,
+    "example": "crates/api_clients/seedance2pro_client/src/generate/audio/generate_suno_remix.rs:190"
+   },
+   "grok.com": {
+    "count": 35,
+    "example": "crates/api_clients/grok_consumer_client/src/client/grok_domain.rs:2"
+   },
+   "queue.fal.run": {
+    "count": 17,
+    "example": "crates/api_clients/fal_client/src/polling/poll_job_response/poll_job_response.rs:152"
+   },
+   "something.else": {
+    "count": 15,
+    "example": "crates/vendor/tauri-plugin-http/src/scope.rs:172"
+   },
+   "www.midjourney.com": {
+    "count": 10,
+    "example": "crates/api_clients/midjourney_client/src/endpoints/refresh_token.rs:71"
+   },
+   "api.storyteller.ai": {
+    "count": 9,
+    "example": "crates/api_clients/artcraft_client/src/endpoints/omni_gen/models/audio/omni_gen_list_audio_models.rs:193"
+   },
+   "higgsfield.ai": {
+    "count": 9,
+    "example": "crates/api_clients/higgsfield_client/src/client/higgsfield_host.rs:21"
+   },
+   "assets.grok.com": {
+    "count": 8,
+    "example": "crates/api_clients/grok_consumer_client/src/endpoint_bindings/old_bindings/media_posts/create_media_post/response.rs:22"
+   },
+   "cdn-2.fakeyou.com": {
+    "count": 7,
+    "example": "crates/api_clients/fal_client/src/requests_old/webhook/object/enqueue_hunyuan_3d_21_image_to_3d_webhook.rs:52"
+   },
+   "geo.captcha-delivery.com": {
+    "count": 7,
+    "example": "crates/api_clients/higgsfield_client/src/error/classify_higgsfield_http_error.rs:169"
+   },
+   "imagine.x.ai": {
+    "count": 6,
+    "example": "crates/api_clients/grok_api_client/src/api/requests/images/image_edit/image_edit.rs:319"
+   },
+   "storyteller.ai": {
+    "count": 6,
+    "example": "crates/artcraftx/src/credentials/service_cookie_origin.rs:14"
+   },
+   "tauri.app": {
+    "count": 6,
+    "example": "crates/vendor/tauri-plugin-http/src/scope.rs:214"
+   },
+   "bucket.s3.amazonaws.com": {
+    "count": 5,
+    "example": "crates/api_clients/higgsfield_client/src/endpoints/media/upload_media_bytes.rs:63"
+   },
+   "getartcraft.com": {
+    "count": 5,
+    "example": "crates/artcraftx/src/threads/discord_presence_thread.rs:11"
+   },
+   "studio.storyteller.ai": {
+    "count": 5,
+    "example": "crates/vendor/tauri-plugin-http/src/commands.rs:326"
+   },
+   "imagine-public.x.ai": {
+    "count": 4,
+    "example": "crates/api_clients/grok_consumer_client/src/endpoint_bindings/generate_image_websocket/grok_generate_image_websocket.rs:407"
+   },
+   "clerk.higgsfield.ai": {
+    "count": 4,
+    "example": "crates/api_clients/higgsfield_client/src/client/clerk_host.rs:15"
+   },
+   "input-bucket.s3.amazonaws.com": {
+    "count": 4,
+    "example": "crates/api_clients/higgsfield_client/src/endpoints/media/create_audio_upload.rs:109"
+   },
+   "google.com": {
+    "count": 4,
+    "example": "crates/artcraftx/src/services/grok/windows/grok_login_window/grok_login_window_open.rs:16"
+   },
+   "cdn.artcraft.ai": {
+    "count": 4,
+    "example": "crates/artcraftx/src/threads/third_party_task_polling_thread/events/notify_frontend_of_completion.rs:129"
+   },
+   "fnf-api-gw.higgsfield.ai": {
+    "count": 3,
+    "example": "crates/api_clients/higgsfield_client/src/client/higgsfield_host.rs:17"
+   },
+   "artcraft.ai": {
+    "count": 3,
+    "example": "crates/api_clients/higgsfield_client/src/session/upload_source_guard.rs:67"
+   },
+   "www.magnific.com": {
+    "count": 3,
+    "example": "crates/artcraftx/src/credentials/service_cookie_origin.rs:23"
+   },
+   "openart.ai": {
+    "count": 3,
+    "example": "crates/artcraftx/src/credentials/service_cookie_origin.rs:24"
+   },
+   "accounts.x.ai": {
+    "count": 3,
+    "example": "crates/artcraftx/src/services/grok/windows/grok_login_window/grok_login_window_open.rs:24"
+   },
+   "cdn.seedance2-pro.com": {
+    "count": 3,
+    "example": "crates/router/src/generate/generate_video/providers/kinovi/seedance_2p0/cost.rs:606"
+   },
+   "console.gmicloud.ai": {
+    "count": 2,
+    "example": "crates/api_clients/gmicloud_client/src/requests/common/create_request.rs:12"
+   },
+   "lh3.googleusercontent.com": {
+    "count": 2,
+    "example": "crates/api_clients/midjourney_client/src/credentials/jwt_decode.rs:5"
+   },
+   "static.kinovi.ai": {
+    "count": 2,
+    "example": "crates/api_clients/seedance2pro_client/src/requests/upload_file/upload_file.rs:132"
+   },
+   "accounts.google.com": {
+    "count": 2,
+    "example": "crates/artcraftx/src/services/grok/windows/grok_login_window/grok_login_window_thread.rs:68"
+   },
+   "videos.youtube.com": {
+    "count": 2,
+    "example": "crates/lib/url_utils/src/download_extension/extract_download_extension_from_url.rs:35"
+   },
+   "us.i.posthog.com": {
+    "count": 2,
+    "example": "frontend/apps/artcraft/app/src/index.tsx:83"
+   },
+   "api.fakeyou.com": {
+    "count": 1,
+    "example": "crates/api_clients/artcraft_client/src/utils/api_host.rs:25"
+   },
+   "fal.run": {
+    "count": 1,
+    "example": "crates/api_clients/fal_client/src/requests/core_api/fal_request.rs:57"
+   },
+   "api.x.ai": {
+    "count": 1,
+    "example": "crates/api_clients/grok_api_client/src/api/requests/xai_host.rs:2"
+   },
+   "fakeyou.com": {
+    "count": 1,
+    "example": "crates/api_clients/higgsfield_client/src/session/upload_source_guard.rs:64"
+   },
+   "storage.getartcraft.com": {
+    "count": 1,
+    "example": "crates/api_clients/higgsfield_client/src/session/upload_source_guard.rs:66"
+   },
+   "notfakeyou.com": {
+    "count": 1,
+    "example": "crates/api_clients/higgsfield_client/src/session/upload_source_guard.rs:85"
+   },
+   "securetoken.google.com": {
+    "count": 1,
+    "example": "crates/api_clients/midjourney_client/src/credentials/jwt_decode.rs:7"
+   },
+   "securetoken.googleapis.com": {
+    "count": 1,
+    "example": "crates/api_clients/midjourney_client/src/endpoints/refresh_token.rs:9"
+   },
+   "cdn.midjourney.com": {
+    "count": 1,
+    "example": "crates/api_clients/midjourney_client/src/utils/get_image_url.rs:8"
+   },
+   "kinovi.ai": {
+    "count": 1,
+    "example": "crates/api_clients/seedance2pro_client/src/requests/kinovi_host.rs:29"
+   },
+   "seedance2-pro.com": {
+    "count": 1,
+    "example": "crates/api_clients/seedance2pro_client/src/requests/kinovi_host.rs:30"
+   },
+   "worldlabs.ai": {
+    "count": 1,
+    "example": "crates/artcraftx/src/credentials/service_cookie_origin.rs:20"
+   },
+   "app.runwayml.com": {
+    "count": 1,
+    "example": "crates/artcraftx/src/credentials/service_cookie_origin.rs:25"
+   },
+   "midjourney.com": {
+    "count": 1,
+    "example": "crates/artcraftx/src/services/midjourney/windows/extract_midjourney_webview_cookies.rs:14"
+   },
+   "runwayml.com": {
+    "count": 1,
+    "example": "crates/artcraftx/src/windows/login_window/logins/runway_login_window.rs:15"
+   },
+   "news.ycombinator.com": {
+    "count": 1,
+    "example": "crates/schema/sqlite_identifiers/src/safe_entropy.rs:35"
+   },
+   "fetch.spec.whatwg.org": {
+    "count": 1,
+    "example": "crates/vendor/tauri-plugin-http/src/commands.rs:206"
+   },
+   "tauri.localhost": {
+    "count": 1,
+    "example": "crates/vendor/tauri-plugin-http/src/commands.rs:320"
+   },
+   "www.googletagmanager.com": {
+    "count": 1,
+    "example": "frontend/apps/artcraft/app/index.html:10"
+   },
+   "www.clarity.ms": {
+    "count": 1,
+    "example": "frontend/apps/artcraft/app/index.html:25"
+   },
+   "storage.googleapis.com": {
+    "count": 1,
+    "example": "frontend/libs/api/src/lib/enums/Api.ts:2"
+   },
+   "style.storyteller.ai": {
+    "count": 1,
+    "example": "frontend/libs/api/src/lib/enums/Api.ts:3"
+   },
+   "cdn.storyteller.ai": {
+    "count": 1,
+    "example": "frontend/libs/api/src/lib/enums/Api.ts:4"
+   },
+   "www.gravatar.com": {
+    "count": 1,
+    "example": "frontend/libs/api/src/lib/enums/Api.ts:5"
+   },
+   "api.frankfurter.dev": {
+    "count": 1,
+    "example": "frontend/libs/components/pricing-modal/src/lib/use-currency.ts:118"
+   },
+   "threejs.org": {
+    "count": 1,
+    "example": "frontend/libs/components/upload-modal/src/lib/UploadModal3D/utilities/loadPreviewOnCanvas.ts:185"
+   }
+  }
+ },
+ "cadcraft": {
+  "commit": "699dd1aeca1dba018931d2eb95e92c0cf2033bbd",
+  "telemetry": {},
+  "network": {
+   "listen": {
+    "count": 3,
+    "examples": [
+     "apps/cadcraft/src/control_server.rs:14",
+     "crates/mcp/src/backend.rs:253",
+     "crates/mcp/src/backend.rs:278"
+    ]
+   },
+   "open-browser": {
+    "count": 1,
+    "examples": [
+     "apps/cadcraft/src/native_menu.rs:70"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 1,
+    "examples": [
+     "crates/mcp/src/backend.rs:36"
+    ]
+   }
+  },
+  "hosts": {
+   "discord.gg": {
+    "count": 2,
+    "example": "apps/cadcraft/src/native_menu.rs:70"
+   },
+   "getartcraft.com": {
+    "count": 1,
+    "example": "crates/ui-egui/src/dialogs.rs:250"
+   }
+  }
+ },
+ "cloud-worker": {
+  "commit": "e375345bf6109a23425f8a8c2d35fee79eb062c7",
+  "telemetry": {},
+  "network": {
+   "python-http": {
+    "count": 5,
+    "examples": [
+     "bench/minimax_bench.py:33",
+     "bench/minimax_bench.py:164",
+     "bench/minimax_bench.py:166",
+     "bench/validate_outputs.py:17",
+     "bench/validate_outputs.py:54"
+    ]
+   }
+  },
+  "hosts": {}
+ },
+ "craft-fonts": {
+  "commit": "3d9ab3a132ed0eff457e424226a435a901da30d3",
+  "telemetry": {},
+  "network": {},
+  "hosts": {}
+ },
+ "craft-launcher": {
+  "commit": "c1a9b36f82c79a45da386e285cbddffd301165f1",
+  "telemetry": {},
+  "network": {
+   "browser-fetch": {
+    "count": 1,
+    "examples": [
+     "apps/artcraft-launcher-web/src/web.rs:181"
+    ]
+   },
+   "http-client": {
+    "count": 11,
+    "examples": [
+     "crates/native/src/http.rs:34",
+     "crates/native/src/http.rs:36",
+     "crates/native/src/http.rs:37",
+     "crates/native/src/http.rs:38",
+     "crates/native/src/http.rs:57",
+     "crates/native/src/http.rs:60",
+     "crates/native/src/http.rs:68",
+     "crates/native/src/http.rs:77",
+     "crates/native/src/http.rs:87",
+     "crates/native/src/proxy.rs:5",
+     "crates/native/src/proxy.rs:40"
+    ]
+   },
+   "listen": {
+    "count": 7,
+    "examples": [
+     "crates/native/src/backend.rs:1019",
+     "crates/native/src/http.rs:634",
+     "crates/native/src/http.rs:834",
+     "crates/native/src/single_instance.rs:76",
+     "crates/native/src/single_instance.rs:84",
+     "crates/native/src/single_instance.rs:183",
+     "crates/native/src/single_instance.rs:221"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 2,
+    "examples": [
+     "crates/native/src/single_instance.rs:141",
+     "crates/native/src/single_instance.rs:213"
+    ]
+   },
+   "update-check": {
+    "count": 10,
+    "examples": [
+     "apps/artcraft-launcher-web/src/web.rs:173",
+     "crates/native/src/backend.rs:96",
+     "crates/native/src/backend.rs:136",
+     "crates/native/src/backend.rs:259",
+     "crates/native/src/backend.rs:261",
+     "crates/native/src/backend.rs:423",
+     "crates/native/src/http.rs:818",
+     "crates/native/src/http.rs:835",
+     "crates/native/src/source.rs:81",
+     "crates/native/src/source.rs:116"
+    ]
+   }
+  },
+  "hosts": {
+   "getartcraft.com": {
+    "count": 5,
+    "example": "crates/core/src/catalog.rs:73"
+   },
+   "x.com": {
+    "count": 1,
+    "example": "crates/core/src/catalog.rs:227"
+   },
+   "www.instagram.com": {
+    "count": 1,
+    "example": "crates/core/src/catalog.rs:228"
+   },
+   "www.linkedin.com": {
+    "count": 1,
+    "example": "crates/core/src/catalog.rs:229"
+   },
+   "www.youtube.com": {
+    "count": 1,
+    "example": "crates/core/src/catalog.rs:230"
+   },
+   "www.tiktok.com": {
+    "count": 1,
+    "example": "crates/core/src/catalog.rs:231"
+   },
+   "discord.gg": {
+    "count": 1,
+    "example": "crates/core/src/catalog.rs:235"
+   },
+   "api.storyteller.ai": {
+    "count": 1,
+    "example": "crates/core/src/feed.rs:26"
+   },
+   "www.apple.com": {
+    "count": 1,
+    "example": "crates/native/src/login.rs:59"
+   },
+   "proxy.corp": {
+    "count": 1,
+    "example": "crates/native/src/proxy.rs:182"
+   },
+   "nas.local": {
+    "count": 1,
+    "example": "crates/native/src/proxy.rs:252"
+   }
+  }
+ },
+ "craft-libs": {
+  "commit": "af2b0918d2c5e1ec984a1e1e142542a744596d58",
+  "telemetry": {},
+  "network": {},
+  "hosts": {}
+ },
+ "craft-repo-status-app": {
+  "commit": "0d4aad04f6e6e21e0d00ff9d1294848c8b54672a",
+  "telemetry": {},
+  "network": {
+   "http-client": {
+    "count": 4,
+    "examples": [
+     "crates/craft-github/src/lib.rs:22",
+     "crates/craft-github/src/lib.rs:23",
+     "crates/craft-github/src/lib.rs:44",
+     "crates/craft-github/src/lib.rs:112"
+    ]
+   }
+  },
+  "hosts": {}
+ },
+ "deckcraft": {
+  "commit": "a98df49b21632d69a3da994d35df1ea91dab41af",
+  "telemetry": {},
+  "network": {
+   "listen": {
+    "count": 1,
+    "examples": [
+     "apps/deckcraft/src/control_server.rs:14"
+    ]
+   },
+   "open-browser": {
+    "count": 2,
+    "examples": [
+     "crates/ui-egui/src/lib.rs:736",
+     "crates/ui-egui/src/show.rs:306"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 1,
+    "examples": [
+     "crates/mcp/src/backend.rs:43"
+    ]
+   }
+  },
+  "hosts": {
+   "getartcraft.com": {
+    "count": 3,
+    "example": "crates/engine/src/links.rs:4"
+   },
+   "discord.gg": {
+    "count": 1,
+    "example": "crates/engine/src/links.rs:3"
+   }
+  }
+ },
+ "designcraft": {
+  "commit": "16a7365701f9ce8f93ca77a27a8dc2fffb807869",
+  "telemetry": {},
+  "network": {
+   "listen": {
+    "count": 3,
+    "examples": [
+     "apps/designcraft/src/control_server.rs:28",
+     "apps/designcraft/src/control_server.rs:245",
+     "apps/designcraft/src/control_server.rs:266"
+    ]
+   },
+   "open-browser": {
+    "count": 1,
+    "examples": [
+     "crates/ui-egui/src/lib.rs:975"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 4,
+    "examples": [
+     "apps/designcraft/src/control_server.rs:252",
+     "apps/designcraft/src/control_server.rs:271",
+     "apps/designcraft/src/control_server.rs:272",
+     "crates/mcp/src/backend.rs:43"
+    ]
+   }
+  },
+  "hosts": {
+   "www.idpf.org": {
+    "count": 7,
+    "example": "crates/epub/src/lib.rs:68"
+   },
+   "getartcraft.com": {
+    "count": 5,
+    "example": "crates/engine/src/links.rs:10"
+   },
+   "discord.gg": {
+    "count": 2,
+    "example": "crates/engine/src/links.rs:8"
+   },
+   "www.color.org": {
+    "count": 1,
+    "example": "crates/pdf/src/pdfx.rs:60"
+   },
+   "www.npes.org": {
+    "count": 1,
+    "example": "crates/pdf/src/pdfx.rs:100"
+   }
+  }
+ },
+ "effectcraft": {
+  "commit": "9a7d3e76991d5372448033b473dc12c2480a6a04",
+  "telemetry": {},
+  "network": {
+   "listen": {
+    "count": 3,
+    "examples": [
+     "apps/effectcraft/src/control_server.rs:27",
+     "apps/effectcraft/src/control_server.rs:240",
+     "apps/effectcraft/src/control_server.rs:261"
+    ]
+   },
+   "open-browser": {
+    "count": 1,
+    "examples": [
+     "crates/ui-egui/src/lib.rs:1536"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 4,
+    "examples": [
+     "apps/effectcraft/src/control_server.rs:247",
+     "apps/effectcraft/src/control_server.rs:266",
+     "apps/effectcraft/src/control_server.rs:267",
+     "crates/automation/src/bridge.rs:43"
+    ]
+   },
+   "spawn-curl": {
+    "count": 1,
+    "examples": [
+     "crates/engine/src/models.rs:365"
+    ]
+   }
+  },
+  "hosts": {
+   "getartcraft.com": {
+    "count": 4,
+    "example": "crates/engine/src/links.rs:7"
+   },
+   "storage.googleapis.com": {
+    "count": 2,
+    "example": "crates/segment/src/lib.rs:106"
+   },
+   "discord.gg": {
+    "count": 1,
+    "example": "crates/engine/src/links.rs:6"
+   },
+   "developers.google.com": {
+    "count": 1,
+    "example": "crates/segment/src/lib.rs:107"
+   }
+  }
+ },
+ "filmcraft": {
+  "commit": "4e2d0bc2d3646f9cf27ef7aa8b2095c6858c7efe",
+  "telemetry": {},
+  "network": {
+   "browser-fetch": {
+    "count": 1,
+    "examples": [
+     "apps/filmcraft-web/src/api.rs:108"
+    ]
+   },
+   "http-client": {
+    "count": 5,
+    "examples": [
+     "crates/speech/src/models.rs:281",
+     "crates/speech/src/models.rs:283",
+     "crates/speech/src/models.rs:285",
+     "crates/speech/src/models.rs:286",
+     "crates/speech/src/models.rs:287"
+    ]
+   },
+   "listen": {
+    "count": 4,
+    "examples": [
+     "apps/filmcraft/src/control_server.rs:27",
+     "apps/filmcraft/src/control_server.rs:254",
+     "apps/filmcraft/src/control_server.rs:275",
+     "crates/automation/src/bridge.rs:124"
+    ]
+   },
+   "open-browser": {
+    "count": 3,
+    "examples": [
+     "apps/filmcraft/src/main.rs:243",
+     "crates/ui-egui/src/links.rs:45",
+     "crates/ui-egui/src/panels/menu_dialogs.rs:126"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 4,
+    "examples": [
+     "apps/filmcraft/src/control_server.rs:261",
+     "apps/filmcraft/src/control_server.rs:280",
+     "apps/filmcraft/src/control_server.rs:281",
+     "crates/automation/src/bridge.rs:74"
+    ]
+   }
+  },
+  "hosts": {
+   "huggingface.co": {
+    "count": 7,
+    "example": "crates/speech/src/models.rs:53"
+   },
+   "getartcraft.com": {
+    "count": 2,
+    "example": "crates/ui-egui/src/links.rs:12"
+   },
+   "discord.gg": {
+    "count": 1,
+    "example": "crates/ui-egui/src/links.rs:10"
+   }
+  }
+ },
+ "gridcraft": {
+  "commit": "9f896c1249f40d18bf182199dc03042959be5f3f",
+  "telemetry": {},
+  "network": {
+   "listen": {
+    "count": 1,
+    "examples": [
+     "apps/gridcraft/src/control_server.rs:15"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 1,
+    "examples": [
+     "crates/mcp/src/backend.rs:48"
+    ]
+   }
+  },
+  "hosts": {
+   "x.com": {
+    "count": 4,
+    "example": "crates/functions/src/info.rs:596"
+   },
+   "getartcraft.com": {
+    "count": 2,
+    "example": "apps/gridcraft/src/native_menu.rs:174"
+   },
+   "discord.gg": {
+    "count": 2,
+    "example": "apps/gridcraft/src/native_menu.rs:175"
+   }
+  }
+ },
+ "lightcraft": {
+  "commit": "0dd6593d9db55a17ab559261bac4d766f015c345",
+  "telemetry": {},
+  "network": {
+   "listen": {
+    "count": 7,
+    "examples": [
+     "apps/lightcraft/src/control_server.rs:28",
+     "apps/lightcraft/src/control_server.rs:249",
+     "crates/engine/src/face_download.rs:268",
+     "crates/engine/src/face_download.rs:288",
+     "crates/engine/src/model_download.rs:255",
+     "crates/engine/src/model_download.rs:275",
+     "crates/segment/src/remote.rs:195"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 4,
+    "examples": [
+     "apps/lightcraft/src/control_server.rs:256",
+     "crates/fetch/src/http.rs:193",
+     "crates/mcp/src/backend.rs:53",
+     "crates/segment/src/remote.rs:87"
+    ]
+   }
+  },
+  "hosts": {
+   "www.metadataworkinggroup.com": {
+    "count": 6,
+    "example": "crates/meta/src/xmp.rs:38"
+   },
+   "ns.apple.com": {
+    "count": 3,
+    "example": "crates/codecs/src/gainmap.rs:254"
+   },
+   "huggingface.co": {
+    "count": 3,
+    "example": "crates/faces/src/known.rs:84"
+   },
+   "www.topografix.com": {
+    "count": 3,
+    "example": "crates/meta/src/gpx.rs:271"
+   },
+   "www.openstreetmap.org": {
+    "count": 2,
+    "example": "apps/lightcraft/src/main.rs:1105"
+   },
+   "ns.google.com": {
+    "count": 2,
+    "example": "crates/codecs/src/gainmap.rs:523"
+   },
+   "getartcraft.com": {
+    "count": 2,
+    "example": "crates/ui-egui/src/links.rs:8"
+   },
+   "www.gnu.org": {
+    "count": 1,
+    "example": "crates/denoise-core/src/known.rs:33"
+   },
+   "www.apple.com": {
+    "count": 1,
+    "example": "crates/engine/src/preset_luminar.rs:508"
+   },
+   "ns.lightcraft.app": {
+    "count": 1,
+    "example": "crates/meta/src/xmp.rs:18"
+   },
+   "cipa.jp": {
+    "count": 1,
+    "example": "crates/meta/src/xmp.rs:28"
+   },
+   "discord.gg": {
+    "count": 1,
+    "example": "crates/ui-egui/src/links.rs:6"
+   }
+  }
+ },
+ "pdfcraft": {
+  "commit": "bbbe60015c571ebfc39708ee07777b89e267122a",
+  "telemetry": {},
+  "network": {
+   "browser-fetch": {
+    "count": 1,
+    "examples": [
+     "apps/pdfcraft-web/src/main.rs:113"
+    ]
+   },
+   "http-client": {
+    "count": 5,
+    "examples": [
+     "apps/pdfcraft/src/updates.rs:12",
+     "apps/pdfcraft/src/updates.rs:14",
+     "apps/pdfcraft/src/updates.rs:41",
+     "apps/pdfcraft/src/updates.rs:43",
+     "apps/pdfcraft/src/updates.rs:47"
+    ]
+   },
+   "listen": {
+    "count": 1,
+    "examples": [
+     "crates/ui-egui/src/control.rs:768"
+    ]
+   },
+   "open-browser": {
+    "count": 1,
+    "examples": [
+     "crates/ui-egui/src/lib.rs:1240"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 1,
+    "examples": [
+     "apps/pdfcraft-cli/src/main.rs:742"
+    ]
+   },
+   "update-check": {
+    "count": 1,
+    "examples": [
+     "apps/pdfcraft/src/updates.rs:7"
+    ]
+   }
+  },
+  "hosts": {
+   "www.xfa.org": {
+    "count": 16,
+    "example": "crates/annot/src/lib.rs:1341"
+   },
+   "discord.gg": {
+    "count": 2,
+    "example": "apps/pdfcraft-cli/src/main.rs:66"
+   },
+   "getartcraft.com": {
+    "count": 2,
+    "example": "crates/engine/src/links.rs:10"
+   },
+   "crl.entrust.net": {
+    "count": 2,
+    "example": "crates/sign/src/x509.rs:596"
+   },
+   "xn--pypal-4ve.com": {
+    "count": 1,
+    "example": "crates/engine/src/links.rs:537"
+   },
+   "www.npes.org": {
+    "count": 1,
+    "example": "crates/organize/src/pdfx.rs:131"
+   },
+   "www.aiim.org": {
+    "count": 1,
+    "example": "crates/preflight/src/xmp.rs:102"
+   }
+  }
+ },
+ "photocraft": {
+  "commit": "1234ba4c6faf28ebdd5b19912020ec6336e7722a",
+  "telemetry": {},
+  "network": {
+   "browser-fetch": {
+    "count": 2,
+    "examples": [
+     "apps/photocraft-web/src/web.rs:209",
+     "apps/photocraft-web/src/web.rs:211"
+    ]
+   },
+   "listen": {
+    "count": 4,
+    "examples": [
+     "apps/photocraft/src/control_server.rs:20",
+     "apps/photocraft/src/control_server.rs:122",
+     "apps/photocraft/src/control_server.rs:167",
+     "crates/automation/src/rpc.rs:277"
+    ]
+   },
+   "open-browser": {
+    "count": 2,
+    "examples": [
+     "apps/photocraft/src/services.rs:372",
+     "crates/ui-egui/src/links.rs:28"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 5,
+    "examples": [
+     "apps/photocraft/src/control_server.rs:138",
+     "apps/photocraft/src/control_server.rs:179",
+     "crates/automation/src/bridge.rs:129",
+     "crates/automation/src/rpc.rs:623",
+     "crates/automation/src/rpc.rs:648"
+    ]
+   }
+  },
+  "hosts": {
+   "getartcraft.com": {
+    "count": 3,
+    "example": "crates/ui-egui/src/links.rs:10"
+   },
+   "discord.gg": {
+    "count": 2,
+    "example": "crates/ui-egui/src/links.rs:9"
+   }
+  }
+ },
+ "photocraft-corpus": {
+  "commit": "b2e1dcba8954efa9ad0e7944c258cc0e9a5efc1e",
+  "telemetry": {},
+  "network": {},
+  "hosts": {}
+ },
+ "soundcraft": {
+  "commit": "7414719f3760de1c9359ec9723351a7232442e61",
+  "telemetry": {},
+  "network": {
+   "listen": {
+    "count": 1,
+    "examples": [
+     "apps/soundcraft/src/control_server.rs:13"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 1,
+    "examples": [
+     "crates/automation/src/lib.rs:87"
+    ]
+   }
+  },
+  "hosts": {
+   "www.musicxml.org": {
+    "count": 1,
+    "example": "crates/engine/src/score.rs:237"
+   },
+   "getartcraft.com": {
+    "count": 1,
+    "example": "crates/ui-egui/src/panels.rs:506"
+   },
+   "discord.gg": {
+    "count": 1,
+    "example": "crates/ui-egui/src/panels.rs:507"
+   }
+  }
+ },
+ "vectorcraft": {
+  "commit": "434b47d9c4aa69343937f496750bca5d584fdb1f",
+  "telemetry": {},
+  "network": {
+   "browser-fetch": {
+    "count": 1,
+    "examples": [
+     "apps/vectorcraft-web/src/fonts.rs:93"
+    ]
+   },
+   "listen": {
+    "count": 3,
+    "examples": [
+     "apps/vectorcraft/src/control_server.rs:28",
+     "apps/vectorcraft/src/control_server.rs:247",
+     "apps/vectorcraft/src/control_server.rs:268"
+    ]
+   },
+   "open-browser": {
+    "count": 2,
+    "examples": [
+     "apps/vectorcraft/src/main.rs:500",
+     "crates/ui-egui/src/lib.rs:1016"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 4,
+    "examples": [
+     "apps/vectorcraft/src/control_server.rs:254",
+     "apps/vectorcraft/src/control_server.rs:273",
+     "apps/vectorcraft/src/control_server.rs:274",
+     "crates/mcp/src/backend.rs:43"
+    ]
+   }
+  },
+  "hosts": {
+   "getartcraft.com": {
+    "count": 5,
+    "example": "crates/engine/src/cmd/help.rs:11"
+   },
+   "discord.gg": {
+    "count": 4,
+    "example": "crates/engine/src/cmd/help.rs:10"
+   },
+   "www.npes.org": {
+    "count": 1,
+    "example": "crates/pdf/src/pdfx.rs:145"
+   },
+   "www.inkscape.org": {
+    "count": 1,
+    "example": "crates/svg/src/import.rs:171"
+   },
+   "www.serif.com": {
+    "count": 1,
+    "example": "crates/svg/src/import.rs:575"
+   }
+  }
+ },
+ "wordcraft": {
+  "commit": "1d4f741f23773f47a27a5a017ba47e59629caee5",
+  "telemetry": {},
+  "network": {
+   "listen": {
+    "count": 6,
+    "examples": [
+     "apps/wordcraft/src/control_server.rs:40",
+     "apps/wordcraft/src/control_server.rs:261",
+     "apps/wordcraft/src/control_server.rs:481",
+     "crates/mcp/src/backend.rs:294",
+     "crates/ui-egui/src/zotero.rs:255",
+     "crates/ui-egui/src/zotero.rs:318"
+    ]
+   },
+   "open-browser": {
+    "count": 3,
+    "examples": [
+     "apps/wordcraft/src/print.rs:128",
+     "apps/wordcraft/src/print.rs:143",
+     "crates/ui-egui/src/lib.rs:955"
+    ]
+   },
+   "raw-tcp-out": {
+    "count": 4,
+    "examples": [
+     "apps/wordcraft/src/control_server.rs:282",
+     "apps/wordcraft/src/control_server.rs:406",
+     "crates/mcp/src/backend.rs:113",
+     "crates/zotero/src/client.rs:91"
+    ]
+   }
+  },
+  "hosts": {
+   "getartcraft.com": {
+    "count": 5,
+    "example": "crates/engine/src/sample.rs:115"
+   },
+   "discord.gg": {
+    "count": 3,
+    "example": "crates/mcp/src/server.rs:138"
+   },
+   "www.zotero.org": {
+    "count": 1,
+    "example": "crates/zotero/src/bridge.rs:28"
+   }
+  }
+ }
+}
