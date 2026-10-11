@@ -100,7 +100,9 @@ in), PdfCraft's Help › Check for Updates, and AI model downloads in LightCraft
 ## After an upstream sync
 
 Check a build end to end (every app opened in turn, one screenshot each, exit status 1 if an
-app fails to start or panics; Linux CI can run it under `xvfb-run`):
+app fails to start or panics). CI ([`.github/workflows/craft-studio.yml`](../.github/workflows/craft-studio.yml))
+runs it on every push: under `xvfb-run` on Linux, where it gates the build, and as a best-effort
+run on the GPU-less macOS and Windows runners. The screenshots are the `smoke-<OS>` artifacts.
 
 ```bash
 cargo run --release -p craft-studio -- --smoke /tmp/craft-studio-smoke
