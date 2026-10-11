@@ -33,12 +33,14 @@ scripts/
   upstream-sync.sh        import / mise à jour depuis l'upstream (+ patches + lockfiles)
   gen-module-manifests.py dépendances des adaptateurs depuis les binaires upstream
   fix-lockfile-vulns.py   montées de version semver-compatibles des crates vulnérables
+  osv-check.py            avis GitHub (= Dependabot) sur tous les lockfiles
   audit-external-calls.py inventaire statique télémétrie / réseau / hosts
   fork-artcraft.sh        fork GitHub des repos upstream
 docs/
   craft-studio.md         lancement, architecture, limites
   artcraft/ANALYSIS.md    analyse d'architecture et de licences
   artcraft/EXTERNAL-CALLS.md  audit des sondes et envois externes
+  security.md             état des vulnérabilités (corrigées / acceptées)
 ```
 
 Les repos sans licence permissive restent en submodules : ce repo étant public, leur code n'y est pas redistribué.
