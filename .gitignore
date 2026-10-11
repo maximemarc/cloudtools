@@ -1,0 +1,3 @@
+# Build outputs (all workspaces)
+target/
+node_modules/

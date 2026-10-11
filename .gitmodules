@@ -1,0 +1,12 @@
+[submodule "upstream/artcraft-services"]
+	path = upstream/artcraft-services
+	url = https://github.com/storytold/artcraft-services
+	branch = main
+[submodule "upstream/artcraftx"]
+	path = upstream/artcraftx
+	url = https://github.com/storytold/artcraftx
+	branch = main
+[submodule "upstream/cloud-worker"]
+	path = upstream/cloud-worker
+	url = https://github.com/storytold/cloud-worker
+	branch = main

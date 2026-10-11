@@ -1,0 +1,22 @@
+# name	mode	commit	synced_at	url
+artcraft	vendor	28a39a0de4a2fc2eccc237df2046c24245bd12ab	2026-10-11T13:24:23Z	https://github.com/storytold/artcraft
+artcraft-services	submodule	28bd2e7ee349ded3d65e81fc58929e05f24cb836	2026-10-11T13:25:16Z	https://github.com/storytold/artcraft-services
+artcraftx	submodule	98c2a48940aa0a54604637f665ee539c122fa707	2026-10-11T13:25:18Z	https://github.com/storytold/artcraftx
+cadcraft	vendor	699dd1aeca1dba018931d2eb95e92c0cf2033bbd	2026-10-11T13:24:35Z	https://github.com/storytold/cadcraft
+cloud-worker	submodule	e375345bf6109a23425f8a8c2d35fee79eb062c7	2026-10-11T13:25:19Z	https://github.com/storytold/cloud-worker
+craft-fonts	vendor	3d9ab3a132ed0eff457e424226a435a901da30d3	2026-10-11T13:24:25Z	https://github.com/storytold/craft-fonts
+craft-launcher	vendor	c1a9b36f82c79a45da386e285cbddffd301165f1	2026-10-11T13:24:24Z	https://github.com/storytold/craft-launcher
+craft-libs	vendor	af2b0918d2c5e1ec984a1e1e142542a744596d58	2026-10-11T13:24:23Z	https://github.com/storytold/craft-libs
+craft-repo-status-app	vendor	0d4aad04f6e6e21e0d00ff9d1294848c8b54672a	2026-10-11T13:24:25Z	https://github.com/storytold/craft-repo-status-app
+deckcraft	vendor	a98df49b21632d69a3da994d35df1ea91dab41af	2026-10-11T13:24:36Z	https://github.com/storytold/deckcraft
+designcraft	vendor	16a7365701f9ce8f93ca77a27a8dc2fffb807869	2026-10-11T13:24:34Z	https://github.com/storytold/designcraft
+effectcraft	vendor	9a7d3e76991d5372448033b473dc12c2480a6a04	2026-10-11T13:24:32Z	https://github.com/storytold/effectcraft
+filmcraft	vendor	4e2d0bc2d3646f9cf27ef7aa8b2095c6858c7efe	2026-10-11T13:24:29Z	https://github.com/storytold/filmcraft
+gridcraft	vendor	9f896c1249f40d18bf182199dc03042959be5f3f	2026-10-11T13:24:34Z	https://github.com/storytold/gridcraft
+lightcraft	vendor	0dd6593d9db55a17ab559261bac4d766f015c345	2026-10-11T13:24:28Z	https://github.com/storytold/lightcraft
+pdfcraft	vendor	bbbe60015c571ebfc39708ee07777b89e267122a	2026-10-11T13:24:30Z	https://github.com/storytold/pdfcraft
+photocraft	vendor	1234ba4c6faf28ebdd5b19912020ec6336e7722a	2026-10-11T13:24:26Z	https://github.com/storytold/photocraft
+photocraft-corpus	vendor	b2e1dcba8954efa9ad0e7944c258cc0e9a5efc1e	2026-10-11T13:24:27Z	https://github.com/storytold/photocraft-corpus
+soundcraft	vendor	7414719f3760de1c9359ec9723351a7232442e61	2026-10-11T13:24:36Z	https://github.com/storytold/soundcraft
+vectorcraft	vendor	434b47d9c4aa69343937f496750bca5d584fdb1f	2026-10-11T13:24:31Z	https://github.com/storytold/vectorcraft
+wordcraft	vendor	1d4f741f23773f47a27a5a017ba47e59629caee5	2026-10-11T13:24:33Z	https://github.com/storytold/wordcraft
