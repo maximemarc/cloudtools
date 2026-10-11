@@ -1,0 +1,12 @@
+[package]
+name = "studio-core"
+description = "Contract between the Craft Studio shell and the app modules it hosts"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+eframe = { version = "0.36", default-features = false }
+egui = "0.36"

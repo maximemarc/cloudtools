@@ -1,0 +1,49 @@
+[package]
+name = "craft-studio"
+description = "Every Craft app in one window"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "craft-studio"
+path = "src/main.rs"
+
+[features]
+default = ["artcraft", "photocraft", "lightcraft", "filmcraft", "pdfcraft", "vectorcraft", "effectcraft", "wordcraft", "designcraft", "gridcraft", "cadcraft", "deckcraft", "soundcraft"]
+artcraft = ["dep:studio-artcraft"]
+photocraft = ["dep:studio-photocraft"]
+lightcraft = ["dep:studio-lightcraft"]
+filmcraft = ["dep:studio-filmcraft"]
+pdfcraft = ["dep:studio-pdfcraft"]
+vectorcraft = ["dep:studio-vectorcraft"]
+effectcraft = ["dep:studio-effectcraft"]
+wordcraft = ["dep:studio-wordcraft"]
+designcraft = ["dep:studio-designcraft"]
+gridcraft = ["dep:studio-gridcraft"]
+cadcraft = ["dep:studio-cadcraft"]
+deckcraft = ["dep:studio-deckcraft"]
+soundcraft = ["dep:studio-soundcraft"]
+
+[dependencies]
+eframe = { version = "0.36", default-features = false, features = ["default_fonts", "wgpu", "accesskit", "wayland", "x11", "persistence", "links"] }
+egui = "0.36"
+env_logger = "0.11"
+image = { version = "0.25", default-features = false, features = ["png"] }
+log = "0.4"
+studio-core = { path = "../../crates/studio-core" }
+studio-artcraft = { path = "../../crates/modules/artcraft", optional = true }
+studio-photocraft = { path = "../../crates/modules/photocraft", optional = true }
+studio-lightcraft = { path = "../../crates/modules/lightcraft", optional = true }
+studio-filmcraft = { path = "../../crates/modules/filmcraft", optional = true }
+studio-pdfcraft = { path = "../../crates/modules/pdfcraft", optional = true }
+studio-vectorcraft = { path = "../../crates/modules/vectorcraft", optional = true }
+studio-effectcraft = { path = "../../crates/modules/effectcraft", optional = true }
+studio-wordcraft = { path = "../../crates/modules/wordcraft", optional = true }
+studio-designcraft = { path = "../../crates/modules/designcraft", optional = true }
+studio-gridcraft = { path = "../../crates/modules/gridcraft", optional = true }
+studio-cadcraft = { path = "../../crates/modules/cadcraft", optional = true }
+studio-deckcraft = { path = "../../crates/modules/deckcraft", optional = true }
+studio-soundcraft = { path = "../../crates/modules/soundcraft", optional = true }

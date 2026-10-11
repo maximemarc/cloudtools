@@ -1,0 +1,40 @@
+[workspace]
+resolver = "3"
+members = ["apps/craft-studio", "crates/studio-core", "crates/studio-overlay", "crates/modules/*"]
+exclude = ["upstream"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[patch.crates-io]
+winit = { path = "upstream/pdfcraft/vendor/winit" }
+egui-wgpu = { path = "upstream/pdfcraft/vendor/egui-wgpu" }
+hayro = { path = "upstream/pdfcraft/vendor/hayro" }
+hayro-interpret = { path = "upstream/pdfcraft/vendor/hayro-interpret" }
+hayro-syntax = { path = "upstream/pdfcraft/vendor/hayro-syntax" }
+hayro-jbig2 = { path = "upstream/pdfcraft/vendor/hayro-jbig2" }
+lopdf = { path = "upstream/pdfcraft/vendor/lopdf" }
+
+# Full debug info for ~3.5M lines of Rust takes tens of GB and slows linking: keep line tables
+# (useful backtraces) and optimise dependencies enough for image, video and audio work.
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.release]
+debug = false
+codegen-units = 16
+incremental = false
+
+# Distribution builds: `cargo build --profile dist -p craft-studio`.
+[profile.dist]
+inherits = "release"
+lto = "thin"
+codegen-units = 1
+strip = "debuginfo"
