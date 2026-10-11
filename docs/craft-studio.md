@@ -93,16 +93,17 @@ VectorCraft also keep crash-recovery copies and offer them back on the next star
 
 ## Network and privacy
 
-No module sends telemetry. Network use is on demand only: ArtCraft's generation API (when signed
-in), PdfCraft's Help › Check for Updates, and AI model downloads in LightCraft and EffectCraft
-(checksummed). See [artcraft/EXTERNAL-CALLS.md](artcraft/EXTERNAL-CALLS.md).
+No module sends telemetry. Network use is on demand only: ArtCraft's API, PdfCraft's Help › Check
+for Updates, and AI model downloads in LightCraft and EffectCraft (checksummed). ArtCraft talks to
+`api.storyteller.ai` as soon as it is opened, signed in or not: it loads the model catalogue and,
+whenever the settings settle, asks for a cost estimate that includes the prompt being typed. See [artcraft/EXTERNAL-CALLS.md](artcraft/EXTERNAL-CALLS.md).
 
 ## After an upstream sync
 
 Check a build end to end (every app opened in turn, one screenshot each, exit status 1 if an
 app fails to start or panics). CI ([`.github/workflows/craft-studio.yml`](../.github/workflows/craft-studio.yml))
-runs it on every push: under `xvfb-run` on Linux, where it gates the build, and as a best-effort
-run on the GPU-less macOS and Windows runners. The screenshots are the `smoke-<OS>` artifacts.
+runs it on every push: under `xvfb-run` on Linux and on the runner's Metal device on macOS, where
+it gates the build, and as a best-effort run on the GPU-less Windows runners. The screenshots are the `smoke-<OS>` artifacts.
 
 ```bash
 cargo run --release -p craft-studio -- --smoke /tmp/craft-studio-smoke

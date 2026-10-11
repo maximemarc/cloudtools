@@ -4,7 +4,7 @@
 > Inventaire brut : [`external-calls.inventory.json`](./external-calls.inventory.json), régénéré par `python3 -I scripts/audit-external-calls.py`.
 > « Statut estimé » = atteignabilité depuis le binaire livré + conditions d'activation (flags, CSP, config, features Cargo). Non confirmé par capture réseau.
 
-> **Mise à jour.** L'app Tauri + React d'`artcraft` (sondes 1 à 5 ci-dessous) n'est plus vendorisée dans ce repo (`upstream/repos.conf`). Les constats restent valables pour l'upstream et pour `artcraftx` (submodule). [Craft Studio](../craft-studio.md) n'embarque d'ArtCraft que `artcraft-native` : aucune sonde, seulement l'API de génération quand un compte est connecté.
+> **Mise à jour.** L'app Tauri + React d'`artcraft` (sondes 1 à 5 ci-dessous) n'est plus vendorisée dans ce repo (`upstream/repos.conf`). Les constats restent valables pour l'upstream et pour `artcraftx` (submodule). [Craft Studio](../craft-studio.md) n'embarque d'ArtCraft que `artcraft-native` : aucune sonde, mais des appels à `api.storyteller.ai` dès que le module est ouvert, **même sans compte** : catalogue des modèles au démarrage, puis estimation de coût (`POST /v1/omni_gen/cost/{image,video,audio}`) à chaque changement des réglages, **texte du prompt inclus**, après un court délai (`pages/common.rs`, `CostState`). Constaté au smoke test CI (macOS), pas seulement en analyse statique.
 
 ## Synthèse
 
@@ -38,13 +38,14 @@ Résiduel, sans effet aujourd'hui :
 | Gravatar (`ProfileDropdown`)              | Image via hash d'email ; `gravatar.com` absent d'`img-src` → bloquée                     |
 | `unpkg.com/detect-gpu` dans la CSP        | Aucun usage dans le code de l'app                                                       |
 | `midjourney_client::prompt_session_log`   | Réplique de la télémétrie web de Midjourney ; jamais appelé (code mort)                  |
-| `artcraft-native` (app egui)              | Aucune sonde ; API ArtCraft + CDN uniquement                                             |
+| `artcraft-native` (app egui)              | Aucune sonde ; API ArtCraft + CDN uniquement, mais catalogue et estimations de coût (prompt inclus) partent sans compte |
 
 ### Envois fonctionnels
 
 | Destination                                                        | Rôle                                               | Condition                                   |
 |--------------------------------------------------------------------|----------------------------------------------------|---------------------------------------------|
 | `api.storyteller.ai`, `cdn.storyteller.ai`, `cdn.artcraft.ai`      | Auth, génération, crédits, médias                  | Compte ArtCraft                             |
+| `api.storyteller.ai` (`artcraft-native`)                           | Catalogue des modèles ; estimation de coût avec le prompt en cours de saisie | ArtCraft ouvert, **sans compte** |
 | `sora.chatgpt.com`, `grok.com` / `x.ai`, `midjourney.com`, `marble.worldlabs.ai`, `securetoken.googleapis.com` | Fournisseurs « consumer » via cookies capturés en webview + empreinte TLS de navigateur (`wreq`) | L'utilisateur connecte son compte fournisseur |
 | `queue.fal.run`, `*.fal.media`                                     | FAL en direct (clé API fournie par l'utilisateur)  | Clé `fal.api_key.txt` présente              |
 | En-têtes `sentry-trace` / Statsig vers Grok                        | Imitation du client web grok.com (pas de télémétrie ArtCraft) | Usage de Grok                     |

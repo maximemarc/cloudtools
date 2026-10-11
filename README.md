@@ -14,7 +14,7 @@ cargo run --release -p craft-studio -- --app pdfcraft   # ouvrir directement une
 cargo run --release -p craft-studio -- --list           # identifiants des apps
 ```
 
-CI ([.github/workflows/craft-studio.yml](.github/workflows/craft-studio.yml)) : build release sur Linux, macOS et Windows, puis `--smoke` (les 13 apps ouvertes tour à tour, une capture chacune) — bloquant sous Xvfb sur Linux, indicatif sur les runners macOS/Windows sans GPU. Captures dans les artefacts `smoke-<OS>`.
+CI ([.github/workflows/craft-studio.yml](.github/workflows/craft-studio.yml)) : build release sur Linux, macOS et Windows, puis `--smoke` (les 13 apps ouvertes tour à tour, une capture chacune) — bloquant sur Linux (Xvfb) et macOS (Metal du runner), indicatif sur Windows (runner sans GPU). Captures dans les artefacts `smoke-<OS>`.
 
 ## Layout
 

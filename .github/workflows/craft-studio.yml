@@ -1,9 +1,9 @@
 # Craft Studio on the three desktop platforms.
 #
-# Linux: release build, then `--smoke` under Xvfb on Mesa's software renderers (every app opened
-# in turn, one screenshot each; the job fails if an app fails to start or panics).
-# macOS, Windows: release build, then a best-effort smoke run: hosted runners have no GPU, so a
-# failure there is reported as a warning and the screenshots show how far it got.
+# Every OS: release build, then `--smoke` (every app opened in turn, one screenshot each; it fails
+# if an app fails to start or panics). Linux runs it under Xvfb on Mesa's software renderers, macOS
+# on the runner's paravirtual Metal device. Windows runners have no GPU, so the Windows run is
+# best-effort: a failure is a warning and the screenshots show how far it got.
 name: Craft Studio
 
 on:
@@ -42,7 +42,7 @@ jobs:
       matrix:
         include:
           - { name: Linux, os: ubuntu-24.04, smoke_required: true }
-          - { name: macOS, os: macos-15, smoke_required: false }
+          - { name: macOS, os: macos-15, smoke_required: true }
           - { name: Windows, os: windows-2025, smoke_required: false }
     steps:
       - name: Free disk space
@@ -101,7 +101,7 @@ jobs:
 
       - name: Upload screenshots
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: smoke-${{ runner.os }}
           path: smoke/
