@@ -1,0 +1,1819 @@
+[
+ {
+  "name": "artcraft",
+  "last_commit": "28a39a0|2026-10-11 02:03:53 +0700|BFlat|artcraft-native: Create Audio, in-app playback, animated previews and @Characters (#2079)",
+  "files_total": 5784,
+  "loc": {
+   "rust": 269188,
+   "ts": 206538,
+   "json": 39001,
+   "md": 5033,
+   "js": 3248,
+   "css": 1598,
+   "toml": 1522,
+   "py": 1334,
+   "sh": 791,
+   "yaml": 388,
+   "sql": 127,
+   "html": 79
+  },
+  "files": {
+   "rust": 3247,
+   "ts": 1657,
+   "json": 305,
+   "md": 98,
+   "toml": 42,
+   "css": 33,
+   "sh": 19,
+   "js": 8,
+   "py": 6,
+   "yaml": 4,
+   "html": 2,
+   "sql": 1
+  },
+  "rust_tests": 5996,
+  "unsafe_blocks": 4,
+  "todo_markers": 486,
+  "todo_macros": 8,
+  "cargo_tomls": 39,
+  "package_jsons": 62,
+  "key_deps": {
+   "tokio": 12,
+   "reqwest": 5,
+   "image": 3,
+   "sqlx": 3,
+   "tauri": 1,
+   "serde": 1,
+   "egui": 1,
+   "eframe": 1,
+   "resvg": 1,
+   "rodio": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md",
+   "frontend/libs/components/pagescene/CLAUDE.md",
+   "frontend/libs/components/pagescene/AGENTS.md",
+   "crates/CLAUDE.md",
+   "crates/AGENTS.md",
+   "crates/schema/public/enums/CLAUDE.md",
+   "crates/schema/public/enums/AGENTS.md",
+   "crates/schema/public/tokens/CLAUDE.md",
+   "crates/schema/public/tokens/AGENTS.md"
+  ],
+  "big_rs": [],
+  "workflows": [
+   "artcraft-macos-publish.yml",
+   "artcraft-windows-publish.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".claude",
+   ".config",
+   ".git",
+   ".gitattributes",
+   ".github",
+   ".gitignore",
+   ".sqlx",
+   "AGENTS.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "Cranky.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "_database",
+   "_docs",
+   "artcraft-native",
+   "crates",
+   "docs",
+   "frontend",
+   "rustfmt.toml",
+   "script",
+   "test_data"
+  ]
+ },
+ {
+  "name": "artcraft-services",
+  "last_commit": "28bd2e7e|2026-10-11 19:53:27 +0700|BFlat|Bump ArtCraft Launcher downloads to 0.2.1 (#81)",
+  "files_total": 10590,
+  "loc": {
+   "rust": 483890,
+   "ts": 263837,
+   "json": 165096,
+   "sql": 21852,
+   "yaml": 9830,
+   "md": 8641,
+   "toml": 5797,
+   "py": 3615,
+   "js": 2664,
+   "css": 2329,
+   "sh": 1550,
+   "html": 496
+  },
+  "files": {
+   "rust": 5518,
+   "ts": 1957,
+   "json": 1111,
+   "sql": 737,
+   "md": 152,
+   "toml": 135,
+   "yaml": 124,
+   "css": 40,
+   "sh": 30,
+   "js": 10,
+   "html": 7,
+   "py": 7
+  },
+  "rust_tests": 7365,
+  "unsafe_blocks": 10,
+  "todo_markers": 1341,
+  "todo_macros": 3,
+  "cargo_tomls": 125,
+  "package_jsons": 69,
+  "key_deps": {
+   "tokio": 34,
+   "sqlx": 33,
+   "serde": 19,
+   "reqwest": 13,
+   "actix-web": 9,
+   "image": 4,
+   "zip": 4,
+   "tauri": 2,
+   "ort": 2,
+   "diesel": 1,
+   "rodio": 1,
+   "symphonia": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md",
+   "frontend/libs/components/pagescene/CLAUDE.md",
+   "frontend/libs/components/pagescene/AGENTS.md",
+   "crates/CLAUDE.md",
+   "crates/AGENTS.md",
+   "crates/schema/database/mysql_queries/CLAUDE.md",
+   "crates/schema/database/mysql_queries/AGENTS.md",
+   "crates/schema/public/enums/CLAUDE.md",
+   "crates/schema/public/enums/AGENTS.md"
+  ],
+  "big_rs": [],
+  "workflows": [
+   "docker-publish-cpu.yml"
+  ],
+  "license_files": [
+   "LICENSE.md"
+  ],
+  "license_head": [
+   "ArtCraft License (WIP)",
+   "======================",
+   ""
+  ],
+  "top_level": [
+   ".claude",
+   ".config",
+   ".dockerignore",
+   ".env",
+   ".git",
+   ".gitattributes",
+   ".github",
+   ".gitignore",
+   ".idea",
+   ".sqlx",
+   ".vscode",
+   "AGENTS.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "Cranky.toml",
+   "LICENSE.md",
+   "README.md",
+   "ROADMAP.md",
+   "_database",
+   "_docs",
+   "_metrics",
+   "_tools",
+   "build",
+   "crates",
+   "diesel.toml",
+   "docs",
+   "frontend",
+   "includes",
+   "old_assets",
+   "rustfmt.toml",
+   "script",
+   "secrets",
+   "test_data"
+  ]
+ },
+ {
+  "name": "artcraftx",
+  "last_commit": "98c2a48|2026-09-26 17:45:49 -0700|Brandon Thomas|Merge pull request #5 from storytold/faster-dev-script",
+  "files_total": 4182,
+  "loc": {
+   "rust": 244677,
+   "ts": 59199,
+   "json": 37320,
+   "toml": 1730,
+   "css": 1516,
+   "md": 1121,
+   "sh": 517,
+   "sql": 244,
+   "py": 144,
+   "html": 41,
+   "yaml": 33,
+   "js": 16
+  },
+  "files": {
+   "rust": 2956,
+   "ts": 623,
+   "json": 257,
+   "md": 53,
+   "toml": 43,
+   "css": 26,
+   "sh": 12,
+   "sql": 6,
+   "js": 2,
+   "yaml": 1,
+   "html": 1,
+   "py": 1
+  },
+  "rust_tests": 5913,
+  "unsafe_blocks": 2,
+  "todo_markers": 313,
+  "todo_macros": 3,
+  "cargo_tomls": 41,
+  "package_jsons": 47,
+  "key_deps": {
+   "tokio": 11,
+   "reqwest": 4,
+   "serde": 2,
+   "sqlx": 2,
+   "image": 2,
+   "tauri": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "crates/CLAUDE.md",
+   "crates/api_clients/artcraft_client/CLAUDE.md",
+   "crates/router/src/generate/generate_video/CLAUDE.md",
+   "crates/core_types/CLAUDE.md"
+  ],
+  "big_rs": [],
+  "workflows": [],
+  "license_files": [],
+  "license_head": "",
+  "top_level": [
+   ".git",
+   ".gitignore",
+   ".sqlx",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "Cranky.toml",
+   "README.md",
+   "crates",
+   "docs",
+   "frontend",
+   "rustfmt.toml",
+   "script"
+  ]
+ },
+ {
+  "name": "cadcraft",
+  "last_commit": "699dd1a|2026-10-11 04:26:39 -0400|Valentin Klein|IMPORT, EXPORT, Plot Preview and Batch Publish; ATTACH, SHARE, 3DORBIT say not available yet (part of #9) (#186)",
+  "files_total": 392,
+  "loc": {
+   "rust": 90690,
+   "md": 2702,
+   "yaml": 695,
+   "sh": 603,
+   "toml": 413,
+   "py": 158,
+   "json": 61,
+   "html": 19
+  },
+  "files": {
+   "rust": 283,
+   "md": 23,
+   "toml": 22,
+   "sh": 8,
+   "yaml": 5,
+   "py": 1,
+   "html": 1,
+   "json": 1
+  },
+  "rust_tests": 932,
+  "unsafe_blocks": 0,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 17,
+  "package_jsons": 0,
+  "key_deps": {
+   "serde": 8,
+   "egui": 4,
+   "eframe": 3,
+   "tiny-skia": 2,
+   "image": 2,
+   "rayon": 1,
+   "winit": 1,
+   "wasm-bindgen": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [],
+  "workflows": [
+   "packaging-lint.yml",
+   "release.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "examples",
+   "packaging",
+   "rustfmt.toml",
+   "xtask"
+  ]
+ },
+ {
+  "name": "cloud-worker",
+  "last_commit": "e375345|2026-08-06 20:08:03 -0400|Hanashi|SERVING-PLAN: per-output-second cost and pricing at all margins",
+  "files_total": 40,
+  "loc": {
+   "json": 4491,
+   "py": 1099,
+   "md": 918,
+   "sh": 180,
+   "yaml": 7
+  },
+  "files": {
+   "md": 7,
+   "py": 7,
+   "sh": 6,
+   "json": 3,
+   "yaml": 1
+  },
+  "rust_tests": 0,
+  "unsafe_blocks": 0,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 0,
+  "package_jsons": 0,
+  "key_deps": {},
+  "ai_files": [],
+  "big_rs": [],
+  "workflows": [],
+  "license_files": [],
+  "license_head": "",
+  "top_level": [
+   ".git",
+   ".gitignore",
+   "README.md",
+   "bench",
+   "comfyui",
+   "docs",
+   "install-comfy.sh",
+   "scripts"
+  ]
+ },
+ {
+  "name": "craft-fonts",
+  "last_commit": "3d9ab3a|2026-10-11 19:33:56 +0700|BFlat|Merge pull request #18 from storytold/fonts/noto-sans-thai",
+  "files_total": 31,
+  "loc": {
+   "rust": 605,
+   "md": 228,
+   "toml": 52,
+   "yaml": 28
+  },
+  "files": {
+   "rust": 5,
+   "toml": 4,
+   "md": 3,
+   "yaml": 1
+  },
+  "rust_tests": 13,
+  "unsafe_blocks": 0,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 3,
+  "package_jsons": 0,
+  "key_deps": {},
+  "ai_files": [],
+  "big_rs": [],
+  "workflows": [
+   "ci.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".git",
+   ".github",
+   ".gitignore",
+   "ATTRIBUTION.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "README.md",
+   "clippy.toml",
+   "crates",
+   "docs",
+   "fonts"
+  ]
+ },
+ {
+  "name": "craft-launcher",
+  "last_commit": "c1a9b36|2026-10-11 19:51:54 +0700|BFlat|macOS: open disk images reliably, and say why when they won't open; 0.2.1 (#135)",
+  "files_total": 174,
+  "loc": {
+   "rust": 18375,
+   "yaml": 1012,
+   "sh": 973,
+   "md": 634,
+   "toml": 241,
+   "html": 22
+  },
+  "files": {
+   "rust": 62,
+   "toml": 11,
+   "sh": 11,
+   "yaml": 8,
+   "md": 7,
+   "html": 1
+  },
+  "rust_tests": 230,
+  "unsafe_blocks": 0,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 7,
+  "package_jsons": 0,
+  "key_deps": {
+   "serde": 5,
+   "egui": 4,
+   "eframe": 3,
+   "image": 2,
+   "wasm-bindgen": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [],
+  "workflows": [
+   "ci.yml",
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml",
+   "windows-arm64.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "crates",
+   "docs",
+   "packaging",
+   "rustfmt.toml",
+   "xtask"
+  ]
+ },
+ {
+  "name": "craft-libs",
+  "last_commit": "af2b091|2026-10-10 18:38:14 -0600|skylar taylor-barrick|Merge pull request #6 from skylartaylor/codex/ui-suite-integration-20261010",
+  "files_total": 41,
+  "loc": {
+   "rust": 5688,
+   "md": 904,
+   "json": 270,
+   "toml": 53
+  },
+  "files": {
+   "rust": 21,
+   "md": 9,
+   "toml": 4,
+   "json": 1
+  },
+  "rust_tests": 81,
+  "unsafe_blocks": 0,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 2,
+  "package_jsons": 0,
+  "key_deps": {
+   "egui": 2,
+   "image": 1,
+   "serde": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [],
+  "workflows": [],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".git",
+   ".gitignore",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "clippy.toml",
+   "crates",
+   "docs",
+   "rustfmt.toml"
+  ]
+ },
+ {
+  "name": "craft-repo-status-app",
+  "last_commit": "0d4aad0|2026-10-10 12:50:24 -0400|Brandon Thomas|Merge pull request #2 from storytold/bt-add-launcher-figcraft",
+  "files_total": 48,
+  "loc": {
+   "rust": 3042,
+   "js": 493,
+   "md": 148,
+   "css": 139,
+   "toml": 124,
+   "html": 72,
+   "json": 64
+  },
+  "files": {
+   "rust": 11,
+   "toml": 5,
+   "js": 2,
+   "json": 2,
+   "md": 1,
+   "css": 1,
+   "html": 1
+  },
+  "rust_tests": 24,
+  "unsafe_blocks": 0,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 4,
+  "package_jsons": 0,
+  "key_deps": {
+   "serde": 1,
+   "reqwest": 1,
+   "tauri": 1
+  },
+  "ai_files": [],
+  "big_rs": [],
+  "workflows": [],
+  "license_files": [],
+  "license_head": "",
+  "top_level": [
+   ".git",
+   ".gitignore",
+   "Cargo.lock",
+   "Cargo.toml",
+   "Makefile",
+   "README.md",
+   "craft_status_config.template.toml",
+   "crates",
+   "docs",
+   "ui"
+  ]
+ },
+ {
+  "name": "deckcraft",
+  "last_commit": "a98df49|2026-10-10 19:51:07 -0400|Brandon Thomas|Release prep: 0.5.0 and Linux riscv64 release build (#102)",
+  "files_total": 392,
+  "loc": {
+   "rust": 116570,
+   "md": 2390,
+   "yaml": 858,
+   "sh": 692,
+   "toml": 680,
+   "json": 161,
+   "py": 158,
+   "html": 20
+  },
+  "files": {
+   "rust": 257,
+   "toml": 34,
+   "md": 21,
+   "sh": 10,
+   "yaml": 7,
+   "py": 1,
+   "html": 1,
+   "json": 1
+  },
+  "rust_tests": 506,
+  "unsafe_blocks": 0,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 28,
+  "package_jsons": 0,
+  "key_deps": {
+   "serde": 9,
+   "image": 6,
+   "rayon": 5,
+   "kurbo": 5,
+   "egui": 4,
+   "eframe": 3,
+   "zip": 3,
+   "quick-xml": 2,
+   "symphonia": 1,
+   "winit": 1,
+   "cpal": 1,
+   "wasm-bindgen": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [
+   [
+    "crates/av1/src/spec_tables.rs",
+    9195
+   ]
+  ],
+  "workflows": [
+   "ci.yml",
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "omastore.toml",
+   "packaging",
+   "rustfmt.toml",
+   "xtask"
+  ]
+ },
+ {
+  "name": "designcraft",
+  "last_commit": "16a7365|2026-10-10 19:46:47 -0600|skylar taylor-barrick|Merge pull request #409 from skylartaylor/codex/ui-suite-integration-20261010",
+  "files_total": 426,
+  "loc": {
+   "rust": 128105,
+   "md": 3254,
+   "yaml": 926,
+   "sh": 732,
+   "toml": 614,
+   "json": 235,
+   "py": 158,
+   "html": 19
+  },
+  "files": {
+   "rust": 280,
+   "toml": 26,
+   "md": 25,
+   "sh": 9,
+   "yaml": 7,
+   "py": 1,
+   "html": 1,
+   "json": 1
+  },
+  "rust_tests": 1156,
+  "unsafe_blocks": 0,
+  "todo_markers": 1,
+  "todo_macros": 0,
+  "cargo_tomls": 21,
+  "package_jsons": 0,
+  "key_deps": {
+   "serde": 10,
+   "kurbo": 6,
+   "zip": 6,
+   "image": 5,
+   "egui": 4,
+   "quick-xml": 4,
+   "eframe": 3,
+   "resvg": 2,
+   "rayon": 1,
+   "winit": 1,
+   "wasm-bindgen": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [
+   [
+    "crates/ui-egui/src/dialogs.rs",
+    4566
+   ],
+   [
+    "crates/ui-egui/src/menus.rs",
+    3500
+   ],
+   [
+    "crates/compose/src/lib.rs",
+    3217
+   ],
+   [
+    "crates/ui-egui/src/i18n.rs",
+    3052
+   ]
+  ],
+  "workflows": [
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml",
+   "windows-arm64.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   "AGENTS.md",
+   "ASSETS.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "packaging",
+   "rustfmt.toml",
+   "xtask"
+  ]
+ },
+ {
+  "name": "effectcraft",
+  "last_commit": "9a7d3e7|2026-10-10 20:10:35 -0600|skylar taylor-barrick|Merge pull request #689 from skylartaylor/codex/ui-suite-integration-20261010",
+  "files_total": 1016,
+  "loc": {
+   "rust": 338287,
+   "shader": 14793,
+   "md": 7173,
+   "js": 5376,
+   "toml": 1155,
+   "json": 911,
+   "yaml": 880,
+   "sh": 721,
+   "html": 111,
+   "py": 87
+  },
+  "files": {
+   "rust": 737,
+   "toml": 42,
+   "md": 41,
+   "shader": 28,
+   "js": 15,
+   "sh": 9,
+   "json": 8,
+   "yaml": 7,
+   "py": 1,
+   "html": 1
+  },
+  "rust_tests": 2854,
+  "unsafe_blocks": 2,
+  "todo_markers": 1,
+  "todo_macros": 0,
+  "cargo_tomls": 38,
+  "package_jsons": 0,
+  "key_deps": {
+   "serde": 14,
+   "rayon": 12,
+   "image": 10,
+   "kurbo": 9,
+   "egui": 4,
+   "eframe": 4,
+   "wgpu": 2,
+   "tiny-skia": 2,
+   "cpal": 2,
+   "wasm-bindgen": 2,
+   "winit": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [
+   [
+    "crates/av1enc/src/tables.rs",
+    4805
+   ],
+   [
+    "crates/ui-egui/src/i18n.rs",
+    4389
+   ],
+   [
+    "crates/ui-egui/src/panels/timeline.rs",
+    3908
+   ]
+  ],
+  "workflows": [
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml",
+   "windows-arm64.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   ".mcp.json",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "CLAUDE.md",
+   "CONTRIBUTING.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "examples",
+   "extensions",
+   "packaging",
+   "rustfmt.toml",
+   "xtask"
+  ]
+ },
+ {
+  "name": "filmcraft",
+  "last_commit": "4e2d0bc|2026-10-10 19:46:53 -0600|skylar taylor-barrick|Merge pull request #881 from skylartaylor/codex/ui-suite-integration-20261010",
+  "files_total": 1222,
+  "loc": {
+   "rust": 359980,
+   "md": 10089,
+   "toml": 1472,
+   "py": 1426,
+   "shader": 1332,
+   "json": 1081,
+   "yaml": 929,
+   "sh": 800,
+   "html": 95,
+   "js": 59
+  },
+  "files": {
+   "rust": 884,
+   "md": 63,
+   "toml": 54,
+   "sh": 10,
+   "py": 10,
+   "yaml": 7,
+   "shader": 5,
+   "json": 3,
+   "js": 1,
+   "html": 1
+  },
+  "rust_tests": 2792,
+  "unsafe_blocks": 184,
+  "todo_markers": 1,
+  "todo_macros": 0,
+  "cargo_tomls": 50,
+  "package_jsons": 0,
+  "key_deps": {
+   "serde": 18,
+   "rayon": 18,
+   "image": 8,
+   "egui": 4,
+   "eframe": 4,
+   "wgpu": 2,
+   "tokio": 2,
+   "zip": 1,
+   "symphonia": 1,
+   "winit": 1,
+   "cpal": 1,
+   "wasm-bindgen": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [
+   [
+    "crates/av1/src/spec_tables.rs",
+    8896
+   ],
+   [
+    "crates/engine/src/commands.rs",
+    3939
+   ]
+  ],
+  "workflows": [
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml",
+   "windows-arm64.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   ".mcp.json",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "CLAUDE.md",
+   "CONTRIBUTING.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "packaging",
+   "rustfmt.toml",
+   "xtask"
+  ]
+ },
+ {
+  "name": "gridcraft",
+  "last_commit": "9f896c1|2026-10-10 19:10:53 -0400|Brandon Thomas|Bump version to 0.5.0 for release (#227)",
+  "files_total": 312,
+  "loc": {
+   "rust": 81557,
+   "md": 3089,
+   "yaml": 1091,
+   "sh": 683,
+   "toml": 441,
+   "json": 239,
+   "py": 158,
+   "html": 19
+  },
+  "files": {
+   "rust": 187,
+   "md": 30,
+   "toml": 22,
+   "sh": 9,
+   "yaml": 8,
+   "py": 1,
+   "html": 1,
+   "json": 1
+  },
+  "rust_tests": 590,
+  "unsafe_blocks": 0,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 17,
+  "package_jsons": 0,
+  "key_deps": {
+   "serde": 7,
+   "egui": 4,
+   "image": 4,
+   "eframe": 3,
+   "zip": 3,
+   "quick-xml": 2,
+   "rayon": 1,
+   "wasm-bindgen": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [],
+  "workflows": [
+   "flatpak-pages.yml",
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml",
+   "windows-arm64.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "packaging",
+   "rustfmt.toml",
+   "xtask"
+  ]
+ },
+ {
+  "name": "lightcraft",
+  "last_commit": "0dd6593|2026-10-11 19:30:57 +0700|BFlat|Merge pull request #975: integration batch 26 (31 reviewed contributor PRs)",
+  "files_total": 723,
+  "loc": {
+   "rust": 195651,
+   "json": 26061,
+   "md": 7138,
+   "shader": 1504,
+   "toml": 981,
+   "yaml": 904,
+   "sh": 862,
+   "py": 534,
+   "html": 49,
+   "js": 15
+  },
+  "files": {
+   "rust": 498,
+   "md": 57,
+   "toml": 34,
+   "json": 24,
+   "sh": 10,
+   "shader": 9,
+   "yaml": 7,
+   "py": 5,
+   "js": 1,
+   "html": 1
+  },
+  "rust_tests": 2517,
+  "unsafe_blocks": 11,
+  "todo_markers": 2,
+  "todo_macros": 0,
+  "cargo_tomls": 29,
+  "package_jsons": 0,
+  "key_deps": {
+   "serde": 20,
+   "rayon": 11,
+   "egui": 4,
+   "image": 4,
+   "eframe": 3,
+   "wgpu": 2,
+   "wasm-bindgen": 2,
+   "quick-xml": 2
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [
+   [
+    "crates/ui-egui/src/headless.rs",
+    3503
+   ]
+  ],
+  "workflows": [
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml",
+   "windows-arm64.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   "AGENTS.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "flake.lock",
+   "flake.nix",
+   "nix",
+   "omastore.toml",
+   "packaging",
+   "rustfmt.toml",
+   "tools",
+   "xtask"
+  ]
+ },
+ {
+  "name": "pdfcraft",
+  "last_commit": "bbbe600|2026-10-11 01:15:23 -0400|Brandon Thomas|M10: Windows printing prints at actual size, off the UI thread (follow-up to #847) (#1007)",
+  "files_total": 753,
+  "loc": {
+   "rust": 173353,
+   "toml": 14408,
+   "md": 4598,
+   "json": 1426,
+   "yaml": 1121,
+   "html": 825,
+   "sh": 770,
+   "py": 158
+  },
+  "files": {
+   "rust": 352,
+   "md": 45,
+   "toml": 44,
+   "sh": 9,
+   "yaml": 9,
+   "json": 2,
+   "html": 2,
+   "py": 1
+  },
+  "rust_tests": 2161,
+  "unsafe_blocks": 0,
+  "todo_markers": 2,
+  "todo_macros": 0,
+  "cargo_tomls": 36,
+  "package_jsons": 0,
+  "key_deps": {
+   "image": 6,
+   "egui": 4,
+   "eframe": 4,
+   "serde": 4,
+   "lopdf": 3,
+   "kurbo": 2,
+   "winit": 1,
+   "wasm-bindgen": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [
+   [
+    "crates/render/src/raster.rs",
+    4902
+   ],
+   [
+    "crates/ui-egui/src/canvas.rs",
+    4313
+   ],
+   [
+    "crates/automation/tests/automation.rs",
+    3919
+   ],
+   [
+    "crates/engine/src/lib.rs",
+    3469
+   ]
+  ],
+  "workflows": [
+   "ci.yml",
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml",
+   "windows-arm64.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".gitattributes",
+   ".github",
+   ".gitignore",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "ATTRIBUTION.toml",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "deny.toml",
+   "docs",
+   "packaging",
+   "parity",
+   "rustfmt.toml",
+   "vendor",
+   "xtask"
+  ]
+ },
+ {
+  "name": "photocraft",
+  "last_commit": "10fb923|2026-10-11 09:03:11 -0400|David Mann|Tools: wire Enable Flick Panning for the Hand tool (#204) (#2964)",
+  "files_total": 1534,
+  "loc": {
+   "rust": 435969,
+   "md": 9238,
+   "json": 3155,
+   "toml": 3100,
+   "yaml": 1330,
+   "shader": 1253,
+   "sh": 1037,
+   "py": 275,
+   "html": 30
+  },
+  "files": {
+   "rust": 1113,
+   "md": 92,
+   "toml": 52,
+   "sh": 13,
+   "yaml": 11,
+   "json": 3,
+   "py": 2,
+   "shader": 1,
+   "html": 1
+  },
+  "rust_tests": 6202,
+  "unsafe_blocks": 4,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 36,
+  "package_jsons": 0,
+  "key_deps": {
+   "serde": 14,
+   "rayon": 10,
+   "egui": 4,
+   "eframe": 4,
+   "image": 3,
+   "tokio": 2,
+   "wgpu": 1,
+   "resvg": 1,
+   "winit": 1,
+   "wasm-bindgen": 1
+  },
+  "ai_files": [
+   "AGENTS.md"
+  ],
+  "big_rs": [
+   [
+    "crates/ui-egui/src/canvas.rs",
+    6632
+   ],
+   [
+    "crates/ui-egui/src/panels.rs",
+    5134
+   ],
+   [
+    "crates/ui-egui/src/transform_tool.rs",
+    3895
+   ],
+   [
+    "crates/ui-egui/src/prefs_ui.rs",
+    3096
+   ]
+  ],
+  "workflows": [
+   "ci.yml",
+   "docs.yml",
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "perf-nightly.yml",
+   "release.yml",
+   "windows-arm64.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".config",
+   ".dockerignore",
+   ".git",
+   ".git-blame-ignore-revs",
+   ".github",
+   ".gitignore",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "Dockerfile",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "SECURITY.md",
+   "apps",
+   "assets",
+   "book",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "examples",
+   "packaging",
+   "perf",
+   "rustfmt.toml",
+   "scorecard",
+   "scripts",
+   "xtask"
+  ]
+ },
+ {
+  "name": "photocraft-corpus",
+  "last_commit": "b2e1dcb|2026-10-07 14:45:46 -0400|Brandon Thomas|Rename PrintCraft to PdfCraft (storytold/pdfcraft) (#1)",
+  "files_total": 278,
+  "loc": {
+   "js": 1156,
+   "md": 432,
+   "sh": 32
+  },
+  "files": {
+   "js": 3,
+   "md": 2,
+   "sh": 2
+  },
+  "rust_tests": 0,
+  "unsafe_blocks": 0,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 0,
+  "package_jsons": 0,
+  "key_deps": {},
+  "ai_files": [
+   "AGENTS.md"
+  ],
+  "big_rs": [],
+  "workflows": [],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".git",
+   "AGENTS.md",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "SHA256SUMS",
+   "docs",
+   "photoshop",
+   "tools"
+  ]
+ },
+ {
+  "name": "soundcraft",
+  "last_commit": "7414719|2026-10-10 19:47:00 -0600|skylar taylor-barrick|Merge pull request #167 from skylartaylor/codex/ui-suite-integration-20261010",
+  "files_total": 344,
+  "loc": {
+   "rust": 72359,
+   "md": 2370,
+   "yaml": 902,
+   "sh": 679,
+   "toml": 630,
+   "json": 213,
+   "py": 158,
+   "html": 41
+  },
+  "files": {
+   "rust": 221,
+   "toml": 26,
+   "md": 23,
+   "sh": 9,
+   "yaml": 7,
+   "py": 1,
+   "html": 1,
+   "json": 1
+  },
+  "rust_tests": 549,
+  "unsafe_blocks": 361,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 21,
+  "package_jsons": 0,
+  "key_deps": {
+   "eframe": 3,
+   "egui": 2,
+   "image": 2,
+   "rayon": 2,
+   "cpal": 2,
+   "serde": 1,
+   "symphonia": 1,
+   "wasm-bindgen": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [],
+  "workflows": [
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml",
+   "windows-arm64.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "packaging",
+   "rustfmt.toml",
+   "xtask"
+  ]
+ },
+ {
+  "name": "vectorcraft",
+  "last_commit": "434b47d|2026-10-11 20:07:03 +0700|BFlat|Merge pull request #1195 from storytold/fix/thai-word-navigation",
+  "files_total": 1541,
+  "loc": {
+   "rust": 377378,
+   "md": 7827,
+   "yaml": 1032,
+   "toml": 1029,
+   "json": 800,
+   "sh": 728,
+   "py": 136,
+   "html": 19
+  },
+  "files": {
+   "rust": 1098,
+   "toml": 35,
+   "md": 31,
+   "sh": 10,
+   "yaml": 9,
+   "py": 1,
+   "html": 1,
+   "json": 1
+  },
+  "rust_tests": 5321,
+  "unsafe_blocks": 14,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 30,
+  "package_jsons": 0,
+  "key_deps": {
+   "kurbo": 17,
+   "image": 16,
+   "serde": 13,
+   "egui": 4,
+   "eframe": 3,
+   "usvg": 2,
+   "resvg": 1,
+   "wasm-bindgen": 1,
+   "wgpu": 1,
+   "winit": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [
+   [
+    "crates/ui-egui/src/menus.rs",
+    4077
+   ],
+   [
+    "crates/ui-egui/src/canvas.rs",
+    3777
+   ]
+  ],
+  "workflows": [
+   "affinity-corpus.yml",
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml",
+   "windows-arm64.yml",
+   "windows7.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   "AGENTS.md",
+   "ASSETS.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "examples",
+   "packaging",
+   "rustfmt.toml",
+   "vendor",
+   "xtask"
+  ]
+ },
+ {
+  "name": "wordcraft",
+  "last_commit": "1d4f741|2026-10-11 01:55:01 -0400|Valentin Klein|Citations: eight more bibliography styles (#383) (#388)",
+  "files_total": 356,
+  "loc": {
+   "rust": 114170,
+   "md": 2111,
+   "yaml": 926,
+   "sh": 619,
+   "toml": 607,
+   "json": 161,
+   "py": 158,
+   "html": 19
+  },
+  "files": {
+   "rust": 212,
+   "toml": 26,
+   "md": 23,
+   "sh": 8,
+   "yaml": 7,
+   "py": 1,
+   "html": 1,
+   "json": 1
+  },
+  "rust_tests": 1097,
+  "unsafe_blocks": 0,
+  "todo_markers": 0,
+  "todo_macros": 0,
+  "cargo_tomls": 21,
+  "package_jsons": 0,
+  "key_deps": {
+   "image": 7,
+   "serde": 6,
+   "egui": 4,
+   "kurbo": 4,
+   "zip": 4,
+   "eframe": 3,
+   "quick-xml": 3,
+   "rayon": 1,
+   "wasm-bindgen": 1
+  },
+  "ai_files": [
+   "CLAUDE.md",
+   "AGENTS.md"
+  ],
+  "big_rs": [
+   [
+    "crates/formats/src/latex.rs",
+    3045
+   ]
+  ],
+  "workflows": [
+   "freebsd.yml",
+   "packaging-lint.yml",
+   "release.yml",
+   "windows-arm64.yml"
+  ],
+  "license_files": [
+   "LICENSE-APACHE",
+   "LICENSE-MIT"
+  ],
+  "license_head": [
+   "",
+   "                                 Apache License",
+   "                           Version 2.0, January 2004"
+  ],
+  "top_level": [
+   ".cargo",
+   ".git",
+   ".github",
+   ".gitignore",
+   ".shellcheckrc",
+   "AGENTS.md",
+   "ATTRIBUTION.md",
+   "CLAUDE.md",
+   "Cargo.lock",
+   "Cargo.toml",
+   "LICENSE-APACHE",
+   "LICENSE-MIT",
+   "NOTICE",
+   "README.md",
+   "ROADMAP.md",
+   "apps",
+   "assets",
+   "clippy.toml",
+   "contributors",
+   "crates",
+   "docs",
+   "packaging",
+   "rustfmt.toml",
+   "xtask"
+  ]
+ }
+]
