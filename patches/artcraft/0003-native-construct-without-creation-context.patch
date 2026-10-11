@@ -1,0 +1,28 @@
+diff --git a/upstream/artcraft/artcraft-native/src/app.rs b/upstream/artcraft/artcraft-native/src/app.rs
+index 845fd96..9f09635 100644
+--- a/upstream/artcraft/artcraft-native/src/app.rs
++++ b/upstream/artcraft/artcraft-native/src/app.rs
+@@ -112,13 +112,19 @@ pub struct ArtcraftApp {
+ 
+ impl ArtcraftApp {
+   pub fn new(cc: &eframe::CreationContext<'_>) -> Self {
+-    theme::apply(&cc.egui_ctx);
+-    egui_extras::install_image_loaders(&cc.egui_ctx);
+-    let mut saved: Saved = cc.storage.and_then(|s| eframe::get_value(s, STORAGE_KEY)).unwrap_or_default();
++    Self::from_parts(&cc.egui_ctx, cc.storage)
++  }
++
++  /// What `new` needs from the creation context, for hosts that create the app after start-up
++  /// (Craft Studio opens it in an existing window, where no `CreationContext` exists).
++  pub fn from_parts(ctx: &egui::Context, storage: Option<&dyn eframe::Storage>) -> Self {
++    theme::apply(ctx);
++    egui_extras::install_image_loaders(ctx);
++    let mut saved: Saved = storage.and_then(|s| eframe::get_value(s, STORAGE_KEY)).unwrap_or_default();
+     if let Some(page) = std::env::var("ARTCRAFT_PAGE").ok().and_then(|p| Page::from_slug(&p)) {
+       saved.page = page;
+     }
+-    let backend = Backend::new(cc.egui_ctx.clone());
++    let backend = Backend::new(ctx.clone());
+     let cache = MediaCache::new(backend.runtime(), backend.http());
+     let player = AudioPlayer::new(backend.runtime(), backend.http());
+     for modality in MODALITIES {

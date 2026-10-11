@@ -52,12 +52,13 @@ fix_lockfiles() {
 
 sync_vendor() {
   local name=$1 branch=$2 exclude=$3 url=$4 clone="$CACHE/$1" dest="upstream/$1" sha
-  local pathspec=(.)
+  local pathspec=(.) keep=()
   if [[ "$exclude" != "-" ]]; then
     IFS=',' read -ra paths <<< "$exclude"
     for p in "${paths[@]}"; do
       [[ "$p" == /* || "$p" == *..* ]] && { echo "invalid exclude path for $name: $p" >&2; exit 1; }
-      pathspec+=(":(exclude)$p")
+      # "!path" keeps a path inside an excluded one (assets other parts still use).
+      if [[ "$p" == '!'* ]]; then keep+=("${p#!}"); else pathspec+=(":(exclude)$p"); fi
     done
   fi
 
@@ -72,7 +73,10 @@ sync_vendor() {
   rm -rf -- "$dest"
   mkdir -p "$dest"
   # Tracked files only: no .git, no local build output, symlinks and modes preserved.
-  (cd "$clone" && git ls-files -z -- "${pathspec[@]}") | tar -C "$clone" --null -T - -cf - | tar -C "$dest" -xf -
+  {
+    (cd "$clone" && git ls-files -z -- "${pathspec[@]}")
+    if ((${#keep[@]})); then (cd "$clone" && git ls-files -z -- "${keep[@]}"); fi
+  } | sort -zu | tar -C "$clone" --null -T - -cf - | tar -C "$dest" -xf -
   update_lock "$name" vendor "$sha" "$url"
   echo "vendor     $name @ ${sha:0:12}"
   apply_patches "$name"
