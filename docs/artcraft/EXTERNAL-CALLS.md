@@ -4,6 +4,8 @@
 > Inventaire brut : [`external-calls.inventory.json`](./external-calls.inventory.json), régénéré par `python3 -I scripts/audit-external-calls.py`.
 > « Statut estimé » = atteignabilité depuis le binaire livré + conditions d'activation (flags, CSP, config, features Cargo). Non confirmé par capture réseau.
 
+> **Mise à jour.** L'app Tauri + React d'`artcraft` (sondes 1 à 5 ci-dessous) n'est plus vendorisée dans ce repo (`upstream/repos.conf`). Les constats restent valables pour l'upstream et pour `artcraftx` (submodule). [Craft Studio](../craft-studio.md) n'embarque d'ArtCraft que `artcraft-native` : aucune sonde, seulement l'API de génération quand un compte est connecté.
+
 ## Synthèse
 
 | Périmètre                         | Télémétrie                                                         | Autres envois externes                                      |
