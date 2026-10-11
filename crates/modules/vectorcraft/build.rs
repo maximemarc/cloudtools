@@ -1,1 +1,3 @@
-fn main() { studio_overlay::build("vectorcraft/apps/vectorcraft"); }
+fn main() {
+    studio_overlay::build("vectorcraft/apps/vectorcraft");
+}

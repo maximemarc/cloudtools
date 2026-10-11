@@ -1,1 +1,3 @@
-fn main() { studio_overlay::build("gridcraft/apps/gridcraft"); }
+fn main() {
+    studio_overlay::build("gridcraft/apps/gridcraft");
+}

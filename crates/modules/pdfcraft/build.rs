@@ -1,1 +1,3 @@
-fn main() { studio_overlay::build("pdfcraft/apps/pdfcraft"); }
+fn main() {
+    studio_overlay::build("pdfcraft/apps/pdfcraft");
+}

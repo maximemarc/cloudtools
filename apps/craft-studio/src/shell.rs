@@ -215,7 +215,13 @@ impl Studio {
         let text = ui.visuals().strong_text_color();
         let x = tile.right() + 14.0;
         painter.text(egui::pos2(x, rect.top() + 20.0), egui::Align2::LEFT_TOP, slot.module.info.name, egui::FontId::proportional(17.0), text);
-        painter.text(egui::pos2(x, rect.top() + 44.0), egui::Align2::LEFT_TOP, slot.module.info.summary, egui::FontId::proportional(13.0), ui.visuals().weak_text_color());
+        painter.text(
+            egui::pos2(x, rect.top() + 44.0),
+            egui::Align2::LEFT_TOP,
+            slot.module.info.summary,
+            egui::FontId::proportional(13.0),
+            ui.visuals().weak_text_color(),
+        );
         let state = if slot.app.is_some() { "Running · click to switch" } else { "Click to open" };
         painter.text(egui::pos2(x, rect.bottom() - 18.0), egui::Align2::LEFT_CENTER, state, egui::FontId::proportional(12.0), accent);
         response.on_hover_cursor(egui::CursorIcon::PointingHand)

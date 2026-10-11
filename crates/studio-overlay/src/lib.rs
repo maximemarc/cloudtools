@@ -45,8 +45,7 @@ pub fn generate(overlay: &Overlay) -> io::Result<PathBuf> {
         let out = overlay.out_dir.join(rel);
         let text = fs::read_to_string(file)?;
         let is_root = rel == Path::new("main.rs");
-        let rewritten = rewrite(&text, file, &src, overlay, &package, is_root)
-            .map_err(|e| io::Error::other(format!("{}: {e}", file.display())))?;
+        let rewritten = rewrite(&text, file, &src, overlay, &package, is_root).map_err(|e| io::Error::other(format!("{}: {e}", file.display())))?;
         if let Some(dir) = out.parent() {
             fs::create_dir_all(dir)?;
         }
@@ -170,7 +169,12 @@ fn rewrite(text: &str, file: &Path, src_root: &Path, overlay: &Overlay, package:
 
 fn item_start(item: &syn::Item) -> Span {
     match item {
-        syn::Item::Fn(f) => f.attrs.first().map(|a| a.pound_token.span).unwrap_or_else(|| first_token(&f.vis, f.sig.constness.map(|t| t.span).or(f.sig.asyncness.map(|t| t.span)).or(f.sig.unsafety.map(|t| t.span)).unwrap_or(f.sig.fn_token.span))),
+        syn::Item::Fn(f) => f.attrs.first().map(|a| a.pound_token.span).unwrap_or_else(|| {
+            first_token(
+                &f.vis,
+                f.sig.constness.map(|t| t.span).or(f.sig.asyncness.map(|t| t.span)).or(f.sig.unsafety.map(|t| t.span)).unwrap_or(f.sig.fn_token.span),
+            )
+        }),
         syn::Item::Mod(m) => m.attrs.first().map(|a| a.pound_token.span).unwrap_or_else(|| first_token(&m.vis, m.mod_token.span)),
         _ => item.span(),
     }
@@ -207,10 +211,8 @@ fn is_test_module(item: &syn::Item) -> bool {
 /// `fn main` keeps its inner rewrites) are dropped first; other overlaps are skipped.
 fn apply(text: &str, edits: Vec<Edit>) -> Result<String, String> {
     let removals: Vec<(usize, usize)> = edits.iter().filter(|e| e.text.is_empty() && e.end > e.start).map(|e| (e.start, e.end)).collect();
-    let mut edits: Vec<Edit> = edits
-        .into_iter()
-        .filter(|e| !removals.iter().any(|&(s, end)| (s, end) != (e.start, e.end) && s <= e.start && e.end <= end))
-        .collect();
+    let mut edits: Vec<Edit> =
+        edits.into_iter().filter(|e| !removals.iter().any(|&(s, end)| (s, end) != (e.start, e.end) && s <= e.start && e.end <= end)).collect();
     edits.sort_by(|a, b| b.start.cmp(&a.start).then(b.end.cmp(&a.end)));
     let mut out = text.to_string();
     let mut floor = usize::MAX;

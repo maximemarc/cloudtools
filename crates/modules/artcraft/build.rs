@@ -1,1 +1,3 @@
-fn main() { studio_overlay::build("artcraft/artcraft-native"); }
+fn main() {
+    studio_overlay::build("artcraft/artcraft-native");
+}

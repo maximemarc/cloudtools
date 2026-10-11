@@ -7,6 +7,12 @@ mod upstream {
 }
 
 pub const MODULE: studio_core::Module = studio_core::Module {
-    info: studio_core::ModuleInfo { id: "effectcraft", name: "EffectCraft", monogram: "Ef", summary: "Motion graphics and visual effects", accent: [0x7c, 0x6c, 0xff] },
+    info: studio_core::ModuleInfo {
+        id: "effectcraft",
+        name: "EffectCraft",
+        monogram: "Ef",
+        summary: "Motion graphics and visual effects",
+        accent: [0x7c, 0x6c, 0xff],
+    },
     create: upstream::studio::create,
 };

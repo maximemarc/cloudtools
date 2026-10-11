@@ -1,1 +1,3 @@
-fn main() { studio_overlay::build("deckcraft/apps/deckcraft"); }
+fn main() {
+    studio_overlay::build("deckcraft/apps/deckcraft");
+}

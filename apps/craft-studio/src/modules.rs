@@ -1,6 +1,8 @@
 //! The apps compiled into this build: one Cargo feature per app, all on by default
 //! (`cargo run -p craft-studio --no-default-features --features photocraft,pdfcraft`).
 
+// One push per enabled feature, so no `vec![]`.
+#[allow(clippy::vec_init_then_push)]
 pub fn all() -> Vec<studio_core::Module> {
     #[allow(unused_mut)]
     let mut modules = Vec::new();

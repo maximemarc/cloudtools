@@ -7,6 +7,12 @@ mod upstream {
 }
 
 pub const MODULE: studio_core::Module = studio_core::Module {
-    info: studio_core::ModuleInfo { id: "soundcraft", name: "SoundCraft", monogram: "So", summary: "Recording, editing and mixing audio", accent: [0xc0, 0x8a, 0x2e] },
+    info: studio_core::ModuleInfo {
+        id: "soundcraft",
+        name: "SoundCraft",
+        monogram: "So",
+        summary: "Recording, editing and mixing audio",
+        accent: [0xc0, 0x8a, 0x2e],
+    },
     create: upstream::studio::create,
 };

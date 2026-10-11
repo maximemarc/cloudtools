@@ -64,8 +64,7 @@ pub(crate) fn create(_ctx: &egui::Context, frame: &mut eframe::Frame) -> Result<
             .map(|p| p.to_string_lossy().to_string())
     }));
     app.hooks.pick_folder = Some(Box::new(|| rfd::FileDialog::new().pick_folder().map(|p| p.to_string_lossy().to_string())));
-    app.hooks.pick_folder_at =
-        Some(Box::new(|dir: &str| rfd::FileDialog::new().set_directory(dir).pick_folder().map(|p| p.to_string_lossy().into_owned())));
+    app.hooks.pick_folder_at = Some(Box::new(|dir: &str| rfd::FileDialog::new().set_directory(dir).pick_folder().map(|p| p.to_string_lossy().into_owned())));
     app.hooks.open_path = Some(Box::new(open_path));
     app.hooks.open_url = Some(Box::new(|url: &str| open::that_detached(url).map_err(|e| e.to_string())));
     app.hooks.clipboard_media = Some(Box::new(clipboard_media));

@@ -1,1 +1,3 @@
-fn main() { studio_overlay::build("cadcraft/apps/cadcraft"); }
+fn main() {
+    studio_overlay::build("cadcraft/apps/cadcraft");
+}

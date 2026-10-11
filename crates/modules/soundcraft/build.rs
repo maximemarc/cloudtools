@@ -1,1 +1,3 @@
-fn main() { studio_overlay::build("soundcraft/apps/soundcraft"); }
+fn main() {
+    studio_overlay::build("soundcraft/apps/soundcraft");
+}

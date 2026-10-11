@@ -1,1 +1,3 @@
-fn main() { studio_overlay::build("filmcraft/apps/filmcraft"); }
+fn main() {
+    studio_overlay::build("filmcraft/apps/filmcraft");
+}

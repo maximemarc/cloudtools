@@ -7,6 +7,12 @@ mod upstream {
 }
 
 pub const MODULE: studio_core::Module = studio_core::Module {
-    info: studio_core::ModuleInfo { id: "photocraft", name: "PhotoCraft", monogram: "Ph", summary: "Image editing, layers and PSD", accent: [0x31, 0xa8, 0xff] },
+    info: studio_core::ModuleInfo {
+        id: "photocraft",
+        name: "PhotoCraft",
+        monogram: "Ph",
+        summary: "Image editing, layers and PSD",
+        accent: [0x31, 0xa8, 0xff],
+    },
     create: upstream::studio::create,
 };

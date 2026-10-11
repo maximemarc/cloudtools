@@ -7,6 +7,12 @@ mod upstream {
 }
 
 pub const MODULE: studio_core::Module = studio_core::Module {
-    info: studio_core::ModuleInfo { id: "cadcraft", name: "CADCraft", monogram: "Ca", summary: "Computer-aided design and drafting", accent: [0xc8, 0x3a, 0x3a] },
+    info: studio_core::ModuleInfo {
+        id: "cadcraft",
+        name: "CADCraft",
+        monogram: "Ca",
+        summary: "Computer-aided design and drafting",
+        accent: [0xc8, 0x3a, 0x3a],
+    },
     create: upstream::studio::create,
 };

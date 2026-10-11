@@ -7,6 +7,12 @@ mod upstream {
 }
 
 pub const MODULE: studio_core::Module = studio_core::Module {
-    info: studio_core::ModuleInfo { id: "artcraft", name: "ArtCraft", monogram: "Ar", summary: "AI image, video and audio generation", accent: [0x3d, 0x6b, 0xff] },
+    info: studio_core::ModuleInfo {
+        id: "artcraft",
+        name: "ArtCraft",
+        monogram: "Ar",
+        summary: "AI image, video and audio generation",
+        accent: [0x3d, 0x6b, 0xff],
+    },
     create: upstream::studio::create,
 };
