@@ -25,6 +25,11 @@ env:
   CARGO_INCREMENTAL: 0
   CARGO_NET_RETRY: 10
   RUST_BACKTRACE: 1
+  # Compiled crates are cached by sccache (rustc, and the C compilers cc-rs runs) in the Actions
+  # cache. It keys on content, so it also reuses the upstream crates: Cargo rebuilds path crates
+  # after every fresh checkout (new mtimes), which makes a cached target directory useless for them.
+  SCCACHE_GHA_ENABLED: "true"
+  RUSTC_WRAPPER: sccache
 
 defaults:
   run:
@@ -75,12 +80,20 @@ jobs:
 
       - uses: dtolnay/rust-toolchain@stable
 
+      - uses: mozilla-actions/sccache-action@v0.0.11
+
+      # The registry and git checkouts only; sccache has the compiled crates.
       - uses: Swatinem/rust-cache@v2
         with:
-          cache-on-failure: true
+          prefix-key: v1-rust
+          cache-targets: false
 
       - name: Build
         run: cargo build --release --locked -p craft-studio
+
+      - name: Compiler cache
+        if: always()
+        run: sccache --show-stats
 
       - name: Command line
         run: |
