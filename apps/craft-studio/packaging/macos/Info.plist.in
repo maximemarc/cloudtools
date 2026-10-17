@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Template: ../package.sh substitutes @VERSION@ (e.g. 0.2.0-rc.1) and @SHORT_VERSION@ (X.Y.Z). -->
+<plist version="1.0">
+<dict>
+  <key>CFBundleDevelopmentRegion</key>
+  <string>en</string>
+  <key>CFBundleDisplayName</key>
+  <string>Craft Studio</string>
+  <key>CFBundleName</key>
+  <string>Craft Studio</string>
+  <key>CFBundleExecutable</key>
+  <string>craft-studio</string>
+  <key>CFBundleIdentifier</key>
+  <string>io.github.maximemarc.craft-studio</string>
+  <key>CFBundleInfoDictionaryVersion</key>
+  <string>6.0</string>
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+  <key>CFBundleShortVersionString</key>
+  <string>@SHORT_VERSION@</string>
+  <key>CFBundleVersion</key>
+  <string>@VERSION@</string>
+  <key>CFBundleIconFile</key>
+  <string>craft-studio</string>
+  <key>LSApplicationCategoryType</key>
+  <string>public.app-category.graphics-design</string>
+  <!-- The default deployment target of aarch64-apple-darwin; the Craft apps target it too. -->
+  <key>LSMinimumSystemVersion</key>
+  <string>11.0</string>
+  <key>NSHighResolutionCapable</key>
+  <true/>
+  <key>NSSupportsAutomaticGraphicsSwitching</key>
+  <true/>
+  <key>NSRequiresAquaSystemAppearance</key>
+  <false/>
+  <!-- SoundCraft records from the input you choose, FilmCraft records voice-over. -->
+  <key>NSMicrophoneUsageDescription</key>
+  <string>SoundCraft and FilmCraft record audio from the microphone you choose.</string>
+  <key>NSHumanReadableCopyright</key>
+  <string>The cloudtools contributors and the Craft app authors. MIT OR Apache-2.0.</string>
+</dict>
+</plist>

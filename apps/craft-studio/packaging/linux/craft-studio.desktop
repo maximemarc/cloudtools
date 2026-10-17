@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Craft Studio
+GenericName=Creative Suite
+Comment=Image, photo, video, vector, layout, PDF, writing, spreadsheet, slide, CAD and audio apps in one window
+Exec=craft-studio
+TryExec=craft-studio
+Icon=craft-studio
+Terminal=false
+# winit does not complete startup-notification handshakes.
+StartupNotify=false
+StartupWMClass=craft-studio
+Categories=Graphics;AudioVideo;Office;
+Keywords=photo;image;video;vector;layout;pdf;document;spreadsheet;presentation;cad;audio;

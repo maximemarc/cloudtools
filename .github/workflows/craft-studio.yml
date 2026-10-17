@@ -4,6 +4,10 @@
 # fails if an app fails to start or panics). The runners have no GPU: Linux renders under Xvfb with
 # Mesa's software drivers, macOS on the paravirtual Metal device, Windows on WARP (DirectX 12 on the
 # CPU, where EffectCraft's GPU compositor falls back to the CPU, as upstream expects).
+#
+# A v* tag also packages each build (apps/craft-studio/packaging/package.sh) and publishes the
+# packages on a GitHub release. "Run workflow" packages without releasing (the packages-<OS>
+# artifacts), to try the installers before tagging.
 name: Craft Studio
 
 on:
@@ -42,11 +46,14 @@ jobs:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
     runs-on: ${{ matrix.os }}
     timeout-minutes: 240
+    env:
+      PACKAGE: ${{ startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch' }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - { name: Linux, os: ubuntu-24.04 }
+          # The oldest supported Ubuntu: the binary and the .deb need its glibc (2.35) or newer.
+          - { name: Linux, os: ubuntu-22.04 }
           - { name: macOS, os: macos-15 }
           - { name: Windows, os: windows-2025 }
     steps:
@@ -120,3 +127,68 @@ jobs:
           path: smoke/
           if-no-files-found: warn
           retention-days: 14
+
+      - name: Install cargo-deb
+        if: env.PACKAGE == 'true' && runner.os == 'Linux'
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-deb
+
+      - name: Install Inno Setup
+        if: env.PACKAGE == 'true' && runner.os == 'Windows'
+        run: |
+          if ! command -v iscc > /dev/null && [ ! -x "/c/Program Files (x86)/Inno Setup 6/ISCC.exe" ]; then
+            choco install innosetup --no-progress -y
+          fi
+
+      - name: Package
+        if: env.PACKAGE == 'true'
+        run: apps/craft-studio/packaging/package.sh dist
+
+      - name: Upload packages
+        if: env.PACKAGE == 'true'
+        uses: actions/upload-artifact@v6
+        with:
+          name: packages-${{ runner.os }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+
+  release:
+    name: Release
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@v7
+        with:
+          pattern: packages-*
+          merge-multiple: true
+          path: dist
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          version=$(python3 -c "import tomllib; print(tomllib.load(open('Cargo.toml', 'rb'))['workspace']['package']['version'])")
+          if [ "$TAG" != "v$version" ]; then
+            echo "::error::tag $TAG does not match the workspace version $version (Cargo.toml)"
+            exit 1
+          fi
+          (cd dist && sha256sum -- * > SHA256SUMS && cat SHA256SUMS)
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            gh release upload "$TAG" dist/* --clobber --repo "$GITHUB_REPOSITORY"
+          else
+            prerelease=()
+            [[ "$version" == *-* ]] && prerelease=(--prerelease)
+            gh release create "$TAG" dist/* --repo "$GITHUB_REPOSITORY" --verify-tag "${prerelease[@]}" \
+              --title "Craft Studio $version" --notes-file apps/craft-studio/packaging/release-notes.md
+          fi

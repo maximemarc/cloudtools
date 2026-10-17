@@ -51,6 +51,20 @@ CRAFT_FONTS_DIR="$PWD/upstream/craft-fonts" cargo build --release -p craft-studi
 `RUST_LOG=debug` raises the log level. Settings, recovery files and libraries live where each
 standalone app keeps them, so the Studio and the standalone apps share them.
 
+## Packages
+
+`apps/craft-studio/packaging/package.sh <dir>` packages a release build for the OS it runs on:
+a `.deb` (cargo-deb) and a `.tar.gz` on Linux, a `.dmg` holding an ad-hoc signed `Craft Studio.app`
+on macOS, an Inno Setup installer and a portable `.zip` on Windows. Each carries `LICENSE-MIT`,
+`LICENSE-APACHE` and `THIRD-PARTY-LICENSES.txt` (`scripts/third-party-licenses.py`: the upstream
+repos and every crate the build compiles for that target). The icon is drawn in code
+(`src/icon.rs`); `cargo run --release -p craft-studio --example icons -- <dir>` exports it.
+
+CI packages on `v*` tags and on "Run workflow", and a tag publishes the packages on a GitHub
+release with `SHA256SUMS`. Linux builds on Ubuntu 22.04, so the packages run on glibc 2.35 or
+newer. Not done: code signing and notarization (they need publisher certificates), Intel Macs,
+Windows on Arm.
+
 ## How it is built
 
 ```text

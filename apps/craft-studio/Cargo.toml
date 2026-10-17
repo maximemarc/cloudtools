@@ -31,7 +31,7 @@ soundcraft = ["dep:studio-soundcraft"]
 eframe = { version = "0.36", default-features = false, features = ["default_fonts", "wgpu", "accesskit", "wayland", "x11", "persistence", "links"] }
 egui = "0.36"
 env_logger = "0.11"
-image = { version = "0.25", default-features = false, features = ["png"] }
+image = { version = "0.25", default-features = false, features = ["png", "ico"] }
 log = "0.4"
 studio-core = { path = "../../crates/studio-core" }
 studio-artcraft = { path = "../../crates/modules/artcraft", optional = true }
@@ -47,3 +47,29 @@ studio-gridcraft = { path = "../../crates/modules/gridcraft", optional = true }
 studio-cadcraft = { path = "../../crates/modules/cadcraft", optional = true }
 studio-deckcraft = { path = "../../crates/modules/deckcraft", optional = true }
 studio-soundcraft = { path = "../../crates/modules/soundcraft", optional = true }
+
+# `cargo deb --no-build` in packaging/package.sh, which writes target/release/package first.
+[package.metadata.deb]
+name = "craft-studio"
+maintainer = "maximemarc <maximemarc@users.noreply.github.com>"
+copyright = "the cloudtools contributors and the Craft app authors (github.com/storytold)"
+extended-description = """\
+Every Craft app in one window: ArtCraft, PhotoCraft, LightCraft, FilmCraft, EffectCraft, \
+VectorCraft, DesignCraft, PdfCraft, WordCraft, GridCraft, DeckCraft, CADCraft and SoundCraft."""
+section = "graphics"
+priority = "optional"
+depends = "$auto"
+# wgpu and winit load these at run time (Vulkan, or GL through EGL; keyboard layouts on X11).
+recommends = "libvulkan1, mesa-vulkan-drivers, libegl1, libxkbcommon-x11-0"
+assets = [
+    ["target/release/craft-studio", "usr/bin/", "755"],
+    ["packaging/linux/craft-studio.desktop", "usr/share/applications/", "644"],
+    ["target/release/package/icons/craft-studio-16.png", "usr/share/icons/hicolor/16x16/apps/craft-studio.png", "644"],
+    ["target/release/package/icons/craft-studio-32.png", "usr/share/icons/hicolor/32x32/apps/craft-studio.png", "644"],
+    ["target/release/package/icons/craft-studio-48.png", "usr/share/icons/hicolor/48x48/apps/craft-studio.png", "644"],
+    ["target/release/package/icons/craft-studio-64.png", "usr/share/icons/hicolor/64x64/apps/craft-studio.png", "644"],
+    ["target/release/package/icons/craft-studio-128.png", "usr/share/icons/hicolor/128x128/apps/craft-studio.png", "644"],
+    ["target/release/package/icons/craft-studio-256.png", "usr/share/icons/hicolor/256x256/apps/craft-studio.png", "644"],
+    ["target/release/package/icons/craft-studio-512.png", "usr/share/icons/hicolor/512x512/apps/craft-studio.png", "644"],
+    ["target/release/package/licenses/THIRD-PARTY-LICENSES.txt", "usr/share/doc/craft-studio/", "644"],
+]
