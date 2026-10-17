@@ -65,6 +65,10 @@ upstream/<app>             the upstream code, untouched apart from patches/
   the same eframe/egui 0.36.2, wgpu 30 and winit 0.30.13, so they share one window, one GPU device
   and one event loop. PdfCraft's hardened `hayro`, `lopdf`, `winit` and `egui-wgpu` forks apply to
   every app (`[patch.crates-io]`).
+- **One GPU device for the most demanding app.** The device asks for every limit the adapter
+  offers, with 2D textures capped at 16384 px (`apps/craft-studio/src/gpu.rs`), as EffectCraft does
+  alone; egui's default caps them at 8192 px. PhotoCraft and PdfCraft alone take the adapter's full
+  texture size; here they get at most 16384 px and tile below it.
 - **Adapters reuse the upstream glue.** An app's window glue (file dialogs, preferences, audio,
   recovery) sits in its binary crate next to `fn main`, where no other crate can call it.
   `studio-overlay` rewrites those sources into `OUT_DIR` at build time (drops `fn main` and the

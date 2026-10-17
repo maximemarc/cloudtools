@@ -6,6 +6,7 @@
 #![cfg_attr(all(target_os = "windows", not(debug_assertions)), windows_subsystem = "windows")]
 
 mod global_state;
+mod gpu;
 mod icon;
 mod modules;
 mod shell;
@@ -70,6 +71,7 @@ fn main() -> eframe::Result {
             .with_drag_and_drop(true)
             .with_icon(icon::window_icon()),
         persist_window: true,
+        wgpu_options: gpu::wgpu_options(),
         ..Default::default()
     };
     let failed = std::sync::Arc::new(std::sync::atomic::AtomicBool::new(false));
