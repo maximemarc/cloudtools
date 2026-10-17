@@ -22,13 +22,11 @@ CI ([.github/workflows/craft-studio.yml](.github/workflows/craft-studio.yml)) : 
 
 ## Publier une version
 
-```bash
-# 1. version dans Cargo.toml ([workspace.package] version = "0.2.0"), commit sur main
-# 2. optionnel : Actions › Craft Studio › Run workflow, pour essayer les installateurs (artefacts packages-<OS>)
-git tag v0.2.0 && git push origin v0.2.0   # build + smoke + paquets sur les 3 OS, puis la release
-```
+1. Version dans `Cargo.toml` (`[workspace.package] version = "0.2.0"`), commit sur `main`.
+2. Optionnel : Actions › Craft Studio › Run workflow, champ `release` vide, pour essayer les installateurs (artefacts `packages-<OS>`).
+3. Run workflow sur `main` avec `release` = `0.2.0` (ou `git tag v0.2.0 && git push origin v0.2.0`) : build + smoke + paquets sur les 3 OS, puis le tag et la release.
 
-Le job `release` refuse un tag qui ne correspond pas à la version du `Cargo.toml` ; un tag `vX.Y.Z-rc.N` publie une pré-version.
+Le job `release` refuse une version qui ne correspond pas à celle du `Cargo.toml` ; `X.Y.Z-rc.N` publie une pré-version.
 
 ## Layout
 

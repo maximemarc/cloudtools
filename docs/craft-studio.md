@@ -60,8 +60,8 @@ on macOS, an Inno Setup installer and a portable `.zip` on Windows. Each carries
 repos and every crate the build compiles for that target). The icon is drawn in code
 (`src/icon.rs`); `cargo run --release -p craft-studio --example icons -- <dir>` exports it.
 
-CI packages on `v*` tags and on "Run workflow", and a tag publishes the packages on a GitHub
-release with `SHA256SUMS`. Linux builds on Ubuntu 22.04, so the packages run on glibc 2.35 or
+CI packages on `v*` tags and on "Run workflow"; a tag, or "Run workflow" with a `release` version
+(which creates the tag), publishes the packages on a GitHub release with `SHA256SUMS`. Linux builds on Ubuntu 22.04, so the packages run on glibc 2.35 or
 newer. Not done: code signing and notarization (they need publisher certificates), Intel Macs,
 Windows on Arm.
 

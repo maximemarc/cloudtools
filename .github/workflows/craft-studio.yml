@@ -6,8 +6,9 @@
 # CPU, where EffectCraft's GPU compositor falls back to the CPU, as upstream expects).
 #
 # A v* tag also packages each build (apps/craft-studio/packaging/package.sh) and publishes the
-# packages on a GitHub release. "Run workflow" packages without releasing (the packages-<OS>
-# artifacts), to try the installers before tagging.
+# packages on a GitHub release. "Run workflow" packages too: with a version in "release", it then
+# tags v<version> on that commit and publishes the release; left empty, the packages are only
+# uploaded as packages-<OS> artifacts, to try the installers first.
 name: Craft Studio
 
 on:
@@ -16,6 +17,11 @@ on:
   pull_request:
     paths-ignore: ["docs/**", "**/*.md"]
   workflow_dispatch:
+    inputs:
+      release:
+        description: Version to release (e.g. 0.1.0), tagged v<version> on this commit. Empty to package only.
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -158,7 +164,7 @@ jobs:
   release:
     name: Release
     needs: build
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.release != '')
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -176,7 +182,7 @@ jobs:
       - name: Publish
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ github.ref_name }}
+          TAG: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('v{0}', inputs.release) }}
         run: |
           version=$(python3 -c "import tomllib; print(tomllib.load(open('Cargo.toml', 'rb'))['workspace']['package']['version'])")
           if [ "$TAG" != "v$version" ]; then
@@ -189,6 +195,7 @@ jobs:
           else
             prerelease=()
             [[ "$version" == *-* ]] && prerelease=(--prerelease)
-            gh release create "$TAG" dist/* --repo "$GITHUB_REPOSITORY" --verify-tag "${prerelease[@]}" \
+            # Creates the tag on this commit when a dispatch asked for the release.
+            gh release create "$TAG" dist/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" "${prerelease[@]}" \
               --title "Craft Studio $version" --notes-file apps/craft-studio/packaging/release-notes.md
           fi
