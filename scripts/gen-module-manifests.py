@@ -44,6 +44,10 @@ BUILD = {
 # feature changes `eframe::App::on_exit`'s signature for every app in the build (features are
 # unified), which breaks the apps written without it.
 DROP_FEATURES = {"eframe": {"glow"}}
+# Dependencies taken without their default features. muda (menus) is a macOS-only dependency of
+# every app, and its default `gtk3` feature only adds the Linux GTK backend: enabled by one app,
+# it puts gtk-rs 0.18 and glib 0.18 (GHSA-wrw7-89jp-8q8g) in Cargo.lock, though never compiled.
+NO_DEFAULT_FEATURES = {"muda"}
 
 
 def rebase(path: str, base: Path, adapter: Path) -> str:
@@ -103,6 +107,8 @@ def generate(module: str) -> Path:
         for name, drop in DROP_FEATURES.items():
             if name in deps and "features" in deps[name]:
                 deps[name]["features"] = [f for f in deps[name]["features"] if f not in drop]
+        for name in NO_DEFAULT_FEATURES & deps.keys():
+            deps[name]["default-features"] = False
         return deps
 
     out = [

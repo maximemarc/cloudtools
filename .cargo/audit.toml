@@ -10,4 +10,13 @@ ignore = [
   #   with the server's public key during `caching_sha2_password` auth.
   # Re-check when rsa 0.10.0 ships or any use moves to private keys.
   "RUSTSEC-2023-0071",
+  # RUSTSEC-2026-0367/0368/0369 (zip < 9: SUID bits, symlink targets and permissions through
+  # symlinks when *extracting* an archive to disk with `ZipArchive::extract` /
+  # `ZipStreamReader::extract`). Nothing here extracts: the office formats (deckcraft,
+  # designcraft, gridcraft, wordcraft) and candle-core (lightcraft, filmcraft models) read
+  # entries with `by_name` / `by_index` in memory. The fix is zip 9, a major version, which
+  # candle-core 0.9 does not take yet. Re-check on every upstream sync (grep for `.extract(`).
+  "RUSTSEC-2026-0367",
+  "RUSTSEC-2026-0368",
+  "RUSTSEC-2026-0369",
 ]
