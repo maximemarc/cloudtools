@@ -94,9 +94,11 @@ VectorCraft also keep crash-recovery copies and offer them back on the next star
 ## Network and privacy
 
 No module sends telemetry. Network use is on demand only: ArtCraft's API, PdfCraft's Help › Check
-for Updates, and AI model downloads in LightCraft and EffectCraft (checksummed). ArtCraft talks to
-`api.storyteller.ai` as soon as it is opened, signed in or not: it loads the model catalogue and,
-whenever the settings settle, asks for a cost estimate that includes the prompt being typed. See [artcraft/EXTERNAL-CALLS.md](artcraft/EXTERNAL-CALLS.md).
+for Updates, and AI model downloads in LightCraft and EffectCraft (checksummed). Opened, ArtCraft
+loads its model catalogue from `api.storyteller.ai`, signed in or not. Nothing you type or add
+leaves the machine before you sign in: upstream ArtCraft sends the prompt for cost estimates and
+uploads reference images while signed out, which `patches/artcraft/0004` turns off. See
+[artcraft/EXTERNAL-CALLS.md](artcraft/EXTERNAL-CALLS.md).
 
 ## After an upstream sync
 

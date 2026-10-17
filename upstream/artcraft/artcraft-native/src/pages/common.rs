@@ -365,8 +365,14 @@ pub struct CostState {
 }
 
 impl CostState {
-  /// Requests an estimate for `fields` once they've been stable for a moment.
+  /// Requests an estimate for `fields` once they've been stable for a moment. Signed out, it
+  /// requests nothing: the fields hold the prompt being typed, which must not leave the machine
+  /// before the user has an account. Signing in requests the estimate for the current fields.
   pub fn update(&mut self, ui: &Ui, backend: &Backend, modality: Modality, fields: &Map<String, Value>) {
+    if !backend.signed_in() {
+      *self = Self::default();
+      return;
+    }
     let key = Value::Object(fields.clone()).to_string();
     if key == self.key {
       return;

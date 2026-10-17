@@ -51,6 +51,8 @@ pub const SHARE_URL_BASE: &str = "https://getartcraft.com/media/";
 const CHARACTER_MODEL: &str = "seedance_2p0";
 /// Sent on every request (`artcraft_client_identity::ARTCRAFT_DESKTOP_USER_AGENT`).
 const USER_AGENT: &str = "storyteller-client/1.0";
+/// Why a reference wasn't uploaded while signed out.
+const SIGN_IN_TO_UPLOAD: &str = "Sign in to ArtCraft to add references.";
 
 /// Which media an operation is for (OmniGen's modality in the URL).
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
@@ -196,6 +198,11 @@ impl Backend {
 
   pub fn data_root(&self) -> &Path {
     &self.root
+  }
+
+  /// Whether an ArtCraft account is signed in (credentials are stored).
+  pub fn signed_in(&self) -> bool {
+    self.creds.read().is_ok_and(|c| c.is_some())
   }
 
   /// Events that arrived since the last call.
@@ -410,11 +417,16 @@ impl Backend {
 
   // --- Uploads -----------------------------------------------------------------------------
 
-  /// Uploads a reference file from disk; images, MP4 videos and audio.
+  /// Uploads a reference file from disk; images, MP4 videos and audio. Signed out, nothing is
+  /// uploaded.
   pub fn upload_file(&self, ref_id: u64, kind: crate::prompt_box::refs::RefKind, path: PathBuf) {
     use crate::prompt_box::refs::RefKind;
     let api = self.api();
     self.spawn(move |tx| async move {
+      if api.creds.is_none() {
+        let _ = tx.send(Event::Uploaded { ref_id, result: Err(SIGN_IN_TO_UPLOAD.to_owned()) });
+        return;
+      }
       let token = match kind {
         RefKind::Image => upload_image_media_file_from_file(UploadImageFromFileArgs { api_host: &api.host, maybe_creds: api.creds.as_ref(), path: &path, is_intermediate_system_file: true, maybe_prompt_token: None, maybe_generation_provider: None, maybe_batch_token: None }).await.map(|r| r.media_file_token.to_string()).map_err(|e| api_message(&e)),
         RefKind::Video => upload_video_media_file_from_file(UploadVideoFromFileArgs { api_host: &api.host, maybe_creds: api.creds.as_ref(), path: &path, maybe_prompt_token: None, maybe_generation_provider: None }).await.map(|r| r.media_file_token.to_string()).map_err(|e| api_error_message(&e)),
@@ -428,10 +440,14 @@ impl Backend {
     });
   }
 
-  /// Uploads a pasted image (PNG bytes).
+  /// Uploads a pasted image (PNG bytes). Signed out, nothing is uploaded.
   pub fn upload_png(&self, ref_id: u64, png: Vec<u8>) {
     let api = self.api();
     self.spawn(move |tx| async move {
+      if api.creds.is_none() {
+        let _ = tx.send(Event::Uploaded { ref_id, result: Err(SIGN_IN_TO_UPLOAD.to_owned()) });
+        return;
+      }
       let result = upload_image_media_file_from_bytes(UploadImageBytesArgs { api_host: &api.host, maybe_creds: api.creds.as_ref(), image_bytes: png, image_type: ImageType::Png, is_intermediate_system_file: true, maybe_generation_provider: None }).await;
       let result = match result {
         Ok(r) => Ok(api.describe_upload(r.media_file_token.to_string()).await),
