@@ -95,7 +95,8 @@ package_windows() {
     powershell -NoProfile -Command "Compress-Archive -Path '$(cygpath -w "$stage")\\*' -DestinationPath '$(cygpath -w "$OUT/$name.zip")'"
   fi
   local iscc=${ISCC:-$(command -v iscc || echo "/c/Program Files (x86)/Inno Setup 6/ISCC.exe")}
-  "$iscc" /Q "/DAppVersion=$VERSION" "/DStageDir=$(cygpath -w "$stage")" "/DOutputDir=$(cygpath -w "$OUT")" \
+  # MSYS turns /-prefixed arguments into paths; the paths here are already Windows paths.
+  MSYS2_ARG_CONV_EXCL='*' "$iscc" /Q "/DAppVersion=$VERSION" "/DStageDir=$(cygpath -w "$stage")" "/DOutputDir=$(cygpath -w "$OUT")" \
     "$(cygpath -w "$HERE/windows/craft-studio.iss")"
 }
 
