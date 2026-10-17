@@ -22,13 +22,13 @@ LICENSE_FILE = re.compile(r"^(licen[cs]e|copying|notice|unlicense|copyright)([-.
 
 
 def host_triple() -> str:
-    out = subprocess.run(["rustc", "-vV"], capture_output=True, text=True, check=True).stdout
+    out = subprocess.run(["rustc", "-vV"], capture_output=True, text=True, encoding="utf-8", check=True).stdout
     return next(line.split(":", 1)[1].strip() for line in out.splitlines() if line.startswith("host:"))
 
 
 def metadata(target: str) -> dict:
     cmd = ["cargo", "metadata", "--format-version", "1", "--locked", "--filter-platform", target]
-    out = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, check=True).stdout
+    out = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", check=True).stdout
     return json.loads(out)
 
 
